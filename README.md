@@ -3,6 +3,7 @@
 ## Installation
 
 First you need to install EMACS:
+
 * [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
 * Ubuntu/Mint: ?
 
