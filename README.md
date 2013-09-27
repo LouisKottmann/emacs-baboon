@@ -3,10 +3,8 @@
 ## Installation
 
 First you need to install EMACS:
-
-    - [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
-
-    - Ubuntu/Mint: ?
+* [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
+* Ubuntu/Mint: ?
 
 Then you need to install [Prelude](https://github.com/bbatsov/prelude)
 
@@ -28,4 +26,6 @@ Run `emacs --daemon` once (may be done at startup like in a systemd service)
 
 Then use `nohup emacsclient -c &` to enter a session.
 
-or, a bit better (but hard to rememeber): run `emacsclient -c -n -a "" -F "((fullscreen . maximized))"` it will start the daemon if necessary and run itself daemonized
+or, a bit better (but hard to remember):
+run `emacsclient -c -n -a "" -F "((fullscreen . maximized))"`
+it will start the daemon if necessary and run itself daemonized
