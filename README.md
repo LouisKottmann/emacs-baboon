@@ -12,10 +12,18 @@ Also, SBCL is required for [SLIME](http://www.cliki.net/SLIME%20Features) to wor
 
 Finally, fetch this repo into `~/.emacs.d/personal/`
 
-The external libraries it depends on are linked as git submodules when applicable, so do a quick `git submodule update` and you're set. Slime does not have a git repo, it uses cvs, check out [this page](http://www.cliki.net/SLIME-HOWTO) to update it.
+The external libraries it depends on are linked as git submodules, so do a quick `git submodule update` and you're set.
 
 ## Usage
+
+### The easy way
+
+Clone my bash repo with yummy aliases and environment variables then use the `em` command
+
+### The usual way
 
 Run `emacs --daemon` once (may be done at startup like in a systemd service)
 
 Then use `nohup emacsclient -c &` to enter a session.
+
+or, a bit better (but hard to rememeber): run `emacsclient -c -n -a "" -F "((fullscreen . maximized))"` it will start the daemon if necessary and run itself daemonized
