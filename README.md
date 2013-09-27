@@ -2,8 +2,10 @@
 
 ## Installation
 
-First you need to install EMACS:\n
-    - [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")\n
+First you need to install EMACS:
+
+    - [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
+
     - Ubuntu/Mint: ?
 
 Then you need to install [Prelude](https://github.com/bbatsov/prelude)
@@ -18,7 +20,7 @@ The external libraries it depends on are linked as git submodules, so do a quick
 
 ### The easy way
 
-Clone my bash repo with yummy aliases and environment variables then use the `em` command
+Clone [my bash repo](https://bitbucket.org/louis_kottmann/bash) with yummy aliases and environment variables then use the `em` command
 
 ### The usual way
 
