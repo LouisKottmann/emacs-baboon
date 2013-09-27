@@ -3,4 +3,4 @@
 	url = https://github.com/milkypostman/powerline.git
 [submodule "slime"]
 	path = slime
-	url = git@github.com:nablaone/slime.git
+	url = https://github.com/nablaone/slime.git
