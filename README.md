@@ -7,7 +7,7 @@ First you need to install EMACS:
 * [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
 * [Ubuntu/Min]( https://launchpad.net/~cassou/+archive/emacs)
 
-<!-- blank comment -->
+.
 
     add-apt-repository ppa:cassou/emacs
     apt-get update
