@@ -5,7 +5,7 @@
 First you need to install EMACS:
 
 * [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
-* Ubuntu/Mint: https://launchpad.net/~cassou/+archive/emacs (or `add-apt-repository ppa:cassou/emacs` 
+* Ubuntu/Mint: https://launchpad.net/~cassou/+archive/emacs (or `add-apt-repository ppa:cassou/emacs`
 and `apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot`)
 
 Then you need to install [Prelude](https://github.com/bbatsov/prelude)
@@ -14,7 +14,12 @@ Also, SBCL is required for [SLIME](http://www.cliki.net/SLIME%20Features) to wor
 
 Finally, fetch this repo into `~/.emacs.d/personal/`
 
-The external libraries it depends on are linked as git submodules, so do a quick `git submodule update` and you're set.
+The external libraries it depends on are linked as git submodules, so do a quick
+
+    git submodule init
+    git submodule update
+
+and you're set.
 
 ## Usage
 
