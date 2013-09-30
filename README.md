@@ -5,8 +5,11 @@
 First you need to install EMACS:
 
 * [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
-* Ubuntu/Mint: https://launchpad.net/~cassou/+archive/emacs (or `add-apt-repository ppa:cassou/emacs`
-and `apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot`)
+* [Ubuntu/Min]( https://launchpad.net/~cassou/+archive/emacs):
+
+    `add-apt-repository ppa:cassou/emacs`
+    `apt-get update`
+    `apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot`
 
 Then you need to install [Prelude](https://github.com/bbatsov/prelude)
 
