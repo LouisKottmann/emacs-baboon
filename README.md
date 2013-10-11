@@ -2,7 +2,7 @@
 
 ## Installation
 
-First you need to install EMACS:
+1) Install EMACS:
 
 * [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
 * [Ubuntu/Min]( https://launchpad.net/~cassou/+archive/emacs)
@@ -13,18 +13,25 @@ First you need to install EMACS:
     apt-get update
     apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
 
-Then you need to install [Prelude](https://github.com/bbatsov/prelude)
+2) Install [Prelude](https://github.com/bbatsov/prelude)
 
-Also, SBCL is required for [SLIME](http://www.cliki.net/SLIME%20Features) to work properly. On Debian just do `sudo apt-get install sbcl`.
+3) SBCL is required for [SLIME](http://www.cliki.net/SLIME%20Features) to work properly. On Debian just do `sudo apt-get install sbcl`.
 
-Finally, fetch this repo into `~/.emacs.d/personal/`
+4) Fetch this repo into `~/.emacs.d/personal/`
 
-The external libraries it depends on are linked as git submodules, so do a quick
+5) Get the git submodules
 
     git submodule init
     git submodule update
 
-and you're set.
+6) Start EMACS and get the following EMACS packages (M-x package-install):
+
+* slime
+* w3
+
+7) Restart EMACS
+
+8) You're set
 
 ## Usage
 
