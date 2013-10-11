@@ -26,8 +26,11 @@
 
 6) Start EMACS and get the following EMACS packages (M-x package-install):
 
+* solarized
 * slime
+* ecb
 * w3
+* haml
 
 7) Restart EMACS
 
