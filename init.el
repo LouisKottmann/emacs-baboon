@@ -3,6 +3,20 @@
 ;; Color theme
 (load-theme 'solarized-dark t)
 
+;; ERC
+(require 'erc)
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#emacs"")
+        ("oftc.net" "#bitlbee")))
+(erc :server "irc.freenode.net" :port "6667" :nick "baboon")
+(erc :server "irc-ssl.sackheads.org" :port "6669" :nick "fatalbaboon")
+;;(setq erc-autojoin-channels-alist '(("irc-ssl.sackheads.org" "#McCoy")))
+(erc :server "irc.wyplay.net" :port "6667" :nick "louis")
+;;(setq erc-autojoin-channels-alist '(("irc.wyplay.net" "#webapp" "#g7")))
+;;(setq erc-kill-buffer-on-part t)
+;;(setq erc-kill-queries-on-quit t)
+;;(setq erc-kill-server-buffer-on-quit t)
+
 ;; Slime support
 ;; (add-to-list 'load-path "~/.emacs.d/personal/slime/")
 ;; (require 'slime)
