@@ -31,6 +31,8 @@
 * ecb
 * w3
 * haml
+* tabbar
+* auto-complete
 
 7) Restart EMACS
 
