@@ -1,32 +1,10 @@
 ;;; init.el Emacs configuration file for Louis "Baboon" Kottmann
 
 ;; Color theme
-(load-theme 'solarized-dark t)
-
-;; ERC
-(require 'erc)
-(setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emacs"")
-        ("oftc.net" "#bitlbee")))
-(erc :server "irc.freenode.net" :port "6667" :nick "baboon")
-(erc :server "irc-ssl.sackheads.org" :port "6669" :nick "fatalbaboon")
-;;(setq erc-autojoin-channels-alist '(("irc-ssl.sackheads.org" "#McCoy")))
-(erc :server "irc.wyplay.net" :port "6667" :nick "louis")
-;;(setq erc-autojoin-channels-alist '(("irc.wyplay.net" "#webapp" "#g7")))
-;;(setq erc-kill-buffer-on-part t)
-;;(setq erc-kill-queries-on-quit t)
-;;(setq erc-kill-server-buffer-on-quit t)
-
-;; Slime support
-;; (add-to-list 'load-path "~/.emacs.d/personal/slime/")
-;; (require 'slime)
-;; (add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
-;; (add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
-;; Optionally, specify the lisp program you are using. Default is "lisp"
-;;(setq inferior-lisp-program "yourlisp")
+(load-theme 'solarized-light t)
 
 ;; Powerline support
-(add-to-list 'load-path "~/.emacs.d/personal/powerline/")
+(add-to-list 'load-path "~/.emacs.d/personal/powerline")
 (require 'powerline)
 (powerline-default-theme)
 
@@ -34,10 +12,8 @@
 (scroll-bar-mode -1)
 
 ;; ECB
-(ecb-activate)
-(ecb-toggle-layout)
-(ecb-toggle-layout)
-
+;;(require 'ecb)
+;;(ecb-activate)
 
 ;; Auto complete
 (add-to-list 'load-path "~/.emacs.d/personal/auto-complete")
@@ -45,6 +21,9 @@
 (require 'auto-complete-config)
 ; Make sure we can find the dictionaries
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/personal/auto-complete/dict")
+;; Performance workarounds
+(ac-flyspell-workaround)
+(ac-linum-workaround)
 ; Use dictionaries by default
 (setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
 (global-auto-complete-mode t)
@@ -53,6 +32,14 @@
 ; case sensitivity is important when finding matches
 (setq ac-ignore-case nil)
 
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/personal/dict")
-;; (require 'auto-complete-config)
-;; (ac-config-default)
+;; ERC
+(require 'erc)
+(setq erc-kill-buffer-on-part t)
+(setq erc-kill-queries-on-quit t)
+(setq erc-kill-server-buffer-on-quit t)
+(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs")))
+(erc :server "irc.freenode.net" :port "6667" :nick "baboon")
+;;(setq erc-autojoin-channels-alist '(("wyplay.net" "#webapp" "#g7")))
+;;(erc :server "irc.wyplay.net" :port "6667" :nick "louis")
+;;(setq erc-autojoin-channels-alist '(("irc-ssl.sackheads.org" "McCoy")))
+;;(erc :server "irc-ssl.sackheads.org" :port "6669" :nick "fatalbaboon")
