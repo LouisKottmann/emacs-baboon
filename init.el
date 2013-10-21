@@ -27,7 +27,7 @@
 ; Use dictionaries by default
 (setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
 (global-auto-complete-mode t)
-; Start auto-completion after 2 characters of a word
+; Start auto-completion after 1 characters of a word
 (setq ac-auto-start 1)
 ; case sensitivity is important when finding matches
 (setq ac-ignore-case nil)
@@ -43,3 +43,6 @@
 ;;(erc :server "irc.wyplay.net" :port "6667" :nick "louis")
 ;;(setq erc-autojoin-channels-alist '(("irc-ssl.sackheads.org" "McCoy")))
 ;;(erc :server "irc-ssl.sackheads.org" :port "6669" :nick "fatalbaboon")
+
+;; HAML
+(require 'haml-mode)
