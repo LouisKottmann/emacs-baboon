@@ -33,6 +33,7 @@
 * haml
 * tabbar
 * auto-complete
+* powerline
 
 7) Restart EMACS
 

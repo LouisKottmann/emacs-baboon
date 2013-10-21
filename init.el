@@ -4,8 +4,6 @@
 (load-theme 'solarized-light t)
 
 ;; Powerline support
-(add-to-list 'load-path "~/.emacs.d/personal/powerline")
-(require 'powerline)
 (powerline-default-theme)
 
 ;; Disable scrollbars
