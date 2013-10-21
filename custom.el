@@ -22,6 +22,7 @@
  '(erc-port 6667)
  '(erc-reuse-buffers nil)
  '(global-mark-ring-max 64)
+ '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(nxml-child-indent 4)
