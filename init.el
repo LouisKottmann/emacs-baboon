@@ -44,3 +44,6 @@
 
 ;; HAML
 (require 'haml-mode)
+
+;; Soft wrap (words are not split at the end of a line)
+(global-visual-line-mode 1)

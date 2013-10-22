@@ -14,6 +14,7 @@
  '(ecb-options-version "2.40")
  '(ecb-other-window-behavior (quote all))
  '(ecb-source-path (quote (("/" "/") ("/home/louis/JS/webapp" "webapp"))))
+ '(ecb-windows-width 0.15)
  '(erc-autojoin-mode t)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-modules
