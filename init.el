@@ -47,3 +47,4 @@
 
 ;; Soft wrap (words are not split at the end of a line)
 (global-visual-line-mode 1)
+(global-rainbow-delimiters-mode 1)
