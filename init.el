@@ -36,7 +36,7 @@
                                     (".*sackheads.org"
                                      "#mccoy")))
 (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
-(erc-ssl :server "irc.wyplay.net" :port "6667" :nick "louis")
+;; (erc-ssl :server "irc.wyplay.net" :port "6667" :nick "louis")
 
 ;; HAML
 (require 'haml-mode)
@@ -55,6 +55,6 @@
 (setq twittering-icon-mode t)
 
 ;; TODO: ecb-show/hide-windows keymaps
-;; TODO: hide minor modes in powerline
 ;; TODO: tabbar grouping
 ;; TODO: customize powerline
+;;       -> hide minor modes in powerline

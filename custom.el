@@ -15,6 +15,7 @@
  '(ecb-other-window-behavior (quote only-edit))
  '(ecb-source-path (quote (("/" "/") ("/home/louis/JS/webapp" "webapp"))))
  '(ecb-windows-width 0.15)
+ '(emms-stream-repeat-p t)
  '(erc-autojoin-mode t)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-modules
