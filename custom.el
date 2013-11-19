@@ -19,6 +19,9 @@
      ("/home/louis/.emacs.d/personal" "emacs")
      ("/home/louis/JS/webapp" "webapp")
      ("/home/louis/JS/swag" "swag"))))
+     (#("/home/baboon/Ruby/afpric-salon2013" 0 34
+        (help-echo "Mouse-2 toggles maximizing, mouse-3 displays a popup-menu"))
+      "afpric"))))
  '(ecb-windows-width 0.15)
  '(emms-stream-repeat-p t)
  '(erc-autojoin-mode t)
@@ -143,7 +146,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#fdf6e3" :foreground "#657b83" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
+ '(default ((t (:background "nil"))))
  '(powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3"))))
  '(tabbar-button ((t (:background "#5A768B" :foreground "#FDF6E3"))))
