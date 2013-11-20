@@ -18,10 +18,10 @@
     (("/" "/")
      ("/home/louis/.emacs.d/personal" "emacs")
      ("/home/louis/JS/webapp" "webapp")
-     ("/home/louis/JS/swag" "swag"))))
+     ("/home/louis/JS/swag" "swag"))
      (#("/home/baboon/Ruby/afpric-salon2013" 0 34
         (help-echo "Mouse-2 toggles maximizing, mouse-3 displays a popup-menu"))
-      "afpric"))))
+      "afpric")))
  '(ecb-windows-width 0.15)
  '(emms-stream-repeat-p t)
  '(erc-autojoin-mode t)
