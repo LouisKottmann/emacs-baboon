@@ -11,31 +11,15 @@
        rinari markdown-mode web-mode)
   "Packages any decent baboon would use.")
 
-(defun baboon-packages-installed-p (packages)
-  "Check if all packages are installed."
-  (every #'package-installed-p packages))
-
-(defun baboon-require-package (package)
-  "Install package unless already installed."
-  (unless (memq package baboon-packages)
-    (add-to-list 'baboon-packages package))
-  (unless (package-installed-p package)
-    (package-install package)))
-
-(defun baboon-require-packages (packages)
-  "Ensure packages are installed.
-Missing packages are installed."
-  (mapc #'baboon-require-package packages))
-
-(defun baboon-install-packages (packages)
-  "Install missing packages."
-  (unless (baboon-packages-installed-p packages)
-    (message "%s" "Something is looking for newer packages..")
-    (package-refresh-contents)
-    (message "%s" " done.")
-    (baboon-require-packages packages)))
-
-(baboon-install-packages baboon-packages)
+(package-initialize)
+(message "%s" "The jungle god is looking for newer packages..")
+(package-refresh-contents)
+(message "%s" " done.")
+(mapc
+ (lambda (package)
+   (or (package-installed-p package)
+       (package-install package)))
+ baboon-packages)
 
 ;; Color theme
 (load-theme 'solarized-light t)
