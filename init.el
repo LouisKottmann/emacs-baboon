@@ -1,4 +1,41 @@
 ;;; init.el Emacs configuration file for Louis "Baboon" Kottmann
+(require 'cl)
+
+;; Install missing packages
+(require 'package)
+(defvar baboon-packages
+  '(w3 solarized-theme haml-mode
+       slime ecb tabbar
+       powerline auto-complete
+       twittering-mode emms hackernews
+       rinari markdown-mode web-mode)
+  "Packages any decent baboon would use.")
+
+(defun baboon-packages-installed-p (packages)
+  "Check if all packages are installed."
+  (every #'package-installed-p packages))
+
+(defun baboon-require-package (package)
+  "Install package unless already installed."
+  (unless (memq package baboon-packages)
+    (add-to-list 'baboon-packages package))
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(defun baboon-require-packages (packages)
+  "Ensure packages are installed.
+Missing packages are installed."
+  (mapc #'baboon-require-package packages))
+
+(defun baboon-install-packages (packages)
+  "Install missing packages."
+  (unless (baboon-packages-installed-p packages)
+    (message "%s" "Something is looking for newer packages..")
+    (package-refresh-contents)
+    (message "%s" " done.")
+    (baboon-require-packages packages)))
+
+(baboon-install-packages baboon-packages)
 
 ;; Color theme
 (load-theme 'solarized-light t)
@@ -35,7 +72,7 @@
                                      "#g7" "#webapp")
                                     (".*sackheads.org"
                                      "#mccoy")))
-(erc :server "irc.freenode.net" :port "6667" :nick "baboon")
+;; (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
 ;; (erc-ssl :server "irc.wyplay.net" :port "6667" :nick "louis")
 
 ;; HAML
@@ -53,6 +90,13 @@
 (setq twittering-username "louiskottmann")
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
+
+;; Web-mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-engines-alist
+      '(("javascript" . "\\.ejs\\'")))
 
 ;; TODO: ecb-show/hide-windows keymaps
 ;; TODO: tabbar grouping

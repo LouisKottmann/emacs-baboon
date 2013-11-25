@@ -19,25 +19,7 @@
 
 4) Fetch this repo into `~/.emacs.d/personal/`
 
-5) Get the git submodules
-
-    git submodule init
-    git submodule update
-
-6) Start EMACS and get the following EMACS packages (M-x package-install):
-
-* solarized
-* slime
-* ecb
-* w3
-* haml
-* tabbar
-* auto-complete
-* powerline
-
-7) Restart EMACS
-
-8) You're set
+5) Start EMACS
 
 ## Usage
 
