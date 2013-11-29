@@ -5,7 +5,7 @@
 (require 'package)
 (defvar baboon-packages
   '(w3 solarized-theme haml-mode
-       slime ecb tabbar emms
+       slime ecb tabbar
        powerline auto-complete
        twittering-mode emms hackernews
        rinari markdown-mode web-mode)
@@ -83,6 +83,12 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (setq web-mode-engines-alist
       '(("javascript" . "\\.ejs\\'")))
+
+;; Emacs Multimedia System
+(require 'emms-setup)
+(emms-devel)
+(emms-default-players)
+(setq emms-player-mpg321-parameters '("-o" "alsa"))
 
 ;; TODO: tabbar grouping
 ;; TODO: customize powerline
