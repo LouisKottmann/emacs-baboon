@@ -70,7 +70,9 @@
 
 ;; Twittering-mode
 ;; The library autoloads on (twit) but that's counter-intuitive
-(autoload 'twittering-mode "twittering-mode")
+(autoload 'twittering-mode "twittering-mode"
+  "loads twittering-mode, just like twit"
+  t nil)
 (setq twittering-username "louiskottmann")
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
