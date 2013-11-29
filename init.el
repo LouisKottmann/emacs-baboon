@@ -5,7 +5,7 @@
 (require 'package)
 (defvar baboon-packages
   '(w3 solarized-theme haml-mode
-       slime ecb tabbar
+       slime ecb tabbar emms
        powerline auto-complete
        twittering-mode emms hackernews
        rinari markdown-mode web-mode)
@@ -84,7 +84,6 @@
 (setq web-mode-engines-alist
       '(("javascript" . "\\.ejs\\'")))
 
-;; TODO: ecb-show/hide-windows keymaps
 ;; TODO: tabbar grouping
 ;; TODO: customize powerline
 ;;       -> hide minor modes in powerline
