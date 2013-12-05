@@ -99,12 +99,8 @@
 (setq erc-kill-server-buffer-on-quit t)
 (setq erc-autojoin-channels-alist '((".*freenode.net"
                                      "#emacs")
-                                    (".*wyplay.net"
-                                     "#g7" "#webapp")
-                                    (".*sackheads.org"
-                                     "#mccoy")))
+                                    ))
 ;; (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
-;; (erc-ssl :server "irc.wyplay.net" :port "6667" :nick "louis")
 
 ;; HAML
 (require 'haml-mode)
