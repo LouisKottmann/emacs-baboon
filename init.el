@@ -5,8 +5,7 @@
 (require 'package)
 (defvar baboon-packages
   '(w3 solarized-theme haml-mode
-       slime ecb tabbar
-       powerline auto-complete
+       ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
        rinari markdown-mode web-mode)
   "Packages any decent baboon would use.")
