@@ -138,4 +138,24 @@
 
 ;; Custom ELISP
 ;; should assign this to an interactive command
-;; (replace-match "\(\w+\)\ \(\ *\)" "\2\1\ ")
+(defun align-regexp-lefty(beg end align-on)
+  "After using align-regexp, this will move spaces to the left."
+  (interactive "*r \nMAlign on: ")
+  (align-regexp beg end (concat "\\(\\s-*\\)" align-on))
+  (save-restriction
+    (narrow-to-region beg end)
+    (save-excursion
+      (goto-char (point-min))
+      (while (search-forward-regexp
+              (concat "\\(\\w+\\)\\ \\(\\ *\\)"
+                      align-on
+                      "\\(\\ *\\)\\(\\w+\\)")
+              nil t)
+        (replace-match (concat "\\2\\1"
+                               align-on
+                               "\\ \\4")
+                       nil nil)))))
+
+;;(replace-match "\(\w+\)\ \(\ *\)" "\2\1\ ")
+
+;;;init.el ends here
