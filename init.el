@@ -135,6 +135,9 @@
 (setq emms-source-file-default-directory "/media/trinasse/partage/Musique/")
 (add-hook 'emms-player-started-hook 'emms-show)
 
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl") ;; Replace "sbcl" with the path to your implementation
+
 ;; TODO: tabbar grouping
 ;; TODO: interactive function to align the space on the right after align-regexp
 
