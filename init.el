@@ -132,6 +132,8 @@
 (emms-devel)
 (emms-default-players)
 (setq emms-player-mpg321-parameters '("-o" "alsa"))
+(setq emms-source-file-default-directory "/media/trinasse/partage/Musique/")
+(add-hook 'emms-player-started-hook 'emms-show)
 
 ;; TODO: tabbar grouping
 ;; TODO: interactive function to align the space on the right after align-regexp
