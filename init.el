@@ -143,7 +143,7 @@
 ;; Custom ELISP
 ;; should assign this to an interactive command
 (defun align-regexp-lefty(beg end align-on)
-  "After using align-regexp, this will move spaces to the left."
+  "Same as align-regexp except the spaces are on the left."
   (interactive "*r \nMAlign on: ")
   (align-regexp beg end (concat "\\(\\s-*\\)" align-on))
   (save-restriction
