@@ -145,11 +145,10 @@
 (defun align-regexp-lefty(beg end align-on)
   "After using align-regexp, this will move spaces to the left."
   (interactive "*r \nMAlign on: ")
+  (align-regexp beg end (concat "\\(\\s-*\\)" align-on))
   (save-restriction
     (narrow-to-region beg end)
     (save-excursion
-      ;;      (goto-char (point-min))
-      ;;    (align-regexp beg end (concat "\\(\\s-*\\)" align-on))
       (goto-char (point-min))
       (while (search-forward-regexp
               (concat "\\(\\w+\\)\\ \\(\\ *\\)"
