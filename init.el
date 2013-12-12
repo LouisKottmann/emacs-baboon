@@ -151,11 +151,11 @@
     (save-excursion
       (goto-char (point-min))
       (while (search-forward-regexp
-              (concat "\\(\\w+\\)\\ \\(\\ *\\)"
+              (concat "^\\(\\ *\\)\\([^[:space:]]*\\)\\ \\(\\ *\\)"
                       align-on
-                      "\\(\\ *\\)\\(.+\\)")
+                      "\\ *\\(.+\\)$")
               nil t)
-        (replace-match (concat "\\2\\1"
+        (replace-match (concat "\\1\\3\\2"
                                align-on
                                " \\4")
                        nil nil)))))
