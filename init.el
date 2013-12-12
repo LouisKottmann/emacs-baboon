@@ -126,6 +126,8 @@
 (setq web-mode-engines-alist
       '(("javascript" . "\\.ejs\\'")))
 
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 ;; Emacs Multimedia System
 (require 'emms-setup)
 (emms-devel)

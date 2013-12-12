@@ -41,6 +41,8 @@
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
+ '(js2-basic-offset 2)
+ '(js2-include-node-externs t)
  '(message-send-mail-function (quote smtpmail-send-it))
  '(mode-line-format
    (quote
