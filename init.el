@@ -162,14 +162,6 @@
                                " \\4")
                        nil nil)))))
 
-(defun baboon-clean-buffer()
-  "Don't shit where you eat!"
-  (interactive)
-  (prelude-indent-buffer)
-  (prelude-untabify-buffer)
-  (whitespace-cleanup)
-  (message "Clean as a whistle"))
-
 ;; Keybindings
 (global-set-key (kbd "s-<right>") 'shrink-window-horizontally)
 (global-set-key (kbd "s-<left>") 'enlarge-window-horizontally)
