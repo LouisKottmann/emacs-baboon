@@ -162,4 +162,11 @@
                                " \\4")
                        nil nil)))))
 
+;; Keybindings
+(global-set-key (kbd "s-<right>") 'shrink-window-horizontally)
+(global-set-key (kbd "s-<left>") 'enlarge-window-horizontally)
+(global-set-key (kbd "s-<down>") 'shrink-window)
+(global-set-key (kbd "s-<up>") 'enlarge-window)
+
+
 ;;;init.el ends here
