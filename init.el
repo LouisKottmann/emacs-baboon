@@ -105,7 +105,7 @@
 (require 'haml-mode)
 
 ;; Soft wrap (words are not split at the end of a line)
-(global-visual-line-mode 1)
+;; (global-visual-line-mode 1)
 
 ;; Colors parenthesis pairs
 (global-rainbow-delimiters-mode 1)
@@ -118,6 +118,7 @@
 (setq twittering-username "louiskottmann")
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
+(setq twittering-use-icon-storage t)
 
 ;; Web-mode
 (require 'web-mode)
@@ -163,8 +164,8 @@
                        nil nil)))))
 
 ;; Keybindings
-(global-set-key (kbd "s-<right>") 'shrink-window-horizontally)
-(global-set-key (kbd "s-<left>") 'enlarge-window-horizontally)
+(global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "s-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "s-<down>") 'shrink-window)
 (global-set-key (kbd "s-<up>") 'enlarge-window)
 
