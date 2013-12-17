@@ -15,11 +15,13 @@
 
 2) Install [Prelude](https://github.com/bbatsov/prelude)
 
-3) SBCL is required for [SLIME](http://www.cliki.net/SLIME%20Features) to work properly. On Debian just do `sudo apt-get install sbcl`.
+3) Install [SBCL](http://www.sbcl.org/). On Debian just do `sudo apt-get install sbcl`.
 
-4) Fetch this repo into `~/.emacs.d/personal/`
+4) Install [Quicklisp](http://www.quicklisp.org) + [SLIME](http://common-lisp.net/project/slime/)
 
-5) Start EMACS
+5) Fetch this repo into `~/.emacs.d/personal/`
+
+6) Start EMACS
 
 ## Usage
 
