@@ -7,7 +7,8 @@
   '(w3 solarized-theme haml-mode
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
-       rinari markdown-mode web-mode)
+       rinari markdown-mode web-mode
+       smartscan)
   "Packages any decent baboon would use.")
 
 (package-initialize)
@@ -75,6 +76,9 @@
 
 ;; Disable scrollbars
 (scroll-bar-mode -1)
+
+;; Allow to search for next (M-n)/previous (M-p) occurence of word at point
+(global-smartscan-mode 1) ;; (M-') replaces occurences of word at point
 
 ;; Auto complete
 (add-to-list 'load-path "~/.emacs.d/personal/auto-complete")
