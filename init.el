@@ -8,7 +8,7 @@
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
        rinari markdown-mode web-mode
-       smartscan)
+       smartscan vline)
   "Packages any decent baboon would use.")
 
 (package-initialize)
