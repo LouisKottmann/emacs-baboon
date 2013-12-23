@@ -145,6 +145,10 @@
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl") ;; Replace "sbcl" with the path to your implementation
 
+;; Shell colors
+(add-hook 'magit-mode-hook 'ansi-color-for-comint-mode-on)
+(add-hook 'eshell-preoutput-filter-functions 'ansi-color-filter-apply)
+
 ;; TODO: tabbar grouping
 ;; TODO: interactive function to align the space on the right after align-regexp
 
