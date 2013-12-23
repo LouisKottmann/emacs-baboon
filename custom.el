@@ -47,6 +47,7 @@
  '(nxml-child-indent 4)
  '(powerline-default-separator (quote slant))
  '(send-mail-function nil)
+ '(smex-history-length 25)
  '(smtpmail-auth-credentials
    (quote
     (("smtp.gmail.com" 587 "louis.kottmann@gmail.com" nil))))
@@ -82,4 +83,4 @@
  '(tabbar-selected ((t (:background "#5A768B" :foreground "#FDF6E3" :box (:line-width -1 :style pressed-button)))))
  '(tabbar-separator ((t (:inherit tabbar-default :height 0.1))))
  '(tabbar-unselected ((t (:background "#FDF6E3" :foreground "#5A768B" :box (:line-width -1 :style released-button)))))
- '(vline ((t (:background "#EEE8D5")))))
+ '(vline ((t (:background "#EEE8D5"))) t))
