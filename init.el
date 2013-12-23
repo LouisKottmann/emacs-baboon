@@ -11,15 +11,19 @@
        smartscan vline)
   "Packages any decent baboon would use.")
 
-(package-initialize)
-(message "%s" "The jungle god is looking for newer packages..")
-(package-refresh-contents)
-(message "%s" " done.")
-(mapc
- (lambda (package)
-   (or (package-installed-p package)
-       (package-install package)))
- baboon-packages)
+(condition-case nil
+    (progn
+      (package-initialize)
+      (message "%s" "The jungle god is looking for newer packages..")
+      (package-refresh-contents)
+      (message "%s" " done.")
+      (mapc
+       (lambda (package)
+         (or (package-installed-p package)
+             (package-install package)))
+       baboon-packages))
+  (error
+   (message "%s" "God failed.. do you have internet access?")))
 
 ;; Color theme
 (load-theme 'solarized-light t)
@@ -81,9 +85,7 @@
 (global-smartscan-mode 1) ;; (M-') replaces occurences of word at point
 
 ;; Auto complete
-(add-to-list 'load-path "~/.emacs.d/personal/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/personal/auto-complete/dict")
 ;; Performance workarounds
 (ac-flyspell-workaround)
 (ac-linum-workaround)
@@ -142,8 +144,10 @@
 (add-hook 'emms-player-started-hook 'emms-show)
 
 ;; SLIME
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "sbcl") ;; Replace "sbcl" with the path to your implementation
+(ignore-errors
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  ;; Replace "sbcl" with the path to your implementation
+  (setq inferior-lisp-program "sbcl"))
 
 ;; Shell colors
 (add-hook 'magit-mode-hook 'ansi-color-for-comint-mode-on)
@@ -168,9 +172,7 @@
                       align-on
                       "\\ *\\(.+\\)$")
               nil t)
-        (replace-match (concat "\\1\\3\\2"
-                               align-on
-                               " \\4")
+        (replace-match (concat "\\1\\3\\2" align-on " \\4")
                        nil nil)))))
 
 ;; Keybindings
@@ -179,6 +181,5 @@
 (global-set-key (kbd "s-<down>") 'shrink-window)
 (global-set-key (kbd "s-<up>") 'enlarge-window)
 (global-set-key (kbd "C-c . l a") 'ecb-activate)
-
 
 ;;;init.el ends here
