@@ -21,7 +21,9 @@
 
 5) Fetch this repo into `~/.emacs.d/personal/`
 
-6) Start EMACS
+6) Adjust `../prelude-modules.el`, (I particularly like prelude-ido & prelude-key-chord)
+
+7) Start EMACS
 
 ## Usage
 
