@@ -161,7 +161,7 @@
     (save-restriction
       (narrow-to-region beg end)
       (goto-char (point-min))
-      (align-regexp beg end (concat "\\(\\s-*\\)" align-on))
+      (align-regexp (point-min) (point-max) (concat "\\(\\s-*\\)" align-on))
       (goto-char (point-min))
       (while (search-forward-regexp
               (concat "^\\(\\ *\\)\\([^[:space:]]*\\)\\ \\(\\ *\\)"
