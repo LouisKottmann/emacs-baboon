@@ -141,6 +141,7 @@
 (setq emms-source-file-default-directory "/media/trinasse/partage/Musique/")
 (add-hook 'emms-player-started-hook 'emms-show)
 
+;; SLIME
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl") ;; Replace "sbcl" with the path to your implementation
 
