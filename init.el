@@ -149,8 +149,9 @@
 
 ;; Magit
 ;; Fix diff colors
-(dolist (additional-options '("-c" "color.diff=false"))
-  (add-to-list 'magit-git-standard-options additional-options t))
+(eval-after-load "magit"
+  '(dolist (additional-options '("-c" "color.diff=false"))
+    (add-to-list 'magit-git-standard-options additional-options t)))
 
 ;; Custom ELISP
 ;; should assign this to an interactive command
