@@ -27,6 +27,9 @@
 ;; Color theme
 (load-theme 'solarized-light t)
 
+;; French keyboard support (^ etc)
+(load-library "iso-transl")
+
 ;; Powerline support
 ;;;###autoload
 (defun powerline-baboon-theme ()
