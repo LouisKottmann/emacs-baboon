@@ -112,9 +112,6 @@
 ;; HAML
 (require 'haml-mode)
 
-;; Soft wrap (words are not split at the end of a line)
-;; (global-visual-line-mode 1)
-
 ;; Colors parenthesis pairs
 (global-rainbow-delimiters-mode 1)
 
@@ -151,12 +148,6 @@
   ;; Replace "sbcl" with the path to your implementation
   (setq inferior-lisp-program "sbcl"))
 
-;; Shell colors
-(add-hook 'magit-mode-hook 'ansi-color-for-comint-mode-on)
-(add-hook 'eshell-preoutput-filter-functions 'ansi-color-filter-apply)
-
-;; TODO: tabbar grouping
-;; TODO: interactive function to align the space on the right after align-regexp
 
 ;; Custom ELISP
 ;; should assign this to an interactive command
