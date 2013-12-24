@@ -1,5 +1,4 @@
 ;;; init.el Emacs configuration file for Louis "Baboon" Kottmann
-(require 'cl)
 
 ;; Install missing packages
 (require 'package)
