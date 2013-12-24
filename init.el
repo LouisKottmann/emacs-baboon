@@ -143,10 +143,9 @@
 (add-hook 'emms-player-started-hook 'emms-show)
 
 ;; SLIME
-(ignore-errors
-  (load (expand-file-name "~/quicklisp/slime-helper.el"))
-  ;; Replace "sbcl" with the path to your implementation
-  (setq inferior-lisp-program "sbcl"))
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; Replace "sbcl" with the path to your implementation
+(setq inferior-lisp-program "sbcl")
 
 
 ;; Custom ELISP
