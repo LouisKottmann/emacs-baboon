@@ -38,7 +38,20 @@
             (nnimap-address "imap.gmail.com")
             (nnimap-server-port 993)
             (nnimap-stream ssl))))
+ '(ibuffer-default-sorting-mode (quote major-mode))
  '(ibuffer-expert t)
+ '(ibuffer-formats
+   (quote
+    ((mark modified read-only " "
+           (name 22 22 :left :elide)
+           " "
+           (size 9 -1 :right)
+           " "
+           (mode 16 16 :left :elide)
+           " " filename-and-process)
+     (mark " "
+           (name 16 -1)
+           " " filename))))
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(js2-basic-offset 2)
