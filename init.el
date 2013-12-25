@@ -179,5 +179,6 @@
 (global-set-key (kbd "s-<up>") 'enlarge-window)
 (global-set-key (kbd "C-c . l a") 'ecb-activate)
 (global-set-key (kbd "C-x M-o") 'other-frame)
+(global-set-key (kbd "C-c C-q") 'slime-close-all-parens-in-sexp)
 
 ;;;init.el ends here
