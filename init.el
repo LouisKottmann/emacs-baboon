@@ -178,5 +178,6 @@
 (global-set-key (kbd "s-<down>") 'shrink-window)
 (global-set-key (kbd "s-<up>") 'enlarge-window)
 (global-set-key (kbd "C-c . l a") 'ecb-activate)
+(global-set-key (kbd "C-x M-o") 'other-frame)
 
 ;;;init.el ends here
