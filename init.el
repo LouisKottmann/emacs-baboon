@@ -10,6 +10,8 @@
        smartscan vline google-translate)
   "Packages any decent baboon would use.")
 
+(require 'google-translate)
+
 (condition-case nil
     (progn
       (package-initialize)
