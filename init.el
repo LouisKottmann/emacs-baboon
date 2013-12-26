@@ -7,7 +7,7 @@
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
        rinari markdown-mode web-mode
-       smartscan vline)
+       smartscan vline google-translate)
   "Packages any decent baboon would use.")
 
 (condition-case nil

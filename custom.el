@@ -38,6 +38,9 @@
             (nnimap-address "imap.gmail.com")
             (nnimap-server-port 993)
             (nnimap-stream ssl))))
+ '(google-translate-default-source-language "en")
+ '(google-translate-default-target-language "fr")
+ '(google-translate-enable-ido-completion t)
  '(ibuffer-default-sorting-mode (quote major-mode))
  '(ibuffer-expert t)
  '(ibuffer-formats
