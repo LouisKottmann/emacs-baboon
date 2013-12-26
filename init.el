@@ -172,7 +172,12 @@
         (replace-match (concat "\\1\\3\\2" align-on " \\4")
                        nil nil)))))
 
-;; Keybindings
+;; Prelude remapping
+(add-hook 'prelude-mode-hook
+          (lambda ()
+            (define-key prelude-mode-map (kbd "M-o") 'other-window)))
+
+;; Baboon Keybindings
 (global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "s-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "s-<down>") 'shrink-window)
