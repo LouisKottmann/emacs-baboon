@@ -174,6 +174,14 @@
         (replace-match (concat "\\1\\3\\2" align-on " \\4")
                        nil nil)))))
 
+(defun dedicate-window ()
+  "Make the currently selected window irreplacable (toggle-able)"
+  (interactive)
+  (set-window-dedicated-p
+   (selected-window)
+   (not
+    (window-dedicated-p (selected-window)))))
+
 ;; Prelude remapping
 (add-hook 'prelude-mode-hook
           (lambda ()
