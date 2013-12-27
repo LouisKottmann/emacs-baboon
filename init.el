@@ -33,55 +33,69 @@
 ;; French keyboard support (^ etc)
 (load-library "iso-transl")
 
-;; Powerline support
+;; <- Powerline support
+(defvar baboon-mode-line-buffer-count nil)
+(make-variable-buffer-local 'baboon-mode-line-buffer-count)
+
 ;;;###autoload
 (defun powerline-baboon-theme ()
   "Setup the default mode-line."
   (interactive)
-  (setq-default mode-line-format
-                '("%e"
-                  (:eval
-                   (let* ((active (powerline-selected-window-active))
-                          (mode-line (if active 'mode-line 'mode-line-inactive))
-                          (face1 (if active 'powerline-active1 'powerline-inactive1))
-                          (face2 (if active 'powerline-active2 'powerline-inactive2))
-                          (separator-left (intern (format "powerline-%s-%s"
-                                                          powerline-default-separator
-                                                          (car powerline-default-separator-dir))))
-                          (separator-right (intern (format "powerline-%s-%s"
-                                                           powerline-default-separator
-                                                           (cdr powerline-default-separator-dir))))
-                          (lhs (list (powerline-raw "%*" nil 'l)
-                                     (powerline-buffer-size nil 'l)
-                                     (powerline-raw mode-line-mule-info nil 'l)
-                                     (powerline-buffer-id nil 'l)
-                                     (when (and (boundp 'which-func-mode) which-func-mode)
-                                       (powerline-raw which-func-format nil 'l))
-                                     (powerline-raw " ")
-                                     (funcall separator-left mode-line face1)
-                                     (when (boundp 'erc-modified-channels-object)
-                                       (powerline-raw erc-modified-channels-object face1 'l))
-                                     (powerline-major-mode face1 'l)
-                                     (powerline-process face1)
-;;                                     (powerline-minor-modes face1 'l)
-                                     (powerline-narrow face1 'l)
-                                     (powerline-raw " " face1)
-                                     (funcall separator-left face1 face2)
-                                     (powerline-vc face2 'r)))
-                          (rhs (list (powerline-raw global-mode-string face2 'r)
-                                     (funcall separator-right face2 face1)
-                                     (powerline-raw "%4l" face1 'l)
-                                     (powerline-raw ":" face1 'l)
-                                     (powerline-raw "%3c" face1 'r)
-                                     (funcall separator-right face1 mode-line)
-                                     (powerline-raw " ")
-                                     (powerline-raw "%6p" nil 'r)
-                                     (powerline-hud face2 face1))))
-                     (concat (powerline-render lhs)
-                             (powerline-fill face2 (powerline-width rhs))
-                             (powerline-render rhs)))))))
+  (setq-default
+   mode-line-format
+   '("%e"
+     (:eval
+      (let* ((active (powerline-selected-window-active))
+             (mode-line (if active 'mode-line 'mode-line-inactive))
+             (face1 (if active 'powerline-active1 'powerline-inactive1))
+             (face2 (if active 'powerline-active2 'powerline-inactive2))
+             (separator-left (intern (format "powerline-%s-%s"
+                                             powerline-default-separator
+                                             (car powerline-default-separator-dir))))
+             (separator-right (intern (format "powerline-%s-%s"
+                                              powerline-default-separator
+                                              (cdr powerline-default-separator-dir))))
+             (lhs (list (powerline-raw "%*" nil 'l)
+                        (powerline-buffer-size nil 'l)
+                        (powerline-raw mode-line-mule-info nil 'l)
+                        (powerline-buffer-id nil 'l)
+                        (when (and (boundp 'which-func-mode) which-func-mode)
+                          (powerline-raw which-func-format nil 'l))
+                        (powerline-raw " ")
+                        (funcall separator-left mode-line face1)
+                        (when (boundp 'erc-modified-channels-object)
+                          (powerline-raw erc-modified-channels-object face1 'l))
+                        (powerline-major-mode face1 'l)
+                        (powerline-process face1)
+                        (powerline-narrow face1 'l)
+                        (powerline-raw " " face1)
+                        (funcall separator-left face1 face2)
+                        (powerline-vc face2 'r)))
+             (rhs (list (powerline-raw global-mode-string face2 'r)
+                        (funcall separator-right face2 face1)
+                        (powerline-raw "%4l" face1 'l)
+                        (powerline-raw ":" face1 'l)
+                        (powerline-raw "%3c" face1 'r)
+                        (funcall separator-right face1 mode-line)
+                        (powerline-raw " ")
+                        (powerline-raw baboon-mode-line-buffer-count nil 'r))))
+        (concat (powerline-render lhs)
+                (powerline-fill face2 (powerline-width rhs))
+                (powerline-render rhs)))))))
+
+(defun baboon-mode-line-count-lines ()
+  (setq baboon-mode-line-buffer-count
+        (if line-number-mode
+            (int-to-string (+ 1 (count-lines (point-min) (point-max))))
+          "?")))
+
+(add-hook 'find-file-hook 'baboon-mode-line-count-lines)
+(add-hook 'after-save-hook 'baboon-mode-line-count-lines)
+(add-hook 'after-revert-hook 'baboon-mode-line-count-lines)
+(add-hook 'dired-after-readin-hook 'baboon-mode-line-count-lines)
 
 (powerline-baboon-theme)
+;; <- Powerline support
 
 ;; Disable scrollbars
 (scroll-bar-mode -1)
@@ -158,7 +172,7 @@
 
 ;; Custom ELISP
 
-;; align-regexp-lefty
+;; -> align-regexp-lefty
 (defun align-regexp-lefty(beg end align-on)
   "Aligns hashes-like structures around their key-value separator.
 \(same as align-regexp except the spaces are on the left\)"
@@ -176,9 +190,9 @@
               nil t)
         (replace-match (concat "\\1\\3\\2" align-on " \\4")
                        nil nil)))))
-;; align-regexp-lefty
+;; <- align-regexp-lefty
 
-;; baboon-dedicated-window-modeline
+;; -> baboon-dedicated-window-modeline
 (defvar baboon-dedicated-window-modeline-string "⚓"
   "A string added to the modeline when the window is dedicated")
 
@@ -198,7 +212,7 @@ to the modeline of windows that are dedicated"
    (selected-window)
    (not
     (window-dedicated-p (selected-window)))))
-;; baboon-dedicated-window-modeline
+;; <- baboon-dedicated-window-modeline
 
 ;; Prelude remapping
 (add-hook 'prelude-mode-hook
