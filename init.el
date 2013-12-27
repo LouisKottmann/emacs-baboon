@@ -176,14 +176,29 @@
               nil t)
         (replace-match (concat "\\1\\3\\2" align-on " \\4")
                        nil nil)))))
+;; align-regexp-lefty
 
-(defun dedicate-window ()
-  "Make the currently selected window irreplacable (toggle-able)"
+;; baboon-dedicated-window-modeline
+(defvar baboon-dedicated-window-modeline-string "⚓"
+  "A string added to the modeline when the window is dedicated")
+
+(defadvice set-window-dedicated-p (after baboon-dedicated-window-modeline activate)
+  "Adds `baboon-dedicated-window-modeline-string`
+to the modeline of windows that are dedicated"
+  (if (window-dedicated-p window)
+      (setq mode-line-format
+            (append `(,baboon-dedicated-window-modeline-string) mode-line-format))
+    (setq mode-line-format
+          (remove baboon-dedicated-window-modeline-string mode-line-format))))
+
+(defun baboon-dedicate-window ()
+  "(toggler) Make the currently selected window irreplacable"
   (interactive)
   (set-window-dedicated-p
    (selected-window)
    (not
     (window-dedicated-p (selected-window)))))
+;; baboon-dedicated-window-modeline
 
 ;; Prelude remapping
 (add-hook 'prelude-mode-hook
