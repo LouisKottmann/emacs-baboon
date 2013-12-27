@@ -193,17 +193,23 @@
 ;; <- align-regexp-lefty
 
 ;; -> baboon-dedicated-window-modeline
-(defvar baboon-dedicated-window-modeline-string "⚓"
+(defvar baboon-dedicated-window-mode-line-string "⚓"
   "A string added to the modeline when the window is dedicated")
 
-(defadvice set-window-dedicated-p (after baboon-dedicated-window-modeline activate)
-  "Adds `baboon-dedicated-window-modeline-string`
-to the modeline of windows that are dedicated"
-  (if (window-dedicated-p window)
-      (setq mode-line-format
-            (append `(,baboon-dedicated-window-modeline-string) mode-line-format))
-    (setq mode-line-format
-          (remove baboon-dedicated-window-modeline-string mode-line-format))))
+(defun baboon-remove-dedicated-window-mode-line-string ()
+  (setq mode-line-format
+        (remove baboon-dedicated-window-mode-line-string mode-line-format)))
+
+(defun baboon-add-dedicated-window-mode-line-string ()
+  (setq mode-line-format
+        (append `(,baboon-dedicated-window-mode-line-string) mode-line-format)))
+
+(defadvice set-window-dedicated-p (after baboon-dedicated-window-mode-line activate)
+  "Adds `baboon-dedicated-window-mode-line-string`
+to the mode-line of windows that are dedicated"
+  (baboon-remove-dedicated-window-mode-line-string)
+  (when (window-dedicated-p window)
+        (baboon-add-dedicated-window-mode-line-string)))
 
 (defun baboon-dedicate-window ()
   "(toggler) Make the currently selected window irreplacable"
