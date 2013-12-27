@@ -157,9 +157,11 @@
     (add-to-list 'magit-git-standard-options additional-options t)))
 
 ;; Custom ELISP
-;; should assign this to an interactive command
+
+;; align-regexp-lefty
 (defun align-regexp-lefty(beg end align-on)
-  "Same as align-regexp except the spaces are on the left."
+  "Aligns hashes-like structures around their key-value separator.
+\(same as align-regexp except the spaces are on the left\)"
   (interactive "*r \nMAlign on: ")
   (save-excursion
     (save-restriction
