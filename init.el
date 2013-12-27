@@ -11,6 +11,7 @@
   "Packages any decent baboon would use.")
 
 (require 'google-translate)
+(require 'slime)
 
 (condition-case nil
     (progn
