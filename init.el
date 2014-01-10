@@ -100,6 +100,9 @@
 ;; Disable scrollbars
 (scroll-bar-mode -1)
 
+;; Hide cursor when typing
+(setq make-pointer-invisible t)
+
 ;; Allow to search for next (M-n)/previous (M-p) occurence of word at point
 (global-smartscan-mode 1) ;; (M-') replaces occurences of word at point
 
