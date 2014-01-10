@@ -6,7 +6,7 @@
   '(w3 solarized-theme haml-mode
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
-nnn       rinari markdown-mode web-mode
+       rinari markdown-mode web-mode
        smartscan vline google-translate)
   "Packages any decent baboon would use.")
 
