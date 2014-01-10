@@ -6,7 +6,7 @@
   '(w3 solarized-theme haml-mode
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
-       rinari markdown-mode web-mode
+nnn       rinari markdown-mode web-mode
        smartscan vline google-translate)
   "Packages any decent baboon would use.")
 
@@ -58,7 +58,6 @@
              (lhs (list (powerline-raw "%*" nil 'l)
                         (powerline-buffer-size nil 'l)
                         (powerline-raw mode-line-mule-info nil 'l)
-                        (powerline-buffer-id nil 'l)
                         (when (and (boundp 'which-func-mode) which-func-mode)
                           (powerline-raw which-func-format nil 'l))
                         (powerline-raw " ")
