@@ -175,7 +175,6 @@
 
 ;; Custom ELISP
 
-;; -> align-regexp-lefty
 (defun align-regexp-lefty(beg end align-on)
   "Aligns hashes-like structures around their key-value separator.
 \(same as align-regexp except the spaces are on the left\)"
@@ -193,7 +192,18 @@
               nil t)
         (replace-match (concat "\\1\\3\\2" align-on " \\4")
                        nil nil)))))
-;; <- align-regexp-lefty
+
+(defun baboon-rm-multi-whitespace(beg end)
+  "Does blablablah magic -> ?? -> profit!"
+  (interactive "*r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (while (search-forward-regexp " \\{2,\\}" nil t)
+        (replace-match " " nil nil))
+      (goto-char (point-min))
+      (indent-region beg end))))
 
 ;; -> baboon-dedicated-window-modeline
 (defvar baboon-dedicated-window-mode-line-string "⚓"
