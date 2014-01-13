@@ -145,6 +145,9 @@
 (setq twittering-icon-mode t)
 (setq twittering-use-icon-storage t)
 
+;; Html-mode
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
+
 ;; Web-mode
 ;; (require 'web-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
