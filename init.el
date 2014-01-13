@@ -6,7 +6,7 @@
   '(w3 solarized-theme haml-mode
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
-       rinari markdown-mode web-mode
+       rinari markdown-mode ;; web-mode
        smartscan vline google-translate)
   "Packages any decent baboon would use.")
 
@@ -146,13 +146,13 @@
 (setq twittering-use-icon-storage t)
 
 ;; Web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(setq web-mode-engines-alist
-      '(("javascript" . "\\.ejs\\'")))
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (setq web-mode-engines-alist
+;;       '(("javascript" . "\\.ejs\\'")))
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Emacs Multimedia System
 (require 'emms-setup)
