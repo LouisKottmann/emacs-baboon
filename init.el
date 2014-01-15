@@ -10,9 +10,6 @@
        smartscan vline google-translate)
   "Packages any decent baboon would use.")
 
-(require 'google-translate)
-(require 'slime)
-
 (condition-case nil
     (progn
       (package-initialize)
@@ -26,6 +23,8 @@
        baboon-packages))
   (error
    (message "%s" "God failed.. do you have internet access?")))
+
+(require 'google-translate)
 
 ;; Color theme
 (load-theme 'solarized-light t)
@@ -169,6 +168,7 @@
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
+(require 'slime)
 
 ;; Magit
 ;; Fix diff colors
