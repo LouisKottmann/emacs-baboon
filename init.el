@@ -6,8 +6,9 @@
   '(w3 solarized-theme haml-mode
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
-       smartscan vline google-translate)
        rinari markdown-mode visual-regexp
+       smartscan vline google-translate
+       guide-key)
   "Packages any decent baboon would use.")
 
 (condition-case nil
