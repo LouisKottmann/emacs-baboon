@@ -6,8 +6,8 @@
   '(w3 solarized-theme haml-mode
        ecb tabbar powerline auto-complete
        twittering-mode emms hackernews
-       rinari markdown-mode ;; web-mode
        smartscan vline google-translate)
+       rinari markdown-mode visual-regexp
   "Packages any decent baboon would use.")
 
 (condition-case nil
