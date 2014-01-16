@@ -222,7 +222,7 @@
                        nil nil)))))
 
 (defun baboon-rm-multi-whitespace(beg end)
-  "Does blablablah magic -> ?? -> profit!"
+  "Does removes extra whitespaces from region"
   (interactive "*r")
   (save-excursion
     (save-restriction
