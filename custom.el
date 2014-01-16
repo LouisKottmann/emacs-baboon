@@ -41,7 +41,7 @@
  '(google-translate-default-source-language "en")
  '(google-translate-default-target-language "fr")
  '(google-translate-enable-ido-completion t)
- '(guide-key/guide-key-sequence (quote ("C-c" "C-x")))
+ '(guide-key/guide-key-sequence (quote ("C-c" "C-x" "C-h")))
  '(guide-key/popup-window-position (quote bottom))
  '(guide-key/recursive-key-sequence-flag t)
  '(ibuffer-default-sorting-mode (quote major-mode))
