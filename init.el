@@ -265,6 +265,12 @@ to the mode-line of windows that are dedicated"
     (window-dedicated-p (selected-window)))))
 ;; <- baboon-dedicated-window-modeline
 
+;; Flusher
+(defun baboon-flush-lines ()
+  "Flushes all lines after the point, + the current one"
+  (interactive)
+  (flush-lines "" nil nil t))
+
 ;; Prelude remapping
 (add-hook 'prelude-mode-hook
           (lambda ()
@@ -279,5 +285,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-x M-o") 'other-frame)
 (global-set-key (kbd "C-c C-q") 'slime-close-all-parens-in-sexp)
 (global-set-key (kbd "C-c w") 'webjump)
+(global-set-key (kbd "C-c F") 'baboon-flush-lines)
 
 ;;;init.el ends here
