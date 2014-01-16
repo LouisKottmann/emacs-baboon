@@ -202,6 +202,9 @@
        [simple-query "www.emacswiki.org" "www.emacswiki.org/cgi-bin/wiki/" ""])
       )))
 
+;; visual-regexp
+(defalias 'replace-regexp 'vr/replace)
+
 ;; Custom ELISP
 
 (defun align-regexp-lefty(beg end align-on)
