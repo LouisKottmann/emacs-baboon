@@ -154,7 +154,16 @@
 ;; (setq web-mode-engines-alist
 ;;       '(("javascript" . "\\.ejs\\'")))
 
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; Tern - JS jumps & completions - http://ternjs.net/doc/manual.html#emacs
+(add-to-list 'load-path "/home/louis/GitRepos/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
 
 ;; Emacs Multimedia System
 (require 'emms-setup)
