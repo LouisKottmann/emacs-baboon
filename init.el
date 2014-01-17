@@ -205,6 +205,9 @@
 ;; visual-regexp
 (defalias 'replace-regexp 'vr/replace)
 
+;; guide-key
+(guide-key-mode 1)
+
 ;; Custom ELISP
 
 (defun align-regexp-lefty(beg end align-on)
