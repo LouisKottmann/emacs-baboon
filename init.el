@@ -274,6 +274,11 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (flush-lines "" nil nil t))
 
+;; Find and open this file
+(defun baboon-find-emacs-init-file ()
+  (interactive)
+  (find-file "~/.emacs.d/personal/init.el"))
+
 ;; Prelude remapping
 (add-hook 'prelude-mode-hook
           (lambda ()
@@ -289,5 +294,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-c C-q") 'slime-close-all-parens-in-sexp)
 (global-set-key (kbd "C-c w") 'webjump)
 (global-set-key (kbd "C-c F") 'baboon-flush-lines)
+(global-set-key (kbd "C-c E") 'baboon-find-emacs-init-file)
 
 ;;;init.el ends here
