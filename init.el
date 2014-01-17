@@ -279,10 +279,18 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
+;; Find and open ubuntu's shell rc
+(defun baboon-find-shell-init-file ()
+  (interactive)
+  (find-file "~/.bash_aliases"))
+(add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
+
 ;; Prelude remapping
-(add-hook 'prelude-mode-hook
-          (lambda ()
-            (define-key prelude-mode-map (kbd "M-o") 'other-window)))
+(add-hook
+ 'prelude-mode-hook
+ (lambda ()
+   (define-key prelude-mode-map (kbd "M-o") 'other-window)
+   (define-key prelude-mode-map (kbd "C-c S") 'baboon-find-shell-init-file)))
 
 ;; Baboon Keybindings
 (global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
