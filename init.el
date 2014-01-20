@@ -33,6 +33,9 @@
 ;; French keyboard support (^ etc)
 (load-library "iso-transl")
 
+;; Fonts
+(set-face-attribute 'default nil :height 115)
+
 ;; <- Powerline support
 (defvar baboon-mode-line-buffer-count nil)
 (make-variable-buffer-local 'baboon-mode-line-buffer-count)
