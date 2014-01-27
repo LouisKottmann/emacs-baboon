@@ -34,7 +34,7 @@
 (load-library "iso-transl")
 
 ;; Fonts
-(set-face-attribute 'default nil :height 115)
+(set-face-attribute 'default nil :height 100)
 
 ;; <- Powerline support
 (defvar baboon-mode-line-buffer-count nil)
