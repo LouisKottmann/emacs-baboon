@@ -11,19 +11,21 @@
        guide-key)
   "Packages any decent baboon would use.")
 
-(condition-case nil
-    (progn
-      (package-initialize)
-      (message "%s" "The jungle god is looking for newer packages..")
-      (package-refresh-contents)
-      (message "%s" " done.")
-      (mapc
-       (lambda (package)
-         (or (package-installed-p package)
-             (package-install package)))
-       baboon-packages))
-  (error
-   (message "%s" "God failed.. do you have internet access?")))
+(defun baboon-install-packages ()
+  "Installs packages used in this configuration"
+  (condition-case nil
+      (progn
+        (package-initialize)
+        (message "%s" "The jungle god is looking for newer packages..")
+        (package-refresh-contents)
+        (message "%s" " done.")
+        (mapc
+         (lambda (package)
+           (or (package-installed-p package)
+               (package-install package)))
+         baboon-packages))
+    (error
+     (message "%s" "God failed.. do you have internet access?"))))
 
 (require 'google-translate)
 
