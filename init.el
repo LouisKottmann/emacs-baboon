@@ -42,6 +42,19 @@
 (defvar baboon-mode-line-buffer-count nil)
 (make-variable-buffer-local 'baboon-mode-line-buffer-count)
 
+(defun baboon-set-baboon-powerline-selected-window ()
+  "sets the variable `baboon-powerline-selected-window` appropriately"
+  (when (not (minibuffer-window-active-p (frame-selected-window)))
+      (setq baboon-powerline-selected-window (frame-selected-window))))
+
+(add-hook 'window-configuration-change-hook 'baboon-set-baboon-powerline-selected-window)
+(add-hook 'focus-in-hook 'baboon-set-baboon-powerline-selected-window)
+(add-hook 'focus-out-hook 'baboon-set-baboon-powerline-selected-window)
+
+(defadvice select-window (after baboon-select-window activate)
+  "makes powerline aware of window changes"
+  (baboon-set-baboon-powerline-selected-window))
+
 ;;;###autoload
 (defun powerline-baboon-theme ()
   "Setup the default mode-line."
@@ -50,7 +63,7 @@
    mode-line-format
    '("%e"
      (:eval
-      (let* ((active (powerline-selected-window-active))
+      (let* ((active (eq baboon-powerline-selected-window (selected-window)))
              (mode-line (if active 'mode-line 'mode-line-inactive))
              (face1 (if active 'powerline-active1 'powerline-inactive1))
              (face2 (if active 'powerline-active2 'powerline-inactive2))
