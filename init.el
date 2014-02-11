@@ -102,8 +102,8 @@
 (powerline-baboon-theme)
 ;; <- Powerline support
 
-(require 'scrolling)
 (require 'smooth-scrolling)
+(require 'smooth-scroll)
 (smooth-scroll-mode 'toggle)
 
 ;; Disable scrollbars
