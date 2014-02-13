@@ -170,6 +170,7 @@
 ;; Html-mode
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 
+;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Emacs Multimedia System
