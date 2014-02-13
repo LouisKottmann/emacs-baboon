@@ -246,7 +246,7 @@
                        nil nil)))))
 
 (defun baboon-rm-multi-whitespace(beg end)
-  "Does removes extra whitespaces from region"
+  "Removes extra whitespaces from region"
   (interactive "*r")
   (save-excursion
     (save-restriction
