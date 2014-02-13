@@ -8,7 +8,7 @@
        twittering-mode emms hackernews
        rinari markdown-mode visual-regexp
        smartscan vline google-translate
-       guide-key)
+       guide-key soundcloud)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
