@@ -23,6 +23,7 @@
      ("/home/louis/JS/ext_test_app" "external_test_app")
      ("/home/louis/JS/testapp" "testapp"))))
  '(ecb-windows-width 0.15)
+ '(emms-mode-line-mode-line-function nil)
  '(emms-stream-repeat-p t)
  '(erc-autojoin-mode t)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
