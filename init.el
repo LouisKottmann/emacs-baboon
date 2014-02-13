@@ -42,18 +42,34 @@
 (defvar baboon-mode-line-buffer-count nil)
 (make-variable-buffer-local 'baboon-mode-line-buffer-count)
 
+(defun baboon-mode-line-count-lines ()
+  (message "YOLO!")
+  (setq baboon-mode-line-buffer-count
+        (if line-number-mode
+            (int-to-string (+ 1 (count-lines (point-min) (point-max))))
+          "?")))
+
+(add-hook 'find-file-hook 'baboon-mode-line-count-lines)
+(add-hook 'after-save-hook 'baboon-mode-line-count-lines)
+(add-hook 'after-revert-hook 'baboon-mode-line-count-lines)
+(add-hook 'dired-after-readin-hook 'baboon-mode-line-count-lines)
+
 (defun baboon-set-baboon-powerline-selected-window ()
   "sets the variable `baboon-powerline-selected-window` appropriately"
   (when (not (minibuffer-window-active-p (frame-selected-window)))
       (setq baboon-powerline-selected-window (frame-selected-window))))
 
-(add-hook 'window-configuration-change-hook 'baboon-set-baboon-powerline-selected-window)
-(add-hook 'focus-in-hook 'baboon-set-baboon-powerline-selected-window)
-(add-hook 'focus-out-hook 'baboon-set-baboon-powerline-selected-window)
+(defun baboon-current-buffer-changed ()
+  (baboon-set-baboon-powerline-selected-window)
+  (baboon-mode-line-count-lines))
+
+(add-hook 'window-configuration-change-hook 'baboon-current-buffer-changed)
+(add-hook 'focus-in-hook 'baboon-current-buffer-changed)
+(add-hook 'focus-out-hook 'baboon-current-buffer-changed)
 
 (defadvice select-window (after baboon-select-window activate)
   "makes powerline aware of window changes"
-  (baboon-set-baboon-powerline-selected-window))
+  (baboon-current-buffer-changed))
 
 ;;;###autoload
 (defun powerline-baboon-theme ()
@@ -100,17 +116,6 @@
         (concat (powerline-render lhs)
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
-
-(defun baboon-mode-line-count-lines ()
-  (setq baboon-mode-line-buffer-count
-        (if line-number-mode
-            (int-to-string (+ 1 (count-lines (point-min) (point-max))))
-          "?")))
-
-(add-hook 'find-file-hook 'baboon-mode-line-count-lines)
-(add-hook 'after-save-hook 'baboon-mode-line-count-lines)
-(add-hook 'after-revert-hook 'baboon-mode-line-count-lines)
-(add-hook 'dired-after-readin-hook 'baboon-mode-line-count-lines)
 
 (powerline-baboon-theme)
 ;; <- Powerline support
