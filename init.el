@@ -170,13 +170,6 @@
 ;; Html-mode
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 
-;; Web-mode
-;; (require 'web-mode)
-;; (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
-;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;; (setq web-mode-engines-alist
-;;       '(("javascript" . "\\.ejs\\'")))
-
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Emacs Multimedia System
