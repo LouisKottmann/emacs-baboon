@@ -212,7 +212,7 @@
       ("Youtube" .
        [simple-query "youtube.com" "http://www.youtube.com/results?search_query=" ""])
       ("SoundCloud" .
-       [simple-query "soundcloud.come" "https://soundcloud.com/search?q=" "" ])
+       [simple-query "soundcloud.com" "https://soundcloud.com/search?q=" "" ])
       ("Emacs Wiki" .
        [simple-query "www.emacswiki.org" "www.emacswiki.org/cgi-bin/wiki/" ""])
       )))
