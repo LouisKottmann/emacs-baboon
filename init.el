@@ -43,7 +43,6 @@
 (make-variable-buffer-local 'baboon-mode-line-buffer-count)
 
 (defun baboon-mode-line-count-lines ()
-  (message "YOLO!")
   (setq baboon-mode-line-buffer-count
         (if line-number-mode
             (int-to-string (+ 1 (count-lines (point-min) (point-max))))
