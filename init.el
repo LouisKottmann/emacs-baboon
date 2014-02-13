@@ -8,11 +8,12 @@
        twittering-mode emms hackernews
        rinari markdown-mode visual-regexp
        smartscan vline google-translate
-       guide-key soundcloud)
+       guide-key smooth-scroll smooth-scrolling soundcloud)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
   "Installs packages used in this configuration"
+  (interactive)
   (condition-case nil
       (progn
         (package-initialize)
