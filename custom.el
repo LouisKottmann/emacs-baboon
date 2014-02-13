@@ -83,6 +83,7 @@
  '(sp-autoescape-string-quote nil)
  '(sp-autoinsert-pair nil)
  '(sp-autoskip-closing-pair nil)
+ '(sp-show-pair-from-inside t)
  '(tabbar-background-color "#EEE8D5")
  '(tabbar-buffer-home-button (quote (("") "")))
  '(tabbar-cycle-scope (quote tabs))
@@ -98,6 +99,7 @@
  ;; If there is more than one, they won't work right.
  '(powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3"))))
+ '(sp-show-pair-match-face ((t (:inherit lazy-highlight))))
  '(tabbar-button ((t (:background "#5A768B" :foreground "#FDF6E3"))))
  '(tabbar-default ((t (:inherit variable-pitch :background "#EEE8D5" :foreground "#EEE8D5" :height 0.8))))
  '(tabbar-selected ((t (:background "#5A768B" :foreground "#FDF6E3" :box (:line-width -1 :style pressed-button)))))
