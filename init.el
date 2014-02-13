@@ -217,11 +217,13 @@
        [simple-query "www.emacswiki.org" "www.emacswiki.org/cgi-bin/wiki/" ""])
       )))
 
-;; visual-regexp
-(defalias 'replace-regexp 'vr/replace)
-
 ;; guide-key
 (guide-key-mode 1)
+
+;; Aliasing default commands to enhance them
+(defalias 'replace-regexp 'vr/replace) ;; visual-regexp
+(defalias 'isearch-forward 'isearch-forward-regexp)
+(defalias 'isearch-backward 'isearch-backward-regexp)
 
 ;; Custom ELISP
 
