@@ -8,7 +8,8 @@
        twittering-mode emms hackernews
        rinari markdown-mode visual-regexp
        smartscan vline google-translate
-       guide-key smooth-scroll smooth-scrolling soundcloud)
+       guide-key smooth-scroll smooth-scrolling
+       soundcloud ag)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -225,6 +226,10 @@
 ;; guide-key
 (guide-key-mode 1)
 
+;; ag (the silver searcher)
+(setq ag-highlight-search t)
+(setq ag-reuse-buffers 't)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
@@ -313,6 +318,11 @@ to the mode-line of windows that are dedicated"
  (lambda ()
    (define-key prelude-mode-map (kbd "M-o") 'other-window)
    (define-key prelude-mode-map (kbd "C-c S") 'baboon-find-shell-init-file)))
+
+(add-hook
+ 'projectile-mode-hook
+ (lambda ()
+   (define-key projectile-mode-map [?\s-g] 'projectile-ag)))
 
 (add-hook
  'smartparens-mode-hook

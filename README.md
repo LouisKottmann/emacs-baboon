@@ -19,11 +19,13 @@
 
 4) Install [Quicklisp](http://www.quicklisp.org) + [SLIME](http://common-lisp.net/project/slime/)
 
-5) Fetch this repo into `~/.emacs.d/personal/`
+5) Install [AG](https://github.com/ggreer/the_silver_searcher). Compile from source.
 
-6) Adjust `../prelude-modules.el`, (I particularly like prelude-ido & prelude-key-chord)
+6) Fetch this repo into `~/.emacs.d/personal/`
 
-7) Start EMACS
+7) Adjust `../prelude-modules.el`, (I particularly like prelude-ido & prelude-key-chord)
+
+8) Start EMACS
 
 ## Usage
 
