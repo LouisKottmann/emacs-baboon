@@ -66,6 +66,11 @@
  '(js2-include-node-externs t)
  '(message-send-mail-function (quote smtpmail-send-it))
  '(nxml-child-indent 4)
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa" . "http://melpa.milkbox.net/packages/")
+     ("marmalade" . "http://marmalade-repo.org/packages/"))))
  '(powerline-default-separator (quote slant))
  '(send-mail-function nil)
  '(smex-history-length 25)
