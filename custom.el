@@ -74,6 +74,7 @@
  '(powerline-default-separator (quote slant))
  '(send-mail-function nil)
  '(smex-history-length 25)
+ '(smooth-scroll/vscroll-step-size 3)
  '(smtpmail-auth-credentials
    (quote
     (("smtp.gmail.com" 587 "louis.kottmann@gmail.com" nil))))
