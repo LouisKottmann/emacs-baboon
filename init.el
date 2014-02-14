@@ -184,6 +184,7 @@
 (emms-devel)
 (setq emms-source-file-default-directory "/media/trinasse/partage/Musique/")
 (add-hook 'emms-player-started-hook 'emms-show)
+(emms-mode-line-disable)
 ;; MPD config
 (require 'emms-player-mpd)
 (setq emms-player-mpd-server-name "localhost")
