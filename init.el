@@ -323,10 +323,10 @@ to the mode-line of windows that are dedicated"
    (define-key prelude-mode-map (kbd "M-o") 'other-window)
    (define-key prelude-mode-map (kbd "C-c S") 'baboon-find-shell-init-file)))
 
-(add-hook
- 'projectile-mode-hook
- (lambda ()
-   (define-key projectile-mode-map [?\s-g] 'projectile-ag)))
+;; (add-hook
+;;  'projectile-mode-hook
+;;  (lambda ()
+;;    (define-key projectile-mode-map [?\s-g] 'projectile-ag)))
 
 (add-hook
  'smartparens-mode-hook
