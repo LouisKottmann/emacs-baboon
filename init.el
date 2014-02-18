@@ -329,7 +329,11 @@ to the mode-line of windows that are dedicated"
 ;;    (define-key projectile-mode-map [?\s-g] 'projectile-ag)))
 
 ;; Disable forced matching parens everywhere. Try to activate it now, prelude demon!
-(defun smartparens-strict-mode () "")
+(defun prelude-lisp-coding-defaults ()
+  (rainbow-delimiters-mode +1))
+(defun prelude-interactive-lisp-coding-defaults ()
+  (rainbow-delimiters-mode +1)
+  (whitespace-mode -1))
 
 ;; Smartparens remapping
 (add-hook
