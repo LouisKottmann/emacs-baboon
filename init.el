@@ -328,6 +328,10 @@ to the mode-line of windows that are dedicated"
 ;;  (lambda ()
 ;;    (define-key projectile-mode-map [?\s-g] 'projectile-ag)))
 
+;; Disable forced matching parens everywhere. Try to activate it now, prelude demon!
+(defun smartparens-strict-mode () "")
+
+;; Smartparens remapping
 (add-hook
  'smartparens-mode-hook
  (lambda ()
