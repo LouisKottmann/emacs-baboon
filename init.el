@@ -9,7 +9,7 @@
        rinari markdown-mode visual-regexp
        smartscan vline google-translate
        guide-key smooth-scroll smooth-scrolling
-       soundcloud ag)
+       soundcloud ag json-mode)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -178,6 +178,9 @@
 
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; json-mode
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 
 ;; Emacs Multimedia System
 (require 'emms-setup)
