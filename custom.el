@@ -97,7 +97,8 @@
  '(tabbar-scroll-left-button (quote (("") "")))
  '(tabbar-scroll-right-button (quote (("") "")))
  '(tabbar-separator (quote (0.5)))
- '(tabbar-use-images nil))
+ '(tabbar-use-images nil)
+ '(whitespace-line-column 90))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
