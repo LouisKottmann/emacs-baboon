@@ -107,7 +107,7 @@
  '(ag-match-face ((t (:inherit lazy-highlight))))
  '(powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3"))))
- '(sp-show-pair-match-face ((t (:inherit lazy-highlight))))
+ '(sp-show-pair-match-face ((t (:background "#268BD2" :foreground "white"))))
  '(tabbar-button ((t (:background "#5A768B" :foreground "#FDF6E3"))))
  '(tabbar-default ((t (:inherit variable-pitch :background "#EEE8D5" :foreground "#EEE8D5" :height 0.8))))
  '(tabbar-selected ((t (:background "#5A768B" :foreground "#FDF6E3" :box (:line-width -1 :style pressed-button)))))
