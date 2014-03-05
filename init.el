@@ -9,7 +9,7 @@
        rinari markdown-mode visual-regexp
        smartscan vline google-translate
        guide-key smooth-scroll smooth-scrolling
-       soundcloud ag json-mode)
+       soundcloud ag json-mode auto-highlight-symbol)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -236,6 +236,9 @@
 ;; ag (the silver searcher)
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers 't)
+
+;; auto-highlight-symbol
+(add-to-list 'ahs-modes 'js2-mode)
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp

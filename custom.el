@@ -6,6 +6,7 @@
  '(ac-auto-show-menu t)
  '(ac-auto-start 1)
  '(ac-ignore-case (quote smart))
+ '(ahs-idle-interval 0.5)
  '(custom-safe-themes
    (quote
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
@@ -32,6 +33,7 @@
     (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring stamp spelling track truncate)))
  '(erc-port 6667)
  '(erc-reuse-buffers nil)
+ '(global-auto-highlight-symbol-mode t)
  '(global-mark-ring-max 64)
  '(gnus-select-method
    (quote
