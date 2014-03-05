@@ -344,6 +344,9 @@ to the mode-line of windows that are dedicated"
  (lambda ()
    (define-key smartparens-mode-map (kbd "M-r") 'nil)))
 
+;; Flyspell remapping
+(define-key flyspell-mode-map (kbd "C-,") nil)
+
 ;; Baboon Keybindings
 (global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "s-<right>") 'enlarge-window-horizontally)
