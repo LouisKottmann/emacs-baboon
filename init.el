@@ -230,6 +230,17 @@
 ;; auto-highlight-symbol
 (add-to-list 'ahs-modes 'js2-mode)
 
+;; ace-jump-mode
+(setq ace-jump-mode-move-keys
+      (nconc (loop for i from ?a to ?z collect i)
+             (loop for i from ?A to ?Z collect i)
+             (loop for i from ?0 to ?9 collect i)
+             '(?, ?? ?\; ?. ?: ?/ ?! ?§)
+             '(?& ?é ?\" ?' ?( ?- ?è ?_ ?ç ?à ?) ?=)
+             '(?ù ?% ?* ?µ)
+             '(?^ ?$ ?£)
+             '(?€)))
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
@@ -351,5 +362,7 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-c w") 'webjump)
 (global-set-key (kbd "C-c F") 'baboon-flush-lines)
 (global-set-key (kbd "C-c E") 'baboon-find-emacs-init-file)
+(global-set-key (kbd "s-;") 'ace-jump-word-mode)
+(global-set-key (kbd "s-.") 'ace-jump-line-mode)
 
 ;;;init.el ends here
