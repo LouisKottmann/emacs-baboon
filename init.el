@@ -55,22 +55,12 @@
 (add-hook 'after-revert-hook 'baboon-mode-line-count-lines)
 (add-hook 'dired-after-readin-hook 'baboon-mode-line-count-lines)
 
-(defun baboon-set-baboon-powerline-selected-window ()
-  "sets the variable `baboon-powerline-selected-window` appropriately"
-  (when (not (minibuffer-window-active-p (frame-selected-window)))
-      (setq baboon-powerline-selected-window (frame-selected-window))))
-
 (defun baboon-current-buffer-changed ()
-  (baboon-set-baboon-powerline-selected-window)
   (baboon-mode-line-count-lines))
 
 (add-hook 'window-configuration-change-hook 'baboon-current-buffer-changed)
 (add-hook 'focus-in-hook 'baboon-current-buffer-changed)
 (add-hook 'focus-out-hook 'baboon-current-buffer-changed)
-
-(defadvice select-window (after baboon-select-window activate)
-  "makes powerline aware of window changes"
-  (baboon-current-buffer-changed))
 
 ;;;###autoload
 (defun powerline-baboon-theme ()
@@ -80,7 +70,7 @@
    mode-line-format
    '("%e"
      (:eval
-      (let* ((active (eq baboon-powerline-selected-window (selected-window)))
+      (let* ((active (powerline-selected-window-active))
              (mode-line (if active 'mode-line 'mode-line-inactive))
              (face1 (if active 'powerline-active1 'powerline-inactive1))
              (face2 (if active 'powerline-active2 'powerline-inactive2))
