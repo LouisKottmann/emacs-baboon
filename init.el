@@ -243,6 +243,9 @@
              '(?^ ?$ ?£)
              '(?€)))
 
+;; ido
+(setq ido-use-faces t)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
