@@ -142,6 +142,7 @@
 (setq erc-kill-buffer-on-part t)
 (setq erc-kill-queries-on-quit t)
 (setq erc-kill-server-buffer-on-quit t)
+(setq erc-nick "baboon")
 (setq erc-autojoin-channels-alist '((".*freenode.net"
                                      "#emacs")
                                     ))
