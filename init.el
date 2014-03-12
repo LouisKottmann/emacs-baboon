@@ -47,7 +47,7 @@
 (defun baboon-mode-line-count-lines ()
   (setq baboon-mode-line-buffer-count
         (if line-number-mode
-            (int-to-string (+ 1 (count-lines (point-min) (point-max))))
+            (int-to-string (count-lines (point-min) (point-max)))
           "?")))
 
 (add-hook 'find-file-hook 'baboon-mode-line-count-lines)
