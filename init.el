@@ -392,5 +392,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-c E") 'baboon-find-emacs-init-file)
 (global-set-key (kbd "s-;") 'ace-jump-word-mode)
 (global-set-key (kbd "s-.") 'ace-jump-line-mode)
+(global-set-key (kbd "C-h C-P") 'describe-package)
 
 ;;;init.el ends here
