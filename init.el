@@ -254,6 +254,7 @@
 
 ;; fringe
 (fringe-mode '(8 . 0))
+(setq 'indicate-buffer-boundaries 'left)
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
