@@ -152,6 +152,7 @@
  (lambda ()
    (setq erc-fill-column
          (max 70 (- (/ (frame-width) 2) 10)))))
+(add-hook 'erc-mode-hook 'linum-mode)
 ;; (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
 
 ;; HAML
