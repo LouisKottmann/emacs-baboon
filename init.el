@@ -257,6 +257,18 @@
 (fringe-mode '(8 . 0))
 (setq 'indicate-buffer-boundaries 'left)
 
+;; ibuffer
+(add-to-list
+ 'ibuffer-formats
+ '(mark modified read-only " "
+        (name 28 28 :left :elide)
+        " "
+        (mode 16 16 :right :elide)
+        " "
+        (size 7 7 :left :elide)
+        " "
+        filename-and-process))
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
