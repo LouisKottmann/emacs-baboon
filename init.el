@@ -143,9 +143,15 @@
 (setq erc-kill-queries-on-quit t)
 (setq erc-kill-server-buffer-on-quit t)
 (setq erc-nick "baboon")
-(setq erc-autojoin-channels-alist '((".*freenode.net"
-                                     "#emacs")
-                                    ))
+(setq erc-autojoin-channels-alist
+      '(
+        (".*freenode.net" "#emacs")
+        ))
+(add-hook
+ 'after-init-hook
+ (lambda ()
+   (setq erc-fill-column
+         (max 70 (- (/ (frame-width) 2) 10)))))
 ;; (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
 
 ;; HAML
