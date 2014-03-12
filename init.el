@@ -246,6 +246,9 @@
 ;; ido
 (setq ido-use-faces t)
 
+;; fringe
+(fringe-mode '(8 . 0))
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
