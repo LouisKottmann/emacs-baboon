@@ -153,6 +153,7 @@
    (setq erc-fill-column
          (max 70 (- (/ (frame-width) 2) 10)))))
 (add-hook 'erc-mode-hook 'linum-mode)
+(add-hook 'erc-mode-hook 'visual-line-mode)
 ;; (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
 
 ;; HAML
