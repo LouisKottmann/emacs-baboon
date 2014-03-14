@@ -394,5 +394,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "s-;") 'ace-jump-word-mode)
 (global-set-key (kbd "s-.") 'ace-jump-line-mode)
 (global-set-key (kbd "C-h C-P") 'describe-package)
+(global-set-key (kbd "M-D") 'sp-kill-symbol)
 
 ;;;init.el ends here
