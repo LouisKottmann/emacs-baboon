@@ -253,6 +253,8 @@
 
 ;; ido
 (setq ido-use-faces t)
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
 
 ;; fringe
 (fringe-mode '(8 . 0))
