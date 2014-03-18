@@ -355,6 +355,17 @@ to the mode-line of windows that are dedicated"
   (find-file "~/.bash_aliases"))
 (add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
 
+;; Projectile-ag without regexp
+(defun projectile-ag-str (string)
+  "Run an ag search with REGEXP in the project."
+  (interactive
+   (list (read-from-minibuffer
+          (projectile-prepend-project-name "Ag string search for: ")
+          (projectile-symbol-at-point))))
+  (if (fboundp 'ag)
+      (ag string (projectile-project-root))
+    (error "Ag is not available")))
+
 ;; Prelude remapping
 (add-hook
  'prelude-mode-hook
@@ -362,10 +373,11 @@ to the mode-line of windows that are dedicated"
    (define-key prelude-mode-map (kbd "M-o") 'other-window)
    (define-key prelude-mode-map (kbd "C-c S") 'baboon-find-shell-init-file)))
 
-;; (add-hook
-;;  'projectile-mode-hook
-;;  (lambda ()
-;;    (define-key projectile-mode-map [?\s-g] 'projectile-ag)))
+(add-hook
+  'projectile-mode-hook
+  (lambda ()
+    (define-key projectile-mode-map [?\s-g] 'projectile-ag-str)
+    (define-key projectile-mode-map [?\s-G] 'projectile-ag)))
 
 ;; Disable forced matching parens everywhere. Try to activate it now, prelude demon!
 (defun prelude-lisp-coding-defaults ()
