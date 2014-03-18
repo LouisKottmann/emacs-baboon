@@ -113,7 +113,7 @@
 
 (require 'smooth-scrolling)
 (require 'smooth-scroll)
-(smooth-scroll-mode 'toggle)
+(smooth-scroll-mode 1)
 
 ;; Disable scrollbars
 (scroll-bar-mode -1)
@@ -256,9 +256,10 @@
 
 ;; fringe
 (fringe-mode '(8 . 0))
-(setq 'indicate-buffer-boundaries 'left)
+(setq-default indicate-buffer-boundaries 'left)
 
 ;; ibuffer
+(require 'ibuffer)
 (add-to-list
  'ibuffer-formats
  '(mark modified read-only " "
