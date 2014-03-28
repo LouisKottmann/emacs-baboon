@@ -9,7 +9,8 @@
        rinari markdown-mode visual-regexp
        smartscan vline google-translate
        guide-key smooth-scroll smooth-scrolling
-       soundcloud ag json-mode auto-highlight-symbol)
+       soundcloud ag json-mode auto-highlight-symbol
+       ido-vertical-mode)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
