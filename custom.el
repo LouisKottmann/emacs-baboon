@@ -6,6 +6,9 @@
  '(ac-auto-show-menu t)
  '(ac-auto-start 1)
  '(ac-ignore-case (quote smart))
+ '(ag-arguments
+   (quote
+    ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
  '(ahs-idle-interval 0.5)
  '(ahs-modes
    (quote
