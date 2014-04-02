@@ -10,7 +10,7 @@
        smartscan vline google-translate
        guide-key smooth-scroll smooth-scrolling
        soundcloud ag json-mode auto-highlight-symbol
-       ido-vertical-mode)
+       ido-vertical-mode jedi jedi-direx)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -273,6 +273,15 @@
         (size 7 7 :left :elide)
         " "
         filename-and-process))
+
+;; jedi - requires virtualenv (pip install virtualenv)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
+;; jedi-direx
+(eval-after-load "python"
+  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+(add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
 ;; popwin
 (popwin-mode 1)
