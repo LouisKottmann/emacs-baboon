@@ -274,6 +274,16 @@
         " "
         filename-and-process))
 
+;; popwin
+(popwin-mode 1)
+(setq popwin:popup-window-position 'bottom)
+(setq popwin:popup-window-width 80)
+(setq popwin:popup-window-height 80)
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+      popwin:special-display-config)
+(push '(help-mode :position right)
+      popwin:special-display-config)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
