@@ -287,11 +287,15 @@
 (popwin-mode 1)
 (setq popwin:popup-window-position 'bottom)
 (setq popwin:popup-window-width 80)
-(setq popwin:popup-window-height 80)
-(push '(direx:direx-mode :position left :width 25 :dedicated t)
+(setq popwin:popup-window-height 20)
+(push '(direx:direx-mode :position left :width 25 :stick true)
       popwin:special-display-config)
 (push '(help-mode :position right)
       popwin:special-display-config)
+
+;; direx
+(eval-after-load "direx"
+  '(define-key direx:direx-mode-map (kbd "RET") 'direx:find-item-other-window))
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
