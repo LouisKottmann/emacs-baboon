@@ -10,7 +10,7 @@
        smartscan vline google-translate
        guide-key smooth-scroll smooth-scrolling
        soundcloud ag json-mode auto-highlight-symbol
-       ido-vertical-mode jedi jedi-direx)
+       ido-vertical-mode jedi jedi-direx coffee-mode)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
