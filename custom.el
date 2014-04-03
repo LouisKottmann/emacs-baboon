@@ -106,6 +106,7 @@
  '(tabbar-scroll-right-button (quote (("") "")))
  '(tabbar-separator (quote (0.5)))
  '(tabbar-use-images nil)
+ '(user-mail-address "louis.kottmann@gmail.com")
  '(whitespace-line-column 90))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
