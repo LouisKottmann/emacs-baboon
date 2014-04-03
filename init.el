@@ -11,6 +11,7 @@
        guide-key smooth-scroll smooth-scrolling
        soundcloud ag json-mode auto-highlight-symbol
        ido-vertical-mode jedi coffee-mode
+       project-mode fancy-narrow)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
