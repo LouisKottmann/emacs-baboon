@@ -10,7 +10,7 @@
        smartscan vline google-translate
        guide-key smooth-scroll smooth-scrolling
        soundcloud ag json-mode auto-highlight-symbol
-       ido-vertical-mode jedi jedi-direx coffee-mode)
+       ido-vertical-mode jedi coffee-mode
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -278,10 +278,10 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (setq jedi:use-shortcuts t)
-;; jedi-direx
-(eval-after-load "python"
-  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
-(add-hook 'jedi-mode-hook 'jedi-direx:setup)
+(add-hook 'jedi-mode-hook (lambda ()
+                            (when (not (get-buffer "*Python*"))
+                              (run-python "/usr/bin/python -i" nil nil))))
+(add-hook 'jedi-mode-hook 'eldoc-mode)
 
 ;; popwin
 (popwin-mode 1)
