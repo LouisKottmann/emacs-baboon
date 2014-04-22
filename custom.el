@@ -72,6 +72,7 @@
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-include-node-externs t)
+ '(magit-use-overlays t)
  '(message-send-mail-function (quote smtpmail-send-it))
  '(nxml-child-indent 4)
  '(package-archives
@@ -79,6 +80,7 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.milkbox.net/packages/")
      ("marmalade" . "http://marmalade-repo.org/packages/"))))
+ '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote slant))
  '(send-mail-function nil)
  '(smex-history-length 25)
