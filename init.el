@@ -11,7 +11,8 @@
        guide-key smooth-scroll smooth-scrolling
        soundcloud ag json-mode auto-highlight-symbol
        ido-vertical-mode jedi coffee-mode
-       project-mode fancy-narrow)
+       project-mode fancy-narrow multiple-cursors
+       robe rvm)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -297,6 +298,24 @@
 ;; direx
 (eval-after-load "direx"
   '(define-key direx:direx-mode-map (kbd "RET") 'direx:find-item-other-window))
+
+;; multiple-cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<down>") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-<up>") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C->") 'mc/mark-all-words-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-symbols-like-this)
+
+;; Robe
+(require 'robe)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
+
+;; RVM
+(require 'rvm)
+(rvm-use-default)
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
