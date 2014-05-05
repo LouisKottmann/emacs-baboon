@@ -207,12 +207,6 @@
 (setq inferior-lisp-program "sbcl")
 (require 'slime)
 
-;; Magit
-;; Fix diff colors
-(eval-after-load "magit"
-  '(dolist (additional-options '("-c" "color.diff=false"))
-    (add-to-list 'magit-git-standard-options additional-options t)))
-
 ;; Webjump
 (eval-after-load "webjump"
   '(setq
