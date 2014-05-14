@@ -1,37 +1,6 @@
 ;;; init.el Emacs configuration file for Louis "Baboon" Kottmann
 
 ;; Install missing packages
-(require 'package)
-(defvar baboon-packages
-  '(w3 solarized-theme haml-mode
-       ecb tabbar powerline auto-complete
-       twittering-mode emms hackernews
-       rinari markdown-mode visual-regexp
-       smartscan vline google-translate
-       guide-key smooth-scroll smooth-scrolling
-       soundcloud ag json-mode auto-highlight-symbol
-       ido-vertical-mode jedi coffee-mode
-       project-mode fancy-narrow multiple-cursors
-       robe rvm erc-image)
-  "Packages any decent baboon would use.")
-
-(defun baboon-install-packages ()
-  "Installs packages used in this configuration"
-  (interactive)
-  (condition-case nil
-      (progn
-        (package-initialize)
-        (message "%s" "The jungle god is looking for newer packages..")
-        (package-refresh-contents)
-        (message "%s" " done.")
-        (mapc
-         (lambda (package)
-           (or (package-installed-p package)
-               (package-install package)))
-         baboon-packages))
-    (error
-     (message "%s" "God failed.. do you have internet access?"))))
-
 (require 'google-translate)
 
 ;; Color theme
