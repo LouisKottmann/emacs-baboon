@@ -410,7 +410,6 @@ Doesn't mess with special buffers."
     "Press <C-x g> or <s-m> to run magit-status."
     "Press <C-c D> to delete the current file and buffer."
     "Press <C-c s> to swap two windows."
-    "Press <S-RET> or <M-o> to open a new beneath the current one."
     "Press <s-o> to open a line above the current one."
     "Press <C-c C-z> in a Elisp buffer to launch an interactive Elisp shell."
     "Press <C-Backspace> to kill a line backwards."
@@ -556,7 +555,7 @@ This follows freedesktop standards, should work in X servers."
   (let* ((shell (car (reverse (s-split "/" (getenv "SHELL")))))
          (shell-init-file (cond
                            ((s-equals? "zsh" shell) ".zshrc")
-                           ((s-equals? "bash" shell) ".bashrc")
+                           ((s-equals? "bash" shell) ".bash_aliases")
                            (t (error "Unknown shell")))))
     (find-file-other-window (expand-file-name shell-init-file (getenv "HOME")))))
 
