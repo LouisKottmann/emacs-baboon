@@ -13,19 +13,17 @@
     apt-get update
     apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
 
-2) Install [Prelude](https://github.com/bbatsov/prelude)
+2) Install [SBCL](http://www.sbcl.org/). On Debian just do `sudo apt-get install sbcl`.
 
-3) Install [SBCL](http://www.sbcl.org/). On Debian just do `sudo apt-get install sbcl`.
+3) Install [Quicklisp](http://www.quicklisp.org) + [SLIME](http://common-lisp.net/project/slime/)
 
-4) Install [Quicklisp](http://www.quicklisp.org) + [SLIME](http://common-lisp.net/project/slime/)
+4) Install [AG](https://github.com/ggreer/the_silver_searcher). Compile from source.
 
-5) Install [AG](https://github.com/ggreer/the_silver_searcher). Compile from source.
+5) Fetch this repo into `~/.emacs.d/`
 
-6) Fetch this repo into `~/.emacs.d/personal/`
+6) Adjust `../prelude-modules.el`
 
-7) Adjust `../prelude-modules.el`, (I particularly like prelude-ido & prelude-key-chord)
-
-8) Start EMACS
+7) Start EMACS
 
 ## Usage
 
