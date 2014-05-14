@@ -12,7 +12,7 @@
        soundcloud ag json-mode auto-highlight-symbol
        ido-vertical-mode jedi coffee-mode
        project-mode fancy-narrow multiple-cursors
-       robe rvm)
+       robe rvm erc-image)
   "Packages any decent baboon would use.")
 
 (defun baboon-install-packages ()
@@ -158,6 +158,10 @@
 (add-hook 'erc-mode-hook 'linum-mode)
 (add-hook 'erc-mode-hook 'visual-line-mode)
 ;; (erc :server "irc.freenode.net" :port "6667" :nick "baboon")
+
+(require 'erc-image)
+(add-to-list 'erc-modules 'image)
+(erc-update-modules)
 
 ;; HAML
 (require 'haml-mode)
