@@ -163,6 +163,9 @@
 ;; json-mode
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 
+;; shell-script-mode
+(add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
+
 ;; Emacs Multimedia System
 (require 'emms-setup)
 (emms-devel)
@@ -367,12 +370,6 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
-;; Find and open ubuntu's shell rc
-(defun baboon-find-shell-init-file ()
-  (interactive)
-  (find-file "~/.bash_aliases"))
-(add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
-
 ;; Projectile-ag without regexp
 (defun projectile-ag-str (string)
   "Run an ag search with REGEXP in the project."
@@ -383,26 +380,6 @@ to the mode-line of windows that are dedicated"
   (if (fboundp 'ag)
       (ag string (projectile-project-root))
     (error "Ag is not available")))
-
-;; Prelude remapping
-(add-hook
- 'prelude-mode-hook
- (lambda ()
-   (define-key prelude-mode-map (kbd "M-o") 'other-window)
-   (define-key prelude-mode-map (kbd "C-c S") 'baboon-find-shell-init-file)))
-
-(add-hook
-  'projectile-mode-hook
-  (lambda ()
-    (define-key projectile-mode-map [?\s-g] 'projectile-ag-str)
-    (define-key projectile-mode-map [?\s-G] 'projectile-ag)))
-
-;; Disable forced matching parens everywhere. Try to activate it now, prelude demon!
-(defun prelude-lisp-coding-defaults ()
-  (rainbow-delimiters-mode +1))
-(defun prelude-interactive-lisp-coding-defaults ()
-  (rainbow-delimiters-mode +1)
-  (whitespace-mode -1))
 
 ;; Smartparens remapping
 (add-hook
@@ -428,5 +405,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "s-.") 'ace-jump-line-mode)
 (global-set-key (kbd "C-h C-P") 'describe-package)
 (global-set-key (kbd "M-D") 'sp-kill-symbol)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;;;init.el ends here
