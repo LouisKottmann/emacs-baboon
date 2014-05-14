@@ -386,9 +386,11 @@ to the mode-line of windows that are dedicated"
 ;; <- baboon-dedicated-window-modeline
 
 ;; Flusher
-(defun baboon-flush-lines ()
+(defun baboon-flush-lines (&optional move-to-top-p)
   "Flushes all lines after the point, + the current one"
-  (interactive)
+  (interactive "P")
+  (when (not (equal move-to-top-p nil))
+    (beginning-of-buffer))
   (flush-lines "" nil nil t))
 
 ;; Find and open this file
