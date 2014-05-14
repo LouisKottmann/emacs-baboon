@@ -117,6 +117,11 @@
 (require 'smooth-scrolling)
 (require 'smooth-scroll)
 (smooth-scroll-mode 1)
+(defadvice smooth-scroll-mode (around my-smooth-scroll-mode-turn-on-maybe)
+  (unless (memq major-mode
+                (list 'ecb-major-mode))
+    ad-do-it))
+(ad-activate 'smooth-scroll-mode)
 
 ;; Disable scrollbars
 (scroll-bar-mode -1)
