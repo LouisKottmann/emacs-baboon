@@ -42,7 +42,6 @@
     (define-key map (kbd "C-c U") 'prelude-duckduckgo)
     ;; mimic popular IDEs binding, note that it doesn't work in a terminal session
     (define-key map [(shift return)] 'prelude-smart-open-line)
-    (define-key map (kbd "M-o") 'prelude-smart-open-line)
     (define-key map [(control shift return)] 'prelude-smart-open-line-above)
     (define-key map [(control shift up)]  'move-text-up)
     (define-key map [(control shift down)]  'move-text-down)
@@ -71,7 +70,8 @@
     (define-key map [?\s-d] 'projectile-find-dir)
     (define-key map [?\s-p] 'projectile-switch-project)
     (define-key map [?\s-f] 'projectile-find-file)
-    (define-key map [?\s-g] 'projectile-grep)
+    (define-key map [?\s-g] 'projectile-ag)
+    (define-key map [?\s-G] 'projectile-ag-str)
 
     (define-key map (kbd "s-r") 'prelude-recentf-ido-find-file)
     (define-key map (kbd "s-j") 'prelude-top-join-line)
