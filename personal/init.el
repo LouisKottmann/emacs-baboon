@@ -265,7 +265,7 @@
 (global-set-key (kbd "C-c C->") 'mc/mark-all-words-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-symbols-like-this)
 
-;; Robe
+;; Robe (use C-c C-l to load a ruby file)
 (require 'robe)
 (add-hook 'ruby-mode-hook 'robe-mode)
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
