@@ -1,5 +1,7 @@
 # Louis "Baboon" Kottmann's EMACS configuration
 
+Slowly modified prelude by a monkey.
+
 ## Installation
 
 1) Install EMACS:
