@@ -23,7 +23,7 @@ apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
 
 5) Fetch this repo into `~/.emacs.d/`
 
-6) Adjust `../prelude-modules.el`
+6) Adjust `prelude-modules.el`
 
 7) Start EMACS
 
