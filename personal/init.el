@@ -269,6 +269,8 @@
 (require 'robe)
 (add-hook 'ruby-mode-hook 'robe-mode)
 (push 'company-robe company-backends)
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
 
 ;; RVM
 (require 'rvm)
