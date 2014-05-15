@@ -101,19 +101,6 @@
 ;; Allow to search for next (M-n)/previous (M-p) occurence of word at point
 (global-smartscan-mode 1) ;; (M-') replaces occurences of word at point
 
-;; Auto complete
-(require 'auto-complete-config)
-;; Performance workarounds
-(ac-flyspell-workaround)
-(ac-linum-workaround)
-; Use dictionaries by default
-(setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
-(global-auto-complete-mode t)
-; Start auto-completion after 1 characters of a word
-(setq ac-auto-start 1)
-; case sensitivity is important when finding matches
-(setq ac-ignore-case nil)
-
 ;; ERC
 (require 'erc)
 (setq erc-kill-buffer-on-part t)
@@ -158,7 +145,6 @@
 
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-hook 'js2-mode-hook 'ac-js2-mode)
 
 ;; json-mode
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
@@ -286,7 +272,7 @@
 ;; Robe
 (require 'robe)
 (add-hook 'ruby-mode-hook 'robe-mode)
-(add-hook 'robe-mode-hook 'ac-robe-setup)
+(push 'company-robe company-backends)
 
 ;; RVM
 (require 'rvm)
