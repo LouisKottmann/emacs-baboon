@@ -256,10 +256,6 @@
 (push '(help-mode :position right)
       popwin:special-display-config)
 
-;; direx
-(eval-after-load "direx"
-  '(define-key direx:direx-mode-map (kbd "RET") 'direx:find-item-other-window))
-
 ;; multiple-cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
