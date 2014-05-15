@@ -31,7 +31,7 @@ apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
 
 ### The easy way
 
-Clone [my bash repo](https://github.com/LouisKottmann/baboon-bash) with yummy aliases and environment variables then use the `em` command.
+Clone [my bash repo](https://github.com/LouisKottmann/baboon-bash) with yummy aliases and environment variables then use the `emc` command (`em` to load a file into an existing instance).
 
 Please also note that for emails you need to have a `~/.authinfo` file containing gmail access (see [the emacswiki section](http://www.emacswiki.org/emacs/GnusGmail#toc1)).
 
