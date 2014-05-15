@@ -49,7 +49,6 @@
     ace-jump-mode
     ag
     anzu
-    auto-complete
     auto-highlight-symbol
     browse-kill-ring
     coffee-mode
@@ -81,7 +80,6 @@
     move-text
     multiple-cursors
     powerline
-    project-mode
     projectile
     rainbow-mode
     rinari
