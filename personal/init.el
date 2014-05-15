@@ -268,7 +268,6 @@
 ;; Robe
 (require 'robe)
 (add-hook 'ruby-mode-hook 'robe-mode)
-(push 'company-robe company-backends)
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
 
@@ -278,6 +277,15 @@
 
 ;; fancy-narrow (grays out narrowed out instead of hiding it completely - C-x n d/w)
 (fancy-narrow-mode 1)
+
+;; Company-mode
+(define-key company-active-map (kbd "\C-n") 'company-select-next)
+(define-key company-active-map (kbd "\C-p") 'company-select-previous)
+(define-key company-active-map (kbd "\C-d") 'company-show-doc-buffer)
+(define-key company-active-map (kbd "<tab>") 'company-complete)
+(push 'company-robe company-backends)
+(push 'company-inf-ruby company-backends)
+(push 'slime-company company-backends)
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp

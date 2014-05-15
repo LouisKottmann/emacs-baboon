@@ -51,6 +51,7 @@
     anzu
     auto-highlight-symbol
     browse-kill-ring
+    company-inf-ruby
     coffee-mode
     dash
     diff-hl
@@ -85,6 +86,7 @@
     rinari
     robe
     rvm
+    slime-company
     smartparens
     smartscan
     smooth-scroll
