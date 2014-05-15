@@ -276,6 +276,9 @@
 (require 'rvm)
 (rvm-use-default)
 
+;; fancy-narrow (grays out narrowed out instead of hiding it completely - C-x n d/w)
+(fancy-narrow-mode 1)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
