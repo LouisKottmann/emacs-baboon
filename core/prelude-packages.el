@@ -89,7 +89,6 @@
     slime-company
     smartparens
     smartscan
-    smooth-scroll
     smooth-scrolling
     solarized-theme
     soundcloud
