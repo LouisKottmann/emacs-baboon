@@ -275,6 +275,9 @@
 (require 'rvm)
 (rvm-use-default)
 
+;; Rails stuff
+(add-hook 'projectile-mode-hook 'projectile-rails-mode)
+
 ;; fancy-narrow (grays out narrowed out instead of hiding it completely - C-x n d/w)
 (fancy-narrow-mode 1)
 

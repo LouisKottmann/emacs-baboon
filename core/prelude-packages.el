@@ -82,8 +82,8 @@
     multiple-cursors
     powerline
     projectile
+    projectile-rails
     rainbow-mode
-    rinari
     robe
     rvm
     slime-company
