@@ -56,6 +56,7 @@
     dash
     diff-hl
     diminish
+    dockerfile-mode
     easy-kill
     ecb
     elisp-slime-nav
