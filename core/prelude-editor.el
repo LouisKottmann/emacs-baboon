@@ -334,7 +334,7 @@ indent yanked text (with prefix arg don't indent)."
            (or (derived-mode-p 'prog-mode)
                (member major-mode yank-indent-modes)))
       (let ((transient-mark-mode nil))
-    (yank-advised-indent-function (region-beginning) (region-end)))))
+      (yank-advised-indent-function (region-beginning) (region-end)))))
 
 (defadvice yank-pop (after yank-pop-indent activate)
   "If current mode is one of `yank-indent-modes',
@@ -411,6 +411,17 @@ indent yanked text (with prefix arg don't indent)."
 (global-set-key [remap kill-ring-save] 'easy-kill)
 (global-set-key [remap mark-sexp] 'easy-mark)
 
+;;
+(require 'operate-on-number)
+(smartrep-define-key global-map "C-c ."
+                     '(("+" . apply-operation-to-number-at-point)
+                       ("-" . apply-operation-to-number-at-point)
+                       ("*" . apply-operation-to-number-at-point)
+                       ("/" . apply-operation-to-number-at-point)
+                       ("^" . apply-operation-to-number-at-point)
+                       ("<" . apply-operation-to-number-at-point)
+                       (">" . apply-operation-to-number-at-point)
+                       ("'" . operate-on-number-at-point)))
 (provide 'prelude-editor)
 
 ;;; prelude-editor.el ends here

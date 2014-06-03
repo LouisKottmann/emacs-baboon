@@ -82,6 +82,7 @@
     markdown-mode
     move-text
     multiple-cursors
+    operate-on-number
     powerline
     projectile
     projectile-rails
@@ -90,6 +91,7 @@
     rvm
     slime-company
     smartparens
+    smartrep
     smartscan
     smooth-scrolling
     solarized-theme
