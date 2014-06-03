@@ -51,6 +51,7 @@
     anzu
     auto-highlight-symbol
     browse-kill-ring
+    change-inner
     company-inf-ruby
     coffee-mode
     dash

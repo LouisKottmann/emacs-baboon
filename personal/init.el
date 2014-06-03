@@ -283,6 +283,11 @@
 (push 'company-inf-ruby company-backends)
 (push 'slime-company company-backends)
 
+;; change-innner (kills by default, C-u to copy instead)
+(require 'change-inner)
+(global-set-key (kbd "C-i") 'change-inner)
+(global-set-key (kbd "C-S-i") 'change-outer)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
