@@ -230,14 +230,11 @@
         " "
         filename-and-process))
 
-;; jedi - requires virtualenv (pip install virtualenv)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(setq jedi:use-shortcuts t)
-(add-hook 'jedi-mode-hook (lambda ()
-                            (when (not (get-buffer "*Python*"))
-                              (run-python "/usr/bin/python -i" nil nil))))
-(add-hook 'jedi-mode-hook 'eldoc-mode)
+;; anaconda
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'anaconda-eldoc)
+(setq company-backends (delete 'company-ropemacs company-backends))
+(add-to-list 'company-backends 'company-anaconda)
 
 ;; popwin
 (popwin-mode 1)

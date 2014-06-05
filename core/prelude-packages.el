@@ -48,6 +48,7 @@
   '(ace-jump-buffer
     ace-jump-mode
     ag
+    anaconda-mode
     anzu
     auto-highlight-symbol
     browse-kill-ring
@@ -76,7 +77,6 @@
     hackernews
     haml-mode
     ido-vertical-mode
-    jedi
     json-mode
     magit
     markdown-mode
