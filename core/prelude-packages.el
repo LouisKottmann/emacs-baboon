@@ -57,7 +57,6 @@
     coffee-mode
     dash
     diff-hl
-    diminish
     discover-my-major
     dockerfile-mode
     easy-kill

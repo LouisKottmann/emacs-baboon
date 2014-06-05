@@ -89,9 +89,6 @@
 ;; disable annoying blink-matching-paren
 (setq blink-matching-paren nil)
 
-;; diminish keeps the modeline tidy
-(require 'diminish)
-
 ;; meaningful names for buffers with the same name
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -181,7 +178,6 @@ The body of the advice is in BODY."
 
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
-(diminish 'volatile-highlights-mode)
 
 ;; tramp, for sudo access
 (require 'tramp)
@@ -241,7 +237,6 @@ The body of the advice is in BODY."
 
 ;; anzu-mode enhances isearch by showing total matches and current match position
 (require 'anzu)
-(diminish 'anzu-mode)
 (global-anzu-mode)
 
 ;; shorter aliases for ack-and-a-half commands
@@ -366,7 +361,6 @@ indent yanked text (with prefix arg don't indent)."
 
 ;; sensible undo
 (global-undo-tree-mode)
-(diminish 'undo-tree-mode)
 
 ;; enable winner-mode to manage window configurations
 (winner-mode +1)
