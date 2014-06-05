@@ -281,7 +281,7 @@
 (define-key company-active-map (kbd "\C-tab") 'company-complete)
 (push 'company-robe company-backends)
 (push 'company-inf-ruby company-backends)
-(push 'slime-company company-backends)
+(slime-setup '(slime-company))
 
 ;; change-innner (kills by default, C-u to copy instead)
 (require 'change-inner)
