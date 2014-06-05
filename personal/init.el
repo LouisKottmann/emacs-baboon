@@ -285,6 +285,9 @@
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-S-i") 'change-outer)
 
+;; discover-my-major
+(global-set-key (kbd "C-h C-m") 'discover-my-major)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
