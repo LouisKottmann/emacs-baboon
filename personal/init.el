@@ -217,10 +217,6 @@
 (fringe-mode '(8 . 8))
 (setq-default indicate-buffer-boundaries 'left)
 
-(require 'git-gutter-fringe)
-(setq git-gutter-fr:side 'right-fringe)
-(global-git-gutter-mode t)
-
 ;; ibuffer
 (require 'ibuffer)
 (add-to-list
