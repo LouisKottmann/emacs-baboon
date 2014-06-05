@@ -69,6 +69,7 @@
     fancy-narrow
     flycheck
     gist
+    git-gutter-fringe
     gitconfig-mode
     gitignore-mode
     google-translate
