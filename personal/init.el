@@ -214,7 +214,7 @@
 (ido-vertical-mode 1)
 
 ;; fringe
-(fringe-mode '(8 . 8))
+(fringe-mode '(8 . 0))
 (setq-default indicate-buffer-boundaries 'left)
 
 ;; ibuffer
