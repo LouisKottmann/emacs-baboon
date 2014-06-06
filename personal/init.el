@@ -366,17 +366,6 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
-;; Projectile-ag without regexp
-(defun projectile-ag-str (string)
-  "Run an ag search with REGEXP in the project."
-  (interactive
-   (list (read-from-minibuffer
-          (projectile-prepend-project-name "Ag string search for: ")
-          (projectile-symbol-at-point))))
-  (if (fboundp 'ag)
-      (ag string (projectile-project-root))
-    (error "Ag is not available")))
-
 ;; Smartparens remapping
 (add-hook
  'smartparens-mode-hook
