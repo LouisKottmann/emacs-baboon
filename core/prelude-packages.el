@@ -78,6 +78,7 @@
     haml-mode
     ido-vertical-mode
     json-mode
+    js2-mode
     magit
     markdown-mode
     move-text
