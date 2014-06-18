@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         describe-key-briefly
+        easy-kill
         prelude-move-beginning-of-line
         sp--self-insert-command
         ))
