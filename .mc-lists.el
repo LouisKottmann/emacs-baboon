@@ -3,8 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        change-inner
         describe-key-briefly
         easy-kill
+        indent-for-tab-command
+        kill-rectangle
         prelude-move-beginning-of-line
         sp--self-insert-command
         ))
