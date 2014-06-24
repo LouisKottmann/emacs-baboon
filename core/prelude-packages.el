@@ -54,6 +54,7 @@
     browse-kill-ring
     change-inner
     company-inf-ruby
+    company-anaconda
     coffee-mode
     dash
     diff-hl
