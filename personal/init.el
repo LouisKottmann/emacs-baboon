@@ -366,6 +366,30 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
+;; Save window configuration before C-x 1 then reinstate it after another call
+;; -> Codename Zygospore
+(defvar baboon-windows-time-machine-register-name
+  "baboon-windows-time-machine")
+(defvar baboon-last-maximized-window
+  nil)
+(defvar baboon-last-maximized-buffer
+  nil)
+(defun baboon-delete-other-window ()
+  (setq baboon-last-maximized-window (selected-window))
+  (setq baboon-last-maximized-buffer (current-buffer))
+  (window-configuration-to-register baboon-windows-time-machine-register-name)
+  (delete-other-windows))
+(defun baboon-restore-other-windows ()
+  (jump-to-register baboon-windows-time-machine-register-name))
+(defun baboon-toggle-delete-other-windows ()
+  (interactive)
+  (if (and (equal (selected-window) (next-window))
+           (equal (selected-window) baboon-last-maximized-window)
+           (equal (current-buffer) baboon-last-maximized-buffer))
+      (baboon-restore-other-windows)
+    (baboon-delete-other-window)))
+;; -> Codename Zygospore
+
 ;; Smartparens remapping
 (add-hook
  'smartparens-mode-hook
@@ -392,5 +416,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-h C-P") 'describe-package)
 (global-set-key (kbd "M-D") 'sp-kill-symbol)
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-x 1") 'baboon-toggle-delete-other-windows)
 
 ;;;init.el ends here
