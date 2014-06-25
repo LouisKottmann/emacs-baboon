@@ -232,7 +232,7 @@
 
 ;; anaconda
 (add-hook 'python-mode-hook 'anaconda-mode)
-(add-hook 'python-mode-hook 'anaconda-eldoc)
+(add-hook 'python-mode-hook 'eldoc-mode)
 (setq company-backends (delete 'company-ropemacs company-backends))
 (add-to-list 'company-backends 'company-anaconda)
 
