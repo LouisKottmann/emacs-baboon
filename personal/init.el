@@ -288,6 +288,10 @@
 ;; discover-my-major
 (global-set-key (kbd "C-h C-m") 'discover-my-major)
 
+;; WDired (writable dired, C-x C-q in a dired buffer to activate)
+(setq wdired-allow-to-change-permissions t)
+(setq wdired-confirm-overwrite t)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
