@@ -245,6 +245,8 @@
       popwin:special-display-config)
 (push '(help-mode :position right)
       popwin:special-display-config)
+(push '(occur-mode :position bottom :height 18 :stick true)
+      popwin:special-display-config)
 
 ;; multiple-cursors
 (require 'multiple-cursors)
