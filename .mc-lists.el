@@ -9,9 +9,13 @@
         indent-for-tab-command
         kill-rectangle
         prelude-move-beginning-of-line
+        smex
         sp--self-insert-command
+        sp-kill-symbol
+        wdired-finish-edit
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        slime-close-all-parens-in-sexp
         ))
