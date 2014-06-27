@@ -104,7 +104,8 @@
     visual-regexp
     vline
     volatile-highlights
-    w3)
+    w3
+    zygospore)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
