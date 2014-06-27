@@ -452,10 +452,6 @@ Doesn't mess with special buffers."
   (when (y-or-n-p "Do you want to update Prelude? ")
     (message "Updating installed packages...")
     (epl-upgrade)
-    (message "Updating Prelude...")
-    (cd prelude-dir)
-    (shell-command "git pull")
-    (prelude-recompile-init)
     (message "Update finished. Restart Emacs to complete the process.")))
 
 (defun prelude-update-packages (&optional arg)
