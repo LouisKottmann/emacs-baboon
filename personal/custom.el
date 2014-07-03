@@ -84,7 +84,7 @@
      ("melpa" . "http://melpa.milkbox.net/packages/")
      ("marmalade" . "http://marmalade-repo.org/packages/"))))
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
- '(powerline-default-separator (quote slant))
+ '(powerline-default-separator (quote arrow))
  '(prelude-guru nil)
  '(send-mail-function nil)
  '(smex-history-length 25)
