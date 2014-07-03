@@ -372,6 +372,27 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
+;; -> half screen scrolling
+(defvar where-to
+  (make-hash-table :test 'equal))
+
+(puthash 'down -2 where-to)
+(puthash 'up 2 where-to)
+
+(defun half-scroll (where)
+  (move-to-window-line nil)
+  (recenter (gethash where where-to))
+  (move-to-window-line nil))
+
+(defun half-scroll-down ()
+  (interactive)
+  (half-scroll 'down))
+
+(defun half-scroll-up ()
+  (interactive)
+  (half-scroll 'up))
+;; <- half screen scrolling
+
 ;; Smartparens remapping
 (add-hook
  'smartparens-mode-hook
@@ -399,5 +420,7 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "M-D") 'sp-kill-symbol)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+(global-set-key (kbd "C-S-v") 'half-scroll-up)
+(global-set-key (kbd "M-S-v") 'half-scroll-down)
 
 ;;;init.el ends here
