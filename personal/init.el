@@ -194,10 +194,7 @@
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers 't)
 
-;; auto-highlight-symbol
-(add-to-list 'ahs-modes 'js2-mode)
-
-;; ace-jump-mode
+ ;; ace-jump-mode
 (setq ace-jump-mode-move-keys
       (nconc (loop for i from ?a to ?z collect i)
              (loop for i from ?A to ?Z collect i)

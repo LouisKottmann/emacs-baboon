@@ -117,7 +117,10 @@
   (unless (memq package prelude-packages)
     (add-to-list 'prelude-packages package))
   (unless (package-installed-p package)
-    (package-install package)))
+    (condition-case nil
+	(package-install package)
+      (error
+       (message "Failed to install package %s" package)))))
 
 (defun prelude-require-packages (packages)
   "Ensure PACKAGES are installed.
