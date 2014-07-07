@@ -87,6 +87,13 @@ by Prelude.")
 ;; each 50MB of allocated data (the default is on every 0.76MB)
 (setq gc-cons-threshold 50000000)
 
+;; set package archives
+(setq package-archives
+      (quote
+       (("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.milkbox.net/packages/")
+        ("marmalade" . "http://marmalade-repo.org/packages/"))))
+
 ;; preload the personal settings from `prelude-personal-preload-dir'
 (when (file-exists-p prelude-personal-preload-dir)
   (message "Loading personal configuration files in %s..." prelude-personal-preload-dir)
