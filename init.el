@@ -130,8 +130,4 @@ by Prelude.")
 
 (message "Prelude is ready to do thy bidding, Master %s!" current-user)
 
-(prelude-eval-after-init
- ;; greet the use with some useful tip
- (run-at-time 5 nil 'prelude-tip-of-the-day))
-
 ;;; init.el ends here

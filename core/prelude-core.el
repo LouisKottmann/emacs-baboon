@@ -152,23 +152,6 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key [remap move-beginning-of-line]
                 'prelude-move-beginning-of-line)
 
-(defun prelude-indent-buffer ()
-  "Indent the currently visited buffer."
-  (interactive)
-  (indent-region (point-min) (point-max)))
-
-(defun prelude-indent-region-or-buffer ()
-  "Indent a region if selected, otherwise the whole buffer."
-  (interactive)
-  (save-excursion
-    (if (region-active-p)
-        (progn
-          (indent-region (region-beginning) (region-end))
-          (message "Indented selected region."))
-      (progn
-        (prelude-indent-buffer)
-        (message "Indented buffer.")))))
-
 (defun prelude-indent-defun ()
   "Indent the current defun."
   (interactive)
@@ -280,18 +263,6 @@ there's a region, all lines that region covers will be duplicated."
     (cond ((search-forward "<?xml" nil t) (nxml-mode))
           ((search-forward "<html" nil t) (html-mode)))))
 
-(defun prelude-untabify-buffer ()
-  "Remove all tabs from the current buffer."
-  (interactive)
-  (untabify (point-min) (point-max)))
-
-(defun prelude-cleanup-buffer ()
-  "Perform a bunch of operations on the whitespace content of a buffer."
-  (interactive)
-  (prelude-indent-buffer)
-  (prelude-untabify-buffer)
-  (whitespace-cleanup))
-
 (defun prelude-eval-and-replace ()
   "Replace the preceding sexp with its value."
   (interactive)
@@ -391,43 +362,13 @@ Doesn't mess with special buffers."
      (get-buffer-create (generate-new-buffer-name "*scratch*")))
     (emacs-lisp-mode)))
 
-(defvar prelude-tips
-  '("Press <C-c o> to open a file with external program."
-    "Press <C-c p f> or <s-f> to navigate a project's files with ido."
-    "Press <C-c p g> or <s-g> to run grep on a project."
-    "Press <C-c p s> or <s-p> to switch between projects."
-    "Press <C-=> or <s-x> to expand the selected region."
-    "Press <jj> quickly to jump to the beginning of a visible word."
-    "Press <jk> quickly to jump to a visible character."
-    "Press <jl> quickly to jump to a visible line."
-    "Press <C-c g> to search in Google."
-    "Press <C-c G> to search in GitHub."
-    "Press <C-c y> to search in YouTube."
-    "Press <C-c U> to search in DuckDuckGo."
-    "Press <C-c r> to rename the current buffer and file it's visiting."
-    "Press <C-c t> to open a terminal in Emacs."
-    "Press <C-c k> to kill all the buffers, but the active one."
-    "Press <C-x g> or <s-m> to run magit-status."
-    "Press <C-c D> to delete the current file and buffer."
-    "Press <C-c s> to swap two windows."
-    "Press <s-o> to open a line above the current one."
-    "Press <C-c C-z> in a Elisp buffer to launch an interactive Elisp shell."
-    "Press <C-Backspace> to kill a line backwards."
-    "Press <C-S-Backspace> or <s-k> to kill the whole line."
-    "Press <f11> to toggle fullscreen mode."
-    "Press <f12> to toggle the menu bar."
-    "Explore the Tools->Prelude menu to find out about some of Prelude extensions to Emacs."
-    "Access the official Emacs manual by pressing <C-h r>."
-    "Visit the EmacsWiki at http://emacswiki.org to find out even more about Emacs."))
-
-(defun prelude-tip-of-the-day ()
-  "Display a random entry from `prelude-tips'."
+(defun prelude-cleanup-buffer-or-region ()
+  "Cleanup a region if selected, otherwise the whole buffer."
   (interactive)
-  (unless (window-minibuffer-p)
-    ;; pick a new random seed
-    (random t)
-    (message
-     (concat "Prelude tip: " (nth (random (length prelude-tips)) prelude-tips)))))
+  (call-interactively 'untabify)
+  (unless (member major-mode prelude-indent-sensitive-modes)
+    (call-interactively 'indent-region))
+  (whitespace-cleanup))
 
 (defun prelude-eval-after-init (form)
   "Add `(lambda () FORM)' to `after-init-hook'.
