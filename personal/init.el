@@ -6,6 +6,9 @@
 ;; Color theme
 (load-theme 'solarized-light t)
 
+;; custom faces
+(defface baboon-main-color '((t (:foreground  "#182F31"))) "Background color of my logo")
+
 ;; French keyboard support (^ etc)
 (load-library "iso-transl")
 
@@ -290,6 +293,14 @@
 ;; WDired (writable dired, C-x C-q in a dired buffer to activate)
 (setq wdired-allow-to-change-permissions t)
 (setq wdired-confirm-overwrite t)
+
+;; highlight-numbers-mode
+(require 'highlight-numbers)
+(define-globalized-minor-mode global-highlight-numbers-mode
+  highlight-numbers-mode
+  highlight-numbers-mode)
+(global-highlight-numbers-mode t)
+
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
