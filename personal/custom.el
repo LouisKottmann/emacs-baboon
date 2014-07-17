@@ -81,6 +81,7 @@
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote arrow))
  '(prelude-guru nil)
+ '(recentf-max-saved-items 50)
  '(send-mail-function nil)
  '(smex-history-length 25)
  '(smooth-scroll/vscroll-step-size 3)
@@ -126,4 +127,4 @@
  '(tabbar-selected ((t (:background "#5A768B" :foreground "#FDF6E3" :box (:line-width -1 :style pressed-button)))))
  '(tabbar-separator ((t (:inherit tabbar-default :height 0.1))))
  '(tabbar-unselected ((t (:background "#FDF6E3" :foreground "#5A768B" :box (:line-width -1 :style released-button)))))
- '(vline ((t (:background "#EEE8D5"))) t))
+ '(vline ((t (:background "#EEE8D5")))))
