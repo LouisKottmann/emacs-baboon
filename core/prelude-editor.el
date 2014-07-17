@@ -172,7 +172,7 @@ The body of the advice is in BODY."
   (save-some-buffers 'dont-ask))
 
 (when (version<= "24.4" emacs-version)
-  (add-hook 'focus-out-hook 'prelude-save-all-buffers))
+  (add-hook 'focus-out-hook 'prelude-auto-save-command))
 
 ;; highlight the current line
 (global-hl-line-mode +1)
