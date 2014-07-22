@@ -296,11 +296,7 @@
 
 ;; highlight-numbers-mode
 (require 'highlight-numbers)
-(define-globalized-minor-mode global-highlight-numbers-mode
-  highlight-numbers-mode
-  highlight-numbers-mode)
-(global-highlight-numbers-mode t)
-
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
