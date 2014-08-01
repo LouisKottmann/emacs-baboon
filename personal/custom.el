@@ -40,6 +40,7 @@
  '(erc-modules
    (quote
     (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notifications readonly ring stamp spelling track truncate)))
+ '(erc-pcomplete-mode nil)
  '(erc-port 6667)
  '(erc-reuse-buffers nil)
  '(global-auto-highlight-symbol-mode t)
