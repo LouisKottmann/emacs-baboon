@@ -17,5 +17,6 @@
 
 (setq mc/cmds-to-run-once
       '(
+        js2-mode-show-node
         slime-close-all-parens-in-sexp
         ))

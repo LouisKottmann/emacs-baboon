@@ -426,5 +426,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 (global-set-key (kbd "C-S-v") 'half-scroll-up)
 (global-set-key (kbd "M-S-v") 'half-scroll-down)
+(global-set-key (kbd "s-b") 'ido-switch-buffer)
 
 ;;;init.el ends here
