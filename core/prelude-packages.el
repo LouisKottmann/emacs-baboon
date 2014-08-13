@@ -85,6 +85,7 @@
     markdown-mode
     move-text
     multiple-cursors
+    neotree
     operate-on-number
     powerline
     projectile
