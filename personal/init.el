@@ -4,6 +4,7 @@
 (require 'google-translate)
 
 ;; Color theme
+;;; Check 'seti theme
 (load-theme 'solarized-light t)
 
 ;; custom faces
