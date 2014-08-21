@@ -238,7 +238,7 @@
 (add-to-list 'company-backends 'company-anaconda)
 
 ;; popwin
-(popwin-mode 1)
+(popwin-mode -1)
 (setq popwin:popup-window-position 'bottom)
 (setq popwin:popup-window-width 80)
 (setq popwin:popup-window-height 20)
