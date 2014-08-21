@@ -441,5 +441,7 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-S-v") 'half-scroll-up)
 (global-set-key (kbd "M-S-v") 'half-scroll-down)
 (global-set-key (kbd "s-b") 'ido-switch-buffer)
+(global-set-key (kbd "C-<enter>") 'prelude-smart-open-line)
+(global-set-key (kbd "C-S-<enter>") 'prelude-smart-open-line-above)
 
 ;;;init.el ends here
