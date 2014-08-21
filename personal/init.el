@@ -398,6 +398,19 @@ to the mode-line of windows that are dedicated"
   (half-scroll 'up))
 ;; <- half screen scrolling
 
+;; Open randomly named buffer
+(defvar phonetically-spaced-words
+  '() "")
+
+(defun baboon-random-buffer ()
+  (interactive)
+  (switch-to-buffer "sdfsdf"))
+
+;; Open file on lilith
+(defun baboon-lilith-tramp ()
+  (interactive)
+  (find-file "/ssh:baboon@baboon.io#10522:/home/baboon"))
+
 ;; Smartparens remapping
 (add-hook
  'smartparens-mode-hook
