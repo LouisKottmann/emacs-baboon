@@ -377,6 +377,12 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
+(defun baboon-find-shell-init-file ()
+  (interactive "P")
+  (if arg
+      (find-file (expand-file-name ".bash_aliases" (getenv "HOME")))
+    (find-file (expand-file-name ".bashrc" (getenv "HOME")))))
+
 ;; -> half screen scrolling
 (defvar where-to
   (make-hash-table :test 'equal))

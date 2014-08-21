@@ -61,8 +61,7 @@
     (define-key map (kbd "C-c k") 'prelude-kill-other-buffers)
     (define-key map (kbd "C-c TAB") 'prelude-indent-rigidly-and-copy-to-clipboard)
     (define-key map (kbd "C-c h") 'helm-prelude)
-    (define-key map (kbd "C-c I") 'prelude-find-user-init-file)
-    (define-key map (kbd "C-c S") 'prelude-find-shell-init-file)
+    (define-key map (kbd "C-c S") 'baboon-find-shell-init-file)
     ;; make some use of the Super key
     (define-key map [?\s-d] 'projectile-find-dir)
     (define-key map [?\s-p] 'projectile-switch-project)
