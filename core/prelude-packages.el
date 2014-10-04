@@ -44,6 +44,7 @@
 (setq package-user-dir (expand-file-name "elpa" prelude-dir))
 (package-initialize)
 
+;; check out https://github.com/istib/rainbow-blocks
 (defvar prelude-packages
   '(ace-jump-buffer
     ace-jump-mode
