@@ -45,6 +45,7 @@
 (package-initialize)
 
 ;; check out https://github.com/istib/rainbow-blocks
+;; check out https://srclib.org/plugins/emacs/
 (defvar prelude-packages
   '(ace-jump-buffer
     ace-jump-mode
