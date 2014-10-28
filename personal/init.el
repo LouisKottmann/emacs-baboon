@@ -426,9 +426,10 @@ to the mode-line of windows that are dedicated"
 
 ;; Hideshowvis: Shows +/- in the fringe for foldable regions
 (hideshowvis-symbols)
+
 (add-hook
- 'hs-minor-mode-hook
- 'hideshowvis-enable)
+ 'prog-mode-hook
+ 'hideshowvis-minor-mode)
 
 ;; Baboon Keybindings
 (global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
