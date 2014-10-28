@@ -424,7 +424,8 @@ to the mode-line of windows that are dedicated"
 ;; Flyspell remapping
 (define-key flyspell-mode-map (kbd "C-,") nil)
 
-;; Shows '-' in the fringe for foldable regions
+;; Hideshowvis: Shows +/- in the fringe for foldable regions
+(hideshowvis-symbols)
 (add-hook
  'hs-minor-mode-hook
  'hideshowvis-enable)
