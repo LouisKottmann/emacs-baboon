@@ -408,7 +408,11 @@ to the mode-line of windows that are dedicated"
 
 (defun baboon-random-buffer ()
   (interactive)
-  (switch-to-buffer "sdfsdf"))
+  (switch-to-buffer
+   (eval-expression (quote
+                     (concat "sdf "
+                             (format "%s"
+                                     (random 5000)))) nil)))
 
 ;; Open file on lilith
 (defun baboon-lilith-tramp ()
