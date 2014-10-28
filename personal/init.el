@@ -125,7 +125,7 @@
 (require 'haml-mode)
 
 ;; Colors parenthesis pairs
-(global-rainbow-delimiters-mode 1)
+(rainbow-delimiters-mode 1)
 
 ;; Twittering-mode
 ;; The library autoloads on (twit) but that's counter-intuitive
@@ -238,16 +238,16 @@
 (add-to-list 'company-backends 'company-anaconda)
 
 ;; popwin
-(popwin-mode -1)
-(setq popwin:popup-window-position 'bottom)
-(setq popwin:popup-window-width 80)
-(setq popwin:popup-window-height 20)
-(push '(direx:direx-mode :position left :width 25 :stick true)
-      popwin:special-display-config)
-(push '(help-mode :position right)
-      popwin:special-display-config)
-(push '(occur-mode :position bottom :height 18 :stick true)
-      popwin:special-display-config)
+;; (popwin-mode -1)
+;; (setq popwin:popup-window-position 'bottom)
+;; (setq popwin:popup-window-width 80)
+;; (setq popwin:popup-window-height 20)
+;; (push '(direx:direx-mode :position left :width 25 :stick true)
+;;       popwin:special-display-config)
+;; (push '(help-mode :position right)
+;;       popwin:special-display-config)
+;; (push '(occur-mode :position bottom :height 18 :stick true)
+;;       popwin:special-display-config)
 
 ;; multiple-cursors
 (require 'multiple-cursors)
@@ -378,10 +378,8 @@ to the mode-line of windows that are dedicated"
   (find-file "~/.emacs.d/personal/init.el"))
 
 (defun baboon-find-shell-init-file ()
-  (interactive "P")
-  (if arg
-      (find-file (expand-file-name ".bash_aliases" (getenv "HOME")))
-    (find-file (expand-file-name ".bashrc" (getenv "HOME")))))
+  (interactive)
+  (find-file (expand-file-name ".bash_aliases" (getenv "HOME"))))
 
 ;; -> half screen scrolling
 (defvar where-to
@@ -425,6 +423,11 @@ to the mode-line of windows that are dedicated"
 
 ;; Flyspell remapping
 (define-key flyspell-mode-map (kbd "C-,") nil)
+
+;; Shows '-' in the fringe for foldable regions
+(add-hook
+ 'hs-minor-mode-hook
+ 'hideshowvis-enable)
 
 ;; Baboon Keybindings
 (global-set-key (kbd "s-<left>") 'shrink-window-horizontally)

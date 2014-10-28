@@ -79,6 +79,7 @@
     guide-key
     hackernews
     haml-mode
+    hideshowvis
     highlight-numbers
     ido-vertical-mode
     json-mode
