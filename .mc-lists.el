@@ -19,5 +19,6 @@
       '(
         js2-mode-show-node
         markdown-exdent-or-delete
+        mouse-drag-vertical-line
         slime-close-all-parens-in-sexp
         ))
