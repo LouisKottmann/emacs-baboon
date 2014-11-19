@@ -87,6 +87,7 @@
     magit
     markdown-mode
     move-text
+    moz
     multiple-cursors
     neotree
     operate-on-number

@@ -299,6 +299,18 @@
 (require 'highlight-numbers)
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 
+;; mozrepl goodies
+(defun auto-reload-firefox-on-after-save-hook ()
+  (add-hook 'after-save-hook
+            '(lambda ()
+               (interactive)
+               (comint-send-string (inferior-moz-process)
+                                   "setTimeout(BrowserReload(), \"1000\");"))
+            'append 'local)) ; buffer-local
+(add-hook 'html-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(add-hook 'css-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(add-hook 'haml-mode-hook 'auto-reload-firefox-on-after-save-hook)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
