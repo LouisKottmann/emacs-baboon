@@ -17,6 +17,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+        haml-electric-backspace
         js2-mode-show-node
         markdown-exdent-or-delete
         mouse-drag-vertical-line
