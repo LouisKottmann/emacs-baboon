@@ -80,6 +80,8 @@
  '(js2-include-node-externs t)
  '(magit-use-overlays t)
  '(message-send-mail-function (quote smtpmail-send-it))
+ '(neo-persist-show nil)
+ '(neo-show-header nil)
  '(nxml-child-indent 4)
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote arrow))
