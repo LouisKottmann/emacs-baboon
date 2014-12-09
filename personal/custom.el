@@ -54,7 +54,7 @@
  '(google-translate-default-source-language "en")
  '(google-translate-default-target-language "fr")
  '(google-translate-enable-ido-completion t)
- '(guide-key/guide-key-sequence (quote ("C-c" "C-x" "C-h")))
+ '(guide-key/guide-key-sequence (quote ("C-c" "C-x" "C-h" "s-m")))
  '(guide-key/highlight-command-regexp "baboon\\|prelude")
  '(guide-key/popup-window-position (quote bottom))
  '(guide-key/recursive-key-sequence-flag t)
