@@ -258,15 +258,15 @@
 (global-set-key (kbd "C-c C->") 'mc/mark-all-words-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-symbols-like-this)
 
+;; rbenv
+(require 'rbenv)
+(rbenv-use-global)
+
 ;; Robe (use C-c C-l to load a ruby file)
 (require 'robe)
 (add-hook 'ruby-mode-hook 'robe-mode)
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  (rvm-activate-corresponding-ruby))
-
-;; RVM
-(require 'rvm)
-(rvm-use-default)
+  (rbenv-use-corresponding))
 
 ;; Rails stuff
 (add-hook 'projectile-mode-hook 'projectile-rails-mode)

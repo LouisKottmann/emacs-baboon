@@ -96,7 +96,7 @@
     projectile-rails
     rainbow-mode
     robe
-    rvm
+    rbenv
     slime-company
     smartparens
     smartrep
