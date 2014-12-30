@@ -148,6 +148,9 @@ Missing packages are installed automatically."
 ;; run package installation
 (prelude-install-packages)
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/standalone-packages/livedown"))
+(require 'livedown)
+
 (defun prelude-list-foreign-packages ()
   "Browse third-party packages not bundled with Prelude.
 
