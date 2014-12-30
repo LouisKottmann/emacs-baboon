@@ -267,6 +267,10 @@
 (add-hook 'ruby-mode-hook 'robe-mode)
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rbenv-use-corresponding))
+(add-to-list 'hs-special-modes-alist
+	     '(ruby-mode
+	       "\\(def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
+	       (lambda (arg) (ruby-end-of-block)) nil))
 
 ;; Rails stuff
 (add-hook 'projectile-mode-hook 'projectile-rails-mode)
