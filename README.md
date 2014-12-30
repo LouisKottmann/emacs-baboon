@@ -4,28 +4,9 @@ Slowly modified prelude by a monkey.
 
 ## Installation
 
-1) Install EMACS:
-
-* [Debian/LMDE](http://emacs.naquadah.org/) (pick "stable")
-* [Ubuntu/Min]( https://launchpad.net/~cassou/+archive/emacs)
-
-```
-add-apt-repository ppa:cassou/emacs
-apt-get update
-apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
-```
-
-2) Install [SBCL](http://www.sbcl.org/). On Debian just do `sudo apt-get install sbcl`.
-
-3) Install [Quicklisp](http://www.quicklisp.org) + [SLIME](http://common-lisp.net/project/slime/)
-
-4) Install [AG](https://github.com/ggreer/the_silver_searcher). Compile from source.
-
-5) Fetch this repo into `~/.emacs.d/`
-
-6) Adjust `prelude-modules.el`
-
-7) Start EMACS
+See this script for relevant 
+[EMACS](https://github.com/LouisKottmann/baboon-bash/blob/master/Scripts/baboon-install-linux.sh#L106) 
+parts
 
 ## Usage
 
