@@ -304,16 +304,25 @@
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 
 ;; mozrepl goodies
-(defun auto-reload-firefox-on-after-save-hook ()
+(defun baboon-refresh-firefox ()
+  (interactive)
+  (comint-send-string (inferior-moz-process)
+                      "setTimeout(BrowserReload(), \"1000\");"))
+
+(defun baboon-start-auto-refresh-firefox ()
+  (interactive)
   (add-hook 'after-save-hook
-            '(lambda ()
-               (interactive)
-               (comint-send-string (inferior-moz-process)
-                                   "setTimeout(BrowserReload(), \"1000\");"))
+            'baboon-refresh-firefox
             'append 'local)) ; buffer-local
-(add-hook 'html-mode-hook 'auto-reload-firefox-on-after-save-hook)
-(add-hook 'css-mode-hook 'auto-reload-firefox-on-after-save-hook)
-(add-hook 'haml-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(defun baboon-stop-auto-refresh-firefox ()
+  (interactive)
+  (remove-hook 'after-save-hook
+               'baboon-refresh-firefox
+               'local))
+;; too many refreshes with these:
+;; (add-hook 'html-mode-hook 'auto-reload-firefox-on-after-save-hook)
+;; (add-hook 'css-mode-hook 'auto-reload-firefox-on-after-save-hook)
+;; (add-hook 'haml-mode-hook 'auto-reload-firefox-on-after-save-hook)
 
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
@@ -474,5 +483,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "s-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-<enter>") 'prelude-smart-open-line)
 (global-set-key (kbd "C-S-<enter>") 'prelude-smart-open-line-above)
+(global-set-key (kbd "s-F") 'baboon-refresh-firefox)
 
 ;;;init.el ends here
