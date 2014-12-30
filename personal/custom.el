@@ -9,6 +9,8 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
+ '(ag-highlight-search t)
+ '(ag-reuse-window t)
  '(ahs-idle-interval 0.5)
  '(ahs-modes
    (quote
@@ -122,7 +124,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ace-jump-face-foreground ((t (:inherit font-lock-constant-face :background "#fdf6e3" :foreground "#268BD2" :inverse-video nil :weight bold))))
- '(ag-match-face ((t (:inherit lazy-highlight))))
+ '(ag-match-face ((t (:inherit baboon-main-color))))
  '(fringe ((t (:background "#fdf6e3"))))
  '(hackernews-link-face ((t (:inherit font-lock-function-name-face))))
  '(highlight-numbers-number ((t (:inherit baboon-main-color))))
