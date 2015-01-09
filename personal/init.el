@@ -485,4 +485,6 @@ to the mode-line of windows that are dedicated"
 (global-set-key (kbd "C-S-<enter>") 'prelude-smart-open-line-above)
 (global-set-key (kbd "s-F") 'baboon-refresh-firefox)
 
+(key-chord-define-global "KK" 'kill-this-buffer)
+
 ;;;init.el ends here
