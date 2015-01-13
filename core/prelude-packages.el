@@ -69,9 +69,11 @@
     epl
     erc-image
     expand-region
+    ewmctrl
     fancy-narrow
     flycheck
     gist
+    git-timemachine
     gitconfig-mode
     gitignore-mode
     google-translate
