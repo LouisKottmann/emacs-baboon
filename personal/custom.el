@@ -9,7 +9,7 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
- '(ag-highlight-search t)
+ '(ag-highlight-search t t)
  '(ag-reuse-window t)
  '(ahs-idle-interval 0.5)
  '(ahs-modes
@@ -83,8 +83,11 @@
  '(js2-include-node-externs t)
  '(magit-use-overlays t)
  '(message-send-mail-function (quote smtpmail-send-it))
+ '(neo-auto-indent-point t)
+ '(neo-banner-message "")
  '(neo-persist-show nil)
  '(neo-show-header nil)
+ '(neo-theme (quote arrow))
  '(nxml-child-indent 4)
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote arrow))
