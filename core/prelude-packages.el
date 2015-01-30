@@ -81,6 +81,7 @@
     guide-key
     hackernews
     haml-mode
+    helm-ag
     hideshowvis
     highlight-numbers
     ido-vertical-mode

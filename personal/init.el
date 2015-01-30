@@ -149,6 +149,9 @@
 ;; shell-script-mode
 (add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
 
+;; nginx-mode
+(add-to-list 'auto-mode-alist '("\\.com\\'" . nginx-mode))
+
 ;; Emacs Multimedia System
 (require 'emms-setup)
 (emms-devel)
@@ -302,6 +305,11 @@
 ;; highlight-numbers-mode
 (require 'highlight-numbers)
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
+
+;; helm-ag
+(defun projectile-helm-ag ()
+  (interactive)
+  (helm-ag (projectile-project-root)))
 
 ;; mozrepl goodies
 (defun baboon-refresh-firefox ()
