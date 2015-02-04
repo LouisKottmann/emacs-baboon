@@ -9,7 +9,7 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
- '(ag-highlight-search t t)
+ '(ag-highlight-search t)
  '(ag-reuse-window t)
  '(ahs-idle-interval 0.5)
  '(ahs-modes

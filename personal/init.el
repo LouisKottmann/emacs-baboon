@@ -201,7 +201,7 @@
 (setq ag-highlight-search t)
 (setq ag-reuse-buffers 't)
 
- ;; ace-jump-mode
+;; ace-jump-mode
 (setq ace-jump-mode-move-keys
       (nconc (loop for i from ?a to ?z collect i)
              (loop for i from ?A to ?Z collect i)
@@ -211,6 +211,9 @@
              '(?ù ?% ?* ?µ)
              '(?^ ?$ ?£)
              '(?€)))
+;; ace-window
+(setq aw-keys
+      (loop for i from ?a to ?z collect i))
 
 ;; ido
 (setq ido-use-faces t)
@@ -512,6 +515,8 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "C-S-<enter>") 'prelude-smart-open-line-above)
 (global-set-key (kbd "s-F") 'baboon-refresh-firefox)
 (global-set-key (kbd "M-;") 'baboon-comment-line-or-region)
+(global-set-key (kbd "s-:") 'ace-window)
+(global-set-key (kbd "s-/") 'ace-swap-window)
 (key-chord-define-global "KK" 'kill-this-buffer)
 
 ;;;init.el ends here

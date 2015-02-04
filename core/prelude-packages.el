@@ -49,6 +49,7 @@
 (defvar prelude-packages
   '(ace-jump-buffer
     ace-jump-mode
+    ace-window
     ag
     anaconda-mode
     anzu
