@@ -279,7 +279,7 @@
 	       (lambda (arg) (ruby-end-of-block)) nil))
 
 ;; Rails stuff
-(add-hook 'projectile-mode-hook 'projectile-rails-mode)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
 
 ;; fancy-narrow (grays out narrowed out instead of hiding it completely - C-x n d/w)
 (fancy-narrow-mode 1)
