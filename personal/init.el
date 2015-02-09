@@ -517,6 +517,7 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "M-;") 'baboon-comment-line-or-region)
 (global-set-key (kbd "s-:") 'ace-window)
 (global-set-key (kbd "s-/") 'ace-swap-window)
+(global-set-key (kbd "s-!") 'ace-delete-window)
 (key-chord-define-global "KK" 'kill-this-buffer)
 
 ;;;init.el ends here
