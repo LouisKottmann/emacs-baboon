@@ -64,9 +64,7 @@
     discover-my-major
     dockerfile-mode
     easy-kill
-    ecb
     elisp-slime-nav
-    emms
     epl
     erc-image
     expand-region
