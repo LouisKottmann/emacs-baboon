@@ -335,6 +335,9 @@
 ;; (add-hook 'css-mode-hook 'auto-reload-firefox-on-after-save-hook)
 ;; (add-hook 'haml-mode-hook 'auto-reload-firefox-on-after-save-hook)
 
+;; neotree
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
 ;; Aliasing default commands to enhance them
 (defalias 'replace-regexp 'vr/replace) ;; visual-regexp
 (defalias 'isearch-forward 'isearch-forward-regexp)
@@ -527,6 +530,7 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "s-!") 'ace-delete-window)
 (global-set-key (kbd "s-c") 'baboon-copy-file-name)
 (key-chord-define-global "KK" 'kill-this-buffer)
+(key-chord-define-global "FF" 'neotree-find)
 
 
 ;;;init.el ends here
