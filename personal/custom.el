@@ -9,7 +9,7 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
- '(ag-highlight-search t)
+ '(ag-highlight-search t t)
  '(ag-reuse-window t)
  '(ahs-idle-interval 0.5)
  '(ahs-modes
@@ -89,6 +89,10 @@
  '(neo-show-header nil)
  '(neo-theme (quote arrow))
  '(nxml-child-indent 4)
+ '(paradox-date-format "%d-%m-%Y")
+ '(paradox-display-download-count t)
+ '(paradox-github-token t)
+ '(paradox-lines-per-entry 2)
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote arrow))
  '(prelude-guru nil)
