@@ -127,6 +127,9 @@
 ;; Colors parenthesis pairs
 (rainbow-delimiters-mode 1)
 
+;; Enable unusual commands
+(put 'set-goal-column 'disabled nil)
+
 ;; Twittering-mode
 ;; The library autoloads on (twit) but that's counter-intuitive
 (autoload 'twittering-mode "twittering-mode"
@@ -139,16 +142,12 @@
 
 ;; Html-mode
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
-
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
 ;; json-mode
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
-
 ;; shell-script-mode
 (add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
-
 ;; nginx-mode
 (add-to-list 'auto-mode-alist '("\\.com\\'" . nginx-mode))
 
@@ -531,6 +530,7 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "s-c") 'baboon-copy-file-name)
 (key-chord-define-global "KK" 'kill-this-buffer)
 (key-chord-define-global "FF" 'neotree-find)
+(global-set-key (kbd "C-c . n n") 'neotree-toggle)
 
 
 ;;;init.el ends here
