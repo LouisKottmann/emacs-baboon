@@ -415,6 +415,10 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "~/.emacs.d/personal/init.el"))
 
+(defun baboon-find-git-config-file ()
+  (interactive)
+  (find-file "~/.gitconfig"))
+
 (defun baboon-find-shell-init-file ()
   (interactive)
   (find-file (expand-file-name ".bash_aliases" (getenv "HOME"))))
