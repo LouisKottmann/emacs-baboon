@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         change-inner
+        company-complete
         describe-key-briefly
         easy-kill
         indent-for-tab-command

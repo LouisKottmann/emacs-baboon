@@ -172,6 +172,9 @@
 ;; Replace "sbcl" with the path to your implementation
 (setq inferior-lisp-program "sbcl")
 (require 'slime)
+(condition-case nil
+    (load (expand-file-name "~/quicklisp/clhs-use-local.el") t)
+  (error "Failed to load emacs offline hyperspec (clhs), moving on.."))
 
 ;; Webjump
 (eval-after-load "webjump"
