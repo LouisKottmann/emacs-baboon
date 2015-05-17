@@ -538,6 +538,6 @@ If region is active, apply to active region instead."
 (key-chord-define-global "KK" 'kill-this-buffer)
 (key-chord-define-global "FF" 'neotree-find)
 (global-set-key (kbd "C-c . n n") 'neotree-toggle)
-
+(global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 ;;;init.el ends here
