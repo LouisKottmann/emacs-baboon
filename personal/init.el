@@ -14,7 +14,7 @@
 (load-library "iso-transl")
 
 ;; Fonts
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :family "UbuntuMono" :height 110)
 
 ;; <- Powerline support
 (defvar baboon-mode-line-buffer-count nil)
@@ -150,6 +150,8 @@
 (add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
 ;; nginx-mode
 (add-to-list 'auto-mode-alist '("\\.com\\'" . nginx-mode))
+;; dockerfile-mode
+(add-to-list 'auto-mode-alist '("\\Dockerfile.sh\\'" . dockerfile-mode))
 
 ;; Emacs Multimedia System
 (require 'emms-setup)
@@ -332,6 +334,7 @@
   (remove-hook 'after-save-hook
                'baboon-refresh-firefox
                'local))
+
 ;; too many refreshes with these:
 ;; (add-hook 'html-mode-hook 'auto-reload-firefox-on-after-save-hook)
 ;; (add-hook 'css-mode-hook 'auto-reload-firefox-on-after-save-hook)
