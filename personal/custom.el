@@ -96,7 +96,7 @@
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote arrow))
  '(prelude-guru nil)
- '(recentf-max-saved-items 50)
+ '(recentf-max-saved-items 250)
  '(send-mail-function nil)
  '(smex-history-length 25)
  '(smooth-scroll/vscroll-step-size 3)
