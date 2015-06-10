@@ -55,6 +55,7 @@
     anzu
     auto-highlight-symbol
     browse-kill-ring
+    calfw
     change-inner
     company-inf-ruby
     company-anaconda

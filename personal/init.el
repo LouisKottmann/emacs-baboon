@@ -1,5 +1,13 @@
 ;;; init.el Emacs configuration file for Louis "Baboon" Kottmann
 
+;; Load secret variables
+(let ((secrets-file (expand-file-name
+                     (concat
+                      user-emacs-directory
+                      "/personal/secrets.el"))))
+  (when (file-exists-p secrets-file)
+    (load secrets-file)))
+
 ;; Install missing packages
 (require 'google-translate)
 
@@ -317,6 +325,17 @@
 (defun projectile-helm-ag ()
   (interactive)
   (helm-ag (projectile-project-root)))
+
+;; calfw - CalDav
+(require 'calfw)
+(require 'calfw-ical)
+(when
+    (and
+     (boundp 'ical-username)
+     (boundp 'ical-password))
+  (cfw:open-ical-calendar
+   (concat
+    "https://" ical-username ":" ical-password "@baboon.io/caldav/baboon@baboon.io/calendar.ics/")))
 
 ;; mozrepl goodies
 (defun baboon-refresh-firefox ()
