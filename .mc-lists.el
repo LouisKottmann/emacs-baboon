@@ -10,6 +10,7 @@
         indent-for-tab-command
         kill-rectangle
         prelude-move-beginning-of-line
+        prelude-smart-open-line
         ruby-tools-to-single-quote-string
         smex
         sp--self-insert-command
