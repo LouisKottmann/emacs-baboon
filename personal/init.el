@@ -367,6 +367,9 @@
 (defalias 'isearch-forward 'isearch-forward-regexp)
 (defalias 'isearch-backward 'isearch-backward-regexp)
 
+;; always show whitespace
+(global-whitespace-mode 1)
+
 ;; Custom ELISP
 
 (defun align-regexp-lefty(beg end align-on)
