@@ -479,10 +479,11 @@ to the mode-line of windows that are dedicated"
 (defun baboon-random-buffer ()
   (interactive)
   (switch-to-buffer
-   (eval-expression (quote
-                     (concat "sdf "
-                             (format "%s"
-                                     (random 5000)))) nil)))
+   (eval-expression
+    (quote
+     (concat "sdf "
+             (format "%s" (random 5000))))
+    nil)))
 
 ;; Open file on lilith
 (defun baboon-lilith-tramp ()
@@ -514,6 +515,13 @@ If region is active, apply to active region instead."
   (interactive)
   (message (buffer-file-name))
   (kill-new (file-truename buffer-file-name)))
+
+(defun baboon-open-nautilus ()
+  "Starts nautilus in the current directory"
+  (interactive)
+  (let* ((filename (file-truename buffer-file-name))
+         (scmd (concat "nautilus" " '" filename "'")))
+    (shell-command scmd)))
 
 ;; Smartparens remapping
 (add-hook
@@ -560,6 +568,7 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "s-/") 'ace-swap-window)
 (global-set-key (kbd "s-!") 'ace-delete-window)
 (global-set-key (kbd "s-c") 'baboon-copy-file-name)
+(global-set-key (kbd "s-C") 'baboon-open-nautilus)
 (key-chord-define-global "KK" 'kill-this-buffer)
 (key-chord-define-global "FF" 'neotree-find)
 (global-set-key (kbd "C-c . n n") 'neotree-toggle)
