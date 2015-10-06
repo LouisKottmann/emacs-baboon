@@ -107,6 +107,7 @@
     smooth-scrolling
     solarized-theme
     soundcloud
+    systemd
     tabbar
     twittering-mode
     undo-tree
