@@ -25,4 +25,5 @@ session*
 .smex-items
 tramp
 url
-personal/secrets
+personal/secretsvar
+var

@@ -84,7 +84,7 @@
     helm-ag
     hideshowvis
     highlight-numbers
-    ido-vertical-mode
+    ido-grid-mode
     json-mode
     js2-mode
     magit
@@ -152,6 +152,7 @@ Missing packages are installed automatically."
 ;; run package installation
 (prelude-install-packages)
 
+;; Install custom packages
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/standalone-packages/livedown"))
 (require 'livedown)
 
