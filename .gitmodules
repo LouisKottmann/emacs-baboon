@@ -1,0 +1,6 @@
+[submodule "standalone-packages/ido-grid-mode.el"]
+	path = standalone-packages/ido-grid-mode.el
+	url = git@github.com:larkery/ido-grid-mode.el.git
+[submodule "standalone-packages/livedown"]
+	path = standalone-packages/livedown
+	url = git@github.com:shime/emacs-livedown.git
