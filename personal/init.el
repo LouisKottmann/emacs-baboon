@@ -538,6 +538,9 @@ If region is active, apply to active region instead."
  'prog-mode-hook
  'hideshowvis-minor-mode)
 
+;; Common Lisp additional keybindings
+(define-key lisp-mode-map (kbd "C-h f") 'hyperspec-lookup)
+
 ;; Baboon Keybindings
 (global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "s-<right>") 'enlarge-window-horizontally)
