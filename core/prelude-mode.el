@@ -52,7 +52,7 @@
     (define-key map (kbd "C-M-z") 'prelude-indent-defun)
     (define-key map (kbd "C-c u") 'prelude-view-url)
     (define-key map (kbd "C-c e") 'prelude-eval-and-replace)
-    (define-key map (kbd "C-c s") 'prelude-swap-windows)
+    ;; (define-key map (kbd "C-c s") 'prelude-swap-windows) ace-swap-window has this as default behavior
     (define-key map (kbd "C-c D") 'prelude-delete-file-and-buffer)
     (define-key map (kbd "C-c d") 'prelude-duplicate-current-line-or-region)
     (define-key map (kbd "C-c M-d") 'prelude-duplicate-and-comment-current-line-or-region)

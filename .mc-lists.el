@@ -12,6 +12,7 @@
         prelude-move-beginning-of-line
         prelude-smart-open-line
         ruby-tools-to-single-quote-string
+        sldb-quit
         smex
         sp--self-insert-command
         sp-kill-symbol
