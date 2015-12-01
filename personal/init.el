@@ -302,7 +302,7 @@
 (global-set-key (kbd "<C-tab>") 'company-complete)
 (push 'company-robe company-backends)
 (push 'company-inf-ruby company-backends)
-(slime-setup '(slime-company))
+(slime-setup '(slime-company slime-fancy slime-highlight-edits))
 
 ;; change-innner (kills by default, C-u to copy instead)
 (require 'change-inner)

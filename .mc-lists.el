@@ -13,6 +13,7 @@
         prelude-smart-open-line
         ruby-tools-to-single-quote-string
         sldb-quit
+        slime-autodoc-space
         smex
         sp--self-insert-command
         sp-kill-symbol
