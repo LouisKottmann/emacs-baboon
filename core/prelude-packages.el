@@ -115,6 +115,7 @@
     vline
     volatile-highlights
     w3
+    web-mode
     zygospore)
   "A list of packages to ensure are installed at launch.")
 
