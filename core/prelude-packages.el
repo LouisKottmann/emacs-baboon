@@ -59,6 +59,7 @@
     change-inner
     company-inf-ruby
     company-anaconda
+    company-quickhelp
     coffee-mode
     dash
     diff-hl
