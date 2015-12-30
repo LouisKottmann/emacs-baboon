@@ -509,11 +509,18 @@ If region is active, apply to active region instead."
     (back-to-indentation)))
 
 ;; Put the current filename in clipboard
-(defun baboon-copy-file-name ()
-  "Show the full path file name in the minibuffer."
+(defun baboon-copy-file-path ()
+  "Show the full path file name in the minibuffer and copies it to the clipboard."
   (interactive)
   (message (buffer-file-name))
   (kill-new (file-truename buffer-file-name)))
+
+(defun baboon-copy-file-name ()
+  "Show the file name in the minibuffer and copies it to the clipboard."
+  (interactive)
+  (let ((filename (message (file-name-nondirectory (buffer-file-name)))))
+    (message filename)
+    (kill-new filename)))
 
 (defun baboon-open-nautilus ()
   "Starts nautilus in the current directory"
@@ -569,7 +576,8 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "s-:") 'ace-window)
 (global-set-key (kbd "s-/") 'ace-swap-window)
 (global-set-key (kbd "s-!") 'ace-delete-window)
-(global-set-key (kbd "s-c") 'baboon-copy-file-name)
+(global-set-key (kbd "s-c") 'baboon-copy-file-path)
+(global-set-key (kbd "c-s-c" 'baboon-copy-file-name)
 (global-set-key (kbd "s-C") 'baboon-open-nautilus)
 (key-chord-define-global "KK" 'kill-this-buffer)
 (key-chord-define-global "FF" 'neotree-find)
