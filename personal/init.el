@@ -577,7 +577,7 @@ If region is active, apply to active region instead."
 (global-set-key (kbd "s-/") 'ace-swap-window)
 (global-set-key (kbd "s-!") 'ace-delete-window)
 (global-set-key (kbd "s-c") 'baboon-copy-file-path)
-(global-set-key (kbd "c-s-c" 'baboon-copy-file-name)
+(global-set-key (kbd "C-s-c") 'baboon-copy-file-name)
 (global-set-key (kbd "s-C") 'baboon-open-nautilus)
 (key-chord-define-global "KK" 'kill-this-buffer)
 (key-chord-define-global "FF" 'neotree-find)
