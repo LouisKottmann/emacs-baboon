@@ -160,6 +160,8 @@
 (add-to-list 'auto-mode-alist '("\\.com\\'" . nginx-mode))
 ;; dockerfile-mode
 (add-to-list 'auto-mode-alist '("\\Dockerfile.sh\\'" . dockerfile-mode))
+;; web-mode
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 ;; Emacs Multimedia System
 (require 'emms-setup)

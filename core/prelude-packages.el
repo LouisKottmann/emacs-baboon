@@ -38,7 +38,7 @@
 (setq package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.org/packages/")
+     ("melpa" . "https://melpa.org/packages/")
      ("marmalade" . "http://marmalade-repo.org/packages/"))))
 
 (setq package-user-dir (expand-file-name "elpa" prelude-dir))
@@ -197,7 +197,7 @@ PACKAGE is installed only if not already present.  The file is opened in MODE."
     ("\\.md\\'" markdown-mode markdown-mode)
     ("\\.ml\\'" tuareg tuareg-mode)
     ("\\.pp\\'" puppet-mode puppet-mode)
-    ("\\.php\\'" php-mode php-mode)
+    ("\\.php\\'" web-mode web-mode)
     ("PKGBUILD\\'" pkgbuild-mode pkgbuild-mode)
     ("\\.rs\\'" rust-mode rust-mode)
     ("\\.sass\\'" sass-mode sass-mode)
