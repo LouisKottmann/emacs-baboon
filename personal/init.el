@@ -1,5 +1,14 @@
 ;;; init.el Emacs configuration file for Louis "Baboon" Kottmann
 
+;; Increase GC threshold to 50MB
+(setq gc-cons-threshold 50000000)
+;; Eventually:
+;; (defun my-minibuffer-setup-hook ()
+;;   (setq gc-cons-threshold most-positive-fixnum))
+
+;; (defun my-minibuffer-exit-hook ()
+;;   (setq gc-cons-threshold 50000000))
+
 ;; Load secret variables
 (let ((secrets-file (expand-file-name
                      (concat
