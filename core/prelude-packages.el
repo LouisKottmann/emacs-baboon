@@ -73,6 +73,7 @@
     ewmctrl
     fancy-narrow
     flycheck
+    ggtags
     gist
     git-timemachine
     gitconfig-mode

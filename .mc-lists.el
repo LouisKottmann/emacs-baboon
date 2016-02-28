@@ -12,6 +12,7 @@
         prelude-move-beginning-of-line
         prelude-smart-open-line
         ruby-tools-to-single-quote-string
+        sh-assignment
         sldb-quit
         slime-autodoc-space
         smex
@@ -27,5 +28,6 @@
         js2-mode-show-node
         markdown-exdent-or-delete
         mouse-drag-vertical-line
+        neotree-find
         slime-close-all-parens-in-sexp
         ))
