@@ -48,6 +48,7 @@
  '(erc-pcomplete-mode nil)
  '(erc-port 6667)
  '(erc-reuse-buffers nil)
+ '(ggtags-global-ignore-case t)
  '(global-auto-highlight-symbol-mode t)
  '(global-mark-ring-max 64)
  '(gnus-select-method

@@ -264,6 +264,7 @@
 (add-hook 'python-mode-hook 'eldoc-mode)
 (setq company-backends (delete 'company-ropemacs company-backends))
 (add-to-list 'company-backends 'company-anaconda)
+(add-to-list 'company-backends 'company-shell)
 
 ;; popwin
 ;; (popwin-mode -1)
