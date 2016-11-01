@@ -5,6 +5,7 @@
       '(
         change-inner
         company-complete
+        cycle-spacing
         describe-key-briefly
         easy-kill
         indent-for-tab-command
@@ -19,6 +20,8 @@
         sp--self-insert-command
         sp-kill-symbol
         wdired-finish-edit
+        yaml-electric-backspace
+        yaml-electric-dash-and-dot
         ))
 
 (setq mc/cmds-to-run-once
