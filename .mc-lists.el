@@ -10,6 +10,7 @@
         easy-kill
         indent-for-tab-command
         kill-rectangle
+        kill-region
         prelude-move-beginning-of-line
         prelude-smart-open-line
         ruby-tools-to-single-quote-string
