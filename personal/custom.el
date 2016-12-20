@@ -9,7 +9,7 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
- '(ag-highlight-search t t)
+ '(ag-highlight-search t)
  '(ag-reuse-window t)
  '(ahs-idle-interval 0.5)
  '(ahs-modes
@@ -64,6 +64,7 @@
  '(guide-key/highlight-command-regexp "baboon\\|prelude")
  '(guide-key/popup-window-position (quote bottom))
  '(guide-key/recursive-key-sequence-flag t)
+ '(helm-ag-fuzzy-match t)
  '(ibuffer-default-sorting-mode (quote major-mode))
  '(ibuffer-expert t)
  '(ibuffer-formats

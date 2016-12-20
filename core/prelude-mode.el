@@ -66,7 +66,7 @@
     (define-key map [?\s-d] 'projectile-find-dir)
     (define-key map [?\s-p] 'projectile-switch-project)
     (define-key map [?\s-f] 'projectile-find-file)
-    (define-key map [?\s-g] 'projectile-ag)
+    (define-key map [?\s-g] 'helm-do-ag-project-root)
 
     (define-key map (kbd "s-r") 'prelude-recentf-ido-find-file)
     (define-key map (kbd "s-j") 'prelude-top-join-line)
