@@ -52,6 +52,7 @@
     ace-window
     ag
     anaconda-mode
+    ansible-doc
     anzu
     auto-highlight-symbol
     browse-kill-ring

@@ -9,7 +9,7 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore=TAGS" "--ignore=*.min.js" "--ignore=*.instrumented.js" "--")))
- '(ag-highlight-search t)
+ '(ag-highlight-search t t)
  '(ag-reuse-window t)
  '(ahs-idle-interval 0.5)
  '(ahs-modes
@@ -89,11 +89,18 @@
  '(message-send-mail-function (quote smtpmail-send-it))
  '(neo-auto-indent-point t)
  '(neo-banner-message "")
+ '(neo-force-change-root t)
+ '(neo-mode-line-type (quote none))
  '(neo-persist-show nil)
  '(neo-show-header nil)
- '(neo-theme (quote arrow))
+ '(neo-theme (quote nerd))
+ '(neo-vc-integration (quote (face)))
+ '(neo-window-width 30)
  '(nginx-indent-level 2)
  '(nxml-child-indent 4)
+ '(package-selected-packages
+   (quote
+    (yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-ubiquitous flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree twittering-mode tabbar systemd soundcloud solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode hackernews guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
  '(paradox-date-format "%d-%m-%Y")
  '(paradox-display-download-count t)
  '(paradox-github-token t)
@@ -144,6 +151,7 @@
  '(neo-dir-link-face ((t (:inherit font-lock-function-name-face))))
  '(neo-file-link-face ((t (:inherit font-lock-reference-face))))
  '(neo-header-face ((t (:inherit font-lock-type-face :weight bold))))
+ '(neo-vc-up-to-date-face ((t (:foreground "snow4"))))
  '(powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3"))))
  '(sp-show-pair-match-face ((t (:background "#268BD2" :foreground "white"))))
