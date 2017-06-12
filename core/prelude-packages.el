@@ -97,6 +97,7 @@
     moz
     multiple-cursors
     neotree
+    nginx-mode
     operate-on-number
     powerline
     projectile

@@ -100,7 +100,7 @@
  '(nxml-child-indent 4)
  '(package-selected-packages
    (quote
-    (yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-ubiquitous flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree twittering-mode tabbar systemd soundcloud solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode hackernews guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
+    (ssh-config-mode ansible-doc jinja2-mode yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-ubiquitous flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree twittering-mode tabbar systemd soundcloud solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode hackernews guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
  '(paradox-date-format "%d-%m-%Y")
  '(paradox-display-download-count t)
  '(paradox-github-token t)
@@ -110,6 +110,7 @@
  '(prelude-guru nil)
  '(recentf-max-saved-items 250)
  '(send-mail-function nil)
+ '(sh-indentation 2)
  '(smex-history-length 25)
  '(smooth-scroll/vscroll-step-size 3)
  '(smtpmail-auth-credentials
