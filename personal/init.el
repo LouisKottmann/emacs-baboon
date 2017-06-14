@@ -165,7 +165,8 @@
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 ;; shell-script-mode
 (add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . shell-script-mode))
-(set-variable 'sh-indentation 2 nil)
+(setq sh-basic-offset 4
+      sh-indentation 2)
 ;; nginx-mode
 (add-to-list 'auto-mode-alist '("\\.com\\'" . nginx-mode))
 ;; dockerfile-mode

@@ -89,6 +89,7 @@
     hideshowvis
     highlight-numbers
     ido-grid-mode
+    jinja2-mode
     json-mode
     js2-mode
     magit
