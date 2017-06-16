@@ -65,6 +65,7 @@
  '(guide-key/popup-window-position (quote bottom))
  '(guide-key/recursive-key-sequence-flag t)
  '(helm-ag-fuzzy-match t)
+ '(helm-ag-insert-at-point (quote \'word))
  '(ibuffer-default-sorting-mode (quote major-mode))
  '(ibuffer-expert t)
  '(ibuffer-formats
