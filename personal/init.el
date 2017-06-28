@@ -169,6 +169,7 @@
       sh-indentation 2)
 ;; nginx-mode
 (add-to-list 'auto-mode-alist '("\\.com\\'" . nginx-mode))
+(add-to-list 'auto-mode-alist '("\\.nginx.conf.j2\\'" . nginx-mode))
 ;; dockerfile-mode
 (add-to-list 'auto-mode-alist '("\\Dockerfile.sh\\'" . dockerfile-mode))
 ;; web-mode
@@ -547,6 +548,30 @@ If region is active, apply to active region instead."
   (let* ((filename (file-truename buffer-file-name))
          (scmd (concat "nautilus" " '" filename "'")))
     (shell-command scmd)))
+
+;; Shell fontlock for variables within quotes
+(defun sh-script-extra-font-lock-match-var-in-double-quoted-string (limit)
+  "Search for variables in double-quoted strings."
+  (let (res)
+    (while
+        (and (setq res (progn (if (eq (get-byte) ?$) (backward-char))
+                              (re-search-forward
+                               "[^\\]\\$\\({#?\\)?\\([[:alpha:]_][[:alnum:]_]*\\|[-#?@!]\\|[[:digit:]]+\\)"
+                               limit t)))
+             (not (eq (nth 3 (syntax-ppss)) ?\")))) res))
+
+(defvar sh-script-extra-font-lock-keywords
+  '((sh-script-extra-font-lock-match-var-in-double-quoted-string
+     (2 font-lock-variable-name-face prepend))))
+
+(defun sh-script-extra-font-lock-activate ()
+  (interactive)
+  (font-lock-add-keywords nil sh-script-extra-font-lock-keywords)
+  (if (fboundp 'font-lock-flush)
+      (font-lock-flush)
+    (when font-lock-mode (with-no-warnings (font-lock-fontify-buffer)))))
+
+(add-hook 'sh-mode-hook 'sh-script-extra-font-lock-activate)
 
 ;; Smartparens remapping
 (add-hook
