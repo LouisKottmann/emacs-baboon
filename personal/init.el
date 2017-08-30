@@ -589,6 +589,27 @@ If region is active, apply to active region instead."
  'prog-mode-hook
  'hideshowvis-minor-mode)
 
+;; quake-like shell
+(defun term-here ()
+  "Opens up a new shell in the directory associated with the
+current buffer's file. The term is renamed to match that
+directory to make multiple term windows easier."
+  (interactive)
+  (let* ((parent (if (buffer-file-name)
+                     (file-name-directory (buffer-file-name))
+                   default-directory))
+         (height (/ (window-total-height) 3))
+         (name   (car (last (split-string parent "/" t)))))
+    (split-window-vertically (- height))
+    (other-window 1)
+    (term "/bin/bash")
+    (rename-buffer (concat "*bash: " name "*"))
+
+    (insert (concat "ls"))
+    (eshell-send-input)))
+
+(global-set-key (kbd "C-s-x") 'term-here)
+
 ;; Common Lisp additional keybindings
 (define-key lisp-mode-map (kbd "C-h f") 'hyperspec-lookup)
 

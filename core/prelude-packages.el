@@ -113,6 +113,7 @@
     smooth-scrolling
     solarized-theme
     soundcloud
+    ssh-config-mode
     systemd
     tabbar
     twittering-mode
