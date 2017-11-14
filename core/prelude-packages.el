@@ -113,12 +113,14 @@
     smooth-scrolling
     solarized-theme
     soundcloud
+    sql-indent
     ssh-config-mode
     systemd
     tabbar
     twittering-mode
     undo-tree
     visual-regexp
+    vlf
     vline
     volatile-highlights
     w3

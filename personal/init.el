@@ -509,6 +509,10 @@ to the mode-line of windows that are dedicated"
   (interactive)
   (find-file "/ssh:baboon@baboon.io#10522:/home/baboon"))
 
+;; sql-indent
+(eval-after-load "sql"
+  '(load-library "sql-indent"))
+
 ;; Comment current line/region
 (defun baboon-comment-line-or-region (n)
   "Comment or uncomment current line and leave point after it.
