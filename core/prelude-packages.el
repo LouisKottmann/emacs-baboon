@@ -57,6 +57,7 @@
     auto-highlight-symbol
     browse-kill-ring
     calfw
+    calfw-ical
     change-inner
     company-inf-ruby
     company-anaconda
