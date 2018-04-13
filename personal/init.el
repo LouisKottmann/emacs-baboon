@@ -174,6 +174,8 @@
 (add-to-list 'auto-mode-alist '("\\Dockerfile.sh\\'" . dockerfile-mode))
 ;; web-mode
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+;; yaml
+(add-to-list 'auto-mode-alist '("\\.yml.j2\\'" . yaml-mode))
 
 ;; Emacs Multimedia System
 (require 'emms-setup)
