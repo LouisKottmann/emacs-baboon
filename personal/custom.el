@@ -109,6 +109,7 @@
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
  '(powerline-default-separator (quote arrow))
  '(prelude-guru nil)
+ '(python-shell-virtualenv-root "/home/louis/virtualenv/ansible")
  '(recentf-max-saved-items 250)
  '(send-mail-function nil)
  '(sh-indentation 2)
