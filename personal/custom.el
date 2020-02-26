@@ -15,6 +15,7 @@
  '(ahs-modes
    (quote
     (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode js2-mode web-mode lisp-mode)))
+ '(ansible-vault-pass-file "/home/louis/.effilab_vault_pass.txt")
  '(company-idle-delay 0.5)
  '(company-quickhelp-delay 0)
  '(company-quickhelp-mode t)
@@ -65,7 +66,9 @@
  '(guide-key/popup-window-position (quote bottom))
  '(guide-key/recursive-key-sequence-flag t)
  '(helm-ag-fuzzy-match t)
- '(helm-ag-insert-at-point (quote \'word))
+ '(helm-ag-insert-at-point (quote \'symbol) t)
+ '(helm-ag-use-agignore t)
+ '(helm-ag-use-temp-buffer t)
  '(ibuffer-default-sorting-mode (quote major-mode))
  '(ibuffer-expert t)
  '(ibuffer-formats
@@ -101,7 +104,7 @@
  '(nxml-child-indent 4)
  '(package-selected-packages
    (quote
-    (syslog-mode sql-indent helm-swoop vlf company-ansible ssh-config-mode ansible-doc jinja2-mode yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-ubiquitous flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree twittering-mode tabbar systemd soundcloud solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode hackernews guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
+    (yascroll ansible-vault go-mode syslog-mode sql-indent helm-swoop vlf company-ansible ssh-config-mode ansible-doc jinja2-mode yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-ubiquitous flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree twittering-mode tabbar systemd soundcloud solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode hackernews guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
  '(paradox-date-format "%d-%m-%Y")
  '(paradox-display-download-count t)
  '(paradox-github-token t)
@@ -139,7 +142,8 @@
  '(tabbar-separator (quote (0.5)))
  '(tabbar-use-images nil)
  '(user-mail-address "louis.kottmann@gmail.com")
- '(whitespace-line-column 90))
+ '(whitespace-line-column 90)
+ '(yascroll:delay-to-hide 3))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -163,4 +167,6 @@
  '(tabbar-selected ((t (:background "#5A768B" :foreground "#FDF6E3" :box (:line-width -1 :style pressed-button)))))
  '(tabbar-separator ((t (:inherit tabbar-default :height 0.1))))
  '(tabbar-unselected ((t (:background "#FDF6E3" :foreground "#5A768B" :box (:line-width -1 :style released-button)))))
- '(vline ((t (:background "#EEE8D5")))))
+ '(vline ((t (:background "#EEE8D5"))))
+ '(yascroll:thumb-fringe ((t (:background "#268BD2" :foreground "#268BD2"))))
+ '(yascroll:thumb-text-area ((t (:background "#CB8E06" :foreground "#CB8E06")))))

@@ -338,6 +338,10 @@
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 
 ;; helm-ag
+(setq helm-ag-insert-at-point 'symbol)
+;;(setq helm-ag-command-option "-ai --hidden ")
+(setq helm-ag-command-option "-i --hidden ")
+
 (defun projectile-helm-ag ()
   (interactive)
   (helm-ag (projectile-project-root)))
@@ -352,6 +356,9 @@
   (cfw:open-ical-calendar
    (concat
     "https://" ical-username ":" ical-password "@baboon.io/caldav/baboon@baboon.io/calendar.ics/")))
+
+(require 'yascroll)
+(global-yascroll-bar-mode)
 
 ;; mozrepl goodies
 (defun baboon-refresh-firefox ()

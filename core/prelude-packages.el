@@ -37,9 +37,8 @@
 
 (setq package-archives
    (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/")
-     ("marmalade" . "http://marmalade-repo.org/packages/"))))
+    (("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/"))))
 
 (setq package-user-dir (expand-file-name "elpa" prelude-dir))
 (package-initialize)

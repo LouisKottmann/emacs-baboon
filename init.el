@@ -97,9 +97,8 @@ by Prelude.")
 ;; set package archives
 (setq package-archives
       (quote
-       (("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/"))))
+       (("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/"))))
 
 ;; preload the personal settings from `prelude-personal-preload-dir'
 (when (file-exists-p prelude-personal-preload-dir)
