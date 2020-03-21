@@ -83,7 +83,6 @@
     google-translate
     grizzl
     guide-key
-    hackernews
     haml-mode
     helm-ag
     hideshowvis
@@ -117,7 +116,6 @@
     ssh-config-mode
     systemd
     tabbar
-    twittering-mode
     undo-tree
     visual-regexp
     vlf

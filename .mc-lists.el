@@ -12,6 +12,7 @@
         kill-rectangle
         kill-region
         markdown-cycle
+        markdown-outdent-or-delete
         prelude-move-beginning-of-line
         prelude-smart-open-line
         ruby-tools-to-single-quote-string

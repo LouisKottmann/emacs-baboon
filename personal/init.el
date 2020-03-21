@@ -147,16 +147,6 @@
 ;; Enable unusual commands
 (put 'set-goal-column 'disabled nil)
 
-;; Twittering-mode
-;; The library autoloads on (twit) but that's counter-intuitive
-(autoload 'twittering-mode "twittering-mode"
-  "loads twittering-mode, just like twit"
-  t nil)
-(setq twittering-username "louiskottmann")
-(setq twittering-use-master-password t)
-(setq twittering-icon-mode t)
-(setq twittering-use-icon-storage t)
-
 ;; Html-mode
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 ;; js2-mode
@@ -176,22 +166,6 @@
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 ;; yaml
 (add-to-list 'auto-mode-alist '("\\.yml.j2\\'" . yaml-mode))
-
-;; Emacs Multimedia System
-(require 'emms-setup)
-(emms-devel)
-(setq emms-source-file-default-directory "/media/trinasse/partage/Musique/")
-(add-hook 'emms-player-started-hook 'emms-show)
-(emms-mode-line-disable)
-;; MPD config
-(require 'emms-player-mpd)
-(setq emms-player-mpd-server-name "localhost")
-(setq emms-player-mpd-server-port "6600")
-(add-to-list 'emms-info-functions 'emms-info-mpd)
-(add-to-list 'emms-player-list 'emms-player-mpd) ;; Top of players list
-(condition-case nil
-    (emms-player-mpd-connect)
-  (error "Failed to connect to MPD, moving on.."))
 
 ;; SLIME
 (load (expand-file-name "~/quicklisp/slime-helper.el"))

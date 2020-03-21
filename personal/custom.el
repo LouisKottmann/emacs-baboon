@@ -39,8 +39,6 @@
         (help-echo "Mouse-2 toggles maximizing, mouse-3 displays a popup-menu"))
       "hut"))))
  '(ecb-windows-width 0.15)
- '(emms-mode-line-mode-line-function nil)
- '(emms-stream-repeat-p t)
  '(erc-autojoin-mode t)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-modules
@@ -104,7 +102,7 @@
  '(nxml-child-indent 4)
  '(package-selected-packages
    (quote
-    (yascroll ansible-vault go-mode syslog-mode sql-indent helm-swoop vlf company-ansible ssh-config-mode ansible-doc jinja2-mode yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-ubiquitous flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree twittering-mode tabbar systemd soundcloud solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode hackernews guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
+    (yascroll ansible-vault go-mode syslog-mode sql-indent helm-swoop csv-mode vlf company-ansible ssh-config-mode ansible-doc jinja2-mode yaml-mode scss-mode yari ruby-tools rainbow-delimiters guru-mode key-chord smex ido-completing-read+ flx-ido zygospore web-mode w3 volatile-highlights vline visual-regexp undo-tree tabbar systemd solarized-theme smooth-scrolling smartscan smartrep smartparens slime-company robe rbenv rainbow-mode projectile-rails powerline operate-on-number neotree multiple-cursors moz move-text markdown-mode magit json-mode js2-mode ido-grid-mode highlight-numbers hideshowvis helm-ag haml-mode guide-key grizzl google-translate gitignore-mode gitconfig-mode git-timemachine gist ggtags flycheck fancy-narrow ewmctrl erc-image elisp-slime-nav easy-kill dockerfile-mode discover-my-major diff-hl company-shell company-quickhelp company-inf-ruby company-anaconda coffee-mode change-inner calfw browse-kill-ring auto-highlight-symbol anzu ag ace-window ace-jump-mode ace-jump-buffer)))
  '(paradox-date-format "%d-%m-%Y")
  '(paradox-display-download-count t)
  '(paradox-github-token t)
@@ -118,13 +116,6 @@
  '(sh-indentation 2)
  '(smex-history-length 25)
  '(smooth-scroll/vscroll-step-size 3)
- '(smtpmail-auth-credentials
-   (quote
-    (("smtp.gmail.com" 587 "louis.kottmann@gmail.com" nil))))
- '(smtpmail-default-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-service 587)
- '(smtpmail-starttls-credentials (quote (("smtp.gmail.com" 587 nil nil))))
  '(sp-autodelete-closing-pair nil)
  '(sp-autodelete-opening-pair nil)
  '(sp-autodelete-pair nil)
@@ -153,7 +144,6 @@
  '(ag-match-face ((t (:inherit baboon-main-color))))
  '(fringe ((t (:background "#fdf6e3"))))
  '(git-timemachine-minibuffer-detail-face ((t (:foreground "firebrick"))))
- '(hackernews-link-face ((t (:inherit font-lock-function-name-face))))
  '(highlight-numbers-number ((t (:inherit baboon-main-color))))
  '(neo-dir-link-face ((t (:inherit font-lock-function-name-face))))
  '(neo-file-link-face ((t (:inherit font-lock-reference-face))))
