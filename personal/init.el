@@ -33,7 +33,7 @@
 ;; Fonts
 (set-face-attribute 'default nil :family "UbuntuMono" :height 110)
 
-;; <- Powerline support
+;; Line counter
 (defvar baboon-mode-line-buffer-count nil)
 (make-variable-buffer-local 'baboon-mode-line-buffer-count)
 
@@ -55,6 +55,7 @@
 (add-hook 'focus-in-hook 'baboon-current-buffer-changed)
 (add-hook 'focus-out-hook 'baboon-current-buffer-changed)
 
+;; <- Powerline support
 ;;;###autoload
 (defun powerline-baboon-theme ()
   "Setup the default mode-line."
