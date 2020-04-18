@@ -106,4 +106,5 @@
   (gsetq rbenv-modeline-function 'rbenv--modeline-plain)
   :config
   (global-rbenv-mode)
+  (rbenv-use-corresponding)
   :hook (ruby-mode . rbenv-mode))
