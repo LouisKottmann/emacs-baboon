@@ -380,3 +380,12 @@
                           ;; (agenda . 5)
                           ;; (registers . 5)
                           (projects . 5))))
+
+(use-package iedit)
+
+(use-package undo-tree
+  :init
+  (gsetq undo-tree-visualizer-timestamps t
+        undo-tree-visualizer-diff t)
+  :config
+  (global-undo-tree-mode 1))
