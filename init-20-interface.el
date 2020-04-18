@@ -172,6 +172,7 @@
   (ag-reuse-window t))
 
 (use-package helm
+  :demand t
   :init
   ;; Changes the helm prefix key
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -194,7 +195,7 @@
          helm-ff-lynx-style-map                t
          helm-bookmark-show-location           t)
   :bind (("s-b" . helm-mini)
-         ("M-x" . helm-M-x))
+         ("s-r" . helm-recentf))
   :config
   (require 'helm-files)
   (require 'helm-config)) ; Necessary for helm-mode
@@ -210,6 +211,7 @@
 ;; (use-package helm-swoop)
 
 (use-package projectile
+  :after helm
   :config
   (setq projectile-cache-file (expand-file-name  "projectile.cache" baboon-savefile-dir))
   (projectile-global-mode t)

@@ -68,3 +68,5 @@
 (use-package yaml-mode)
 
 (use-package toml-mode)
+
+(use-package systemd)
