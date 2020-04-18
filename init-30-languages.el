@@ -2,9 +2,12 @@
 
 (use-package company
   :init (global-company-mode)
-  :config (setq company-minimum-prefix-length 1
-                company-idle-delay 0.0)
-  :bind ("C-<tab>" . company-complete))
+  :config
+  (gsetq company-minimum-prefix-length 1
+         company-idle-delay 0.0)
+  :bind (("C-<tab>" . company-complete)
+         (:map company-active-map
+              ("C-o" . company-other-backend))))
 
 (use-package which-key
   :config
@@ -12,6 +15,7 @@
 
 ;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
 (use-package lsp-mode
+  :demand t
   :init
   (setq lsp-keymap-prefix "C-S-l")
   (gsetq lsp-log-io                       "*debug*"
@@ -28,14 +32,14 @@
          lsp-enable-on-type-formatting    t
          lsp-signature-auto-activate      t
          lsp-enable-semantic-highlighting t)
-  :hook ((ruby-mode . lsp)
-         (shell-script-mode . lsp)
+  :hook ((shell-script-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp
   :config
   (setq lsp-session-file (expand-file-name "lsp-session-v1" baboon-savefile-dir)))
 
-(use-package lsp-ui :commands lsp-ui-mode)
+(use-package lsp-ui
+  :commands lsp-ui-mode)
 
 (use-package company-lsp
   :commands company-lsp
@@ -55,7 +59,35 @@
   (gsetq company-lsp-async               t
          company-lsp-enable-recompletion t
          company-lsp-enable-snippet      t
-         company-lsp-cache-candidates    'auto))
+         company-lsp-cache-candidates    'auto)
+  :config
+  (gsetq-default company-backends
+                 '((company-lsp
+                    company-files          ; files & directory
+                    company-keywords       ; keywords
+                    company-yasnippet)
+                   (company-abbrev company-dabbrev))))
+
+(use-package yasnippet
+  :preface
+  (defvar baboon-snippets-dir (expand-file-name "snippets" baboon-dir)
+    "This folder stores yasnippets")
+  :init
+  (unless (file-exists-p baboon-snippets-dir)
+    (make-directory baboon-snippets-dir))
+  :bind (:map yas-minor-mode-map
+              ("C-'" . yas-expand))
+  :commands (yas-minor-mode)
+  :hook ((prog-mode      . yas-minor-mode)
+         (yas-minor-mode . (lambda ()
+                             (add-to-list
+                              'yas-snippet-dirs
+                              baboon-snippets-dir))))
+  :config
+  (yas-reload-all))
+
+(use-package yasnippet-snippets
+  :after yasnippets)
 
 (use-package markdown-mode
   :mode (("README\\.md\\'" . gfm-mode)
@@ -93,7 +125,9 @@
          "Appraisals\\'")
   :interpreter "ruby"
   :config
-  (add-hook 'ruby-mode-hook #'subword-mode))
+  (add-hook 'ruby-mode-hook #'subword-mode)
+  :hook
+  (ruby-mode . lsp))
 
 (use-package ruby-tools
   :hook (ruby-mode . ruby-tools-mode)
