@@ -1,11 +1,5 @@
 ;;; init-20-interface.el --- Interface customizations
 
-(use-package super-save
-  :init
-  (setq auto-save-default nil)
-  :config
-  (super-save-mode +1))
-
 ;; don't use tabs to indent
 (setq-default indent-tabs-mode nil)
 ;; but maintain correct appearance
@@ -26,34 +20,43 @@
 ;; smart tab behavior - indent or complete
 (setq tab-always-indent 'complete)
 
+(use-package super-save
+  :init
+  (setq auto-save-default nil)
+  :config
+  (super-save-mode +1))
+
 ;; savehist keeps track of some history
-(require 'savehist)
-(setq savehist-additional-variables
-      ;; search entries
-      '(search ring regexp-search-ring)
-      ;; save every minute
-      savehist-autosave-interval 60
-      ;; keep the home clean
-      savehist-file (expand-file-name "savehist" baboon-savefile-dir))
-(savehist-mode +1)
+(use-package savehist
+  :demand t
+  :init
+  (gsetq savehist-additional-variables '(search ring regexp-search-ring) ;; search entries
+        savehist-autosave-interval 60                                    ;; save every minute
+        savehist-file (expand-file-name "savehist" baboon-savefile-dir)) ;; keep the home clean
+  :config
+  (savehist-mode +1))
 
 ;; flyspell-mode does spell-checking on the fly as you type
-(require 'flyspell)
-(setq ispell-program-name "aspell" ; use aspell instead of ispell
-      ispell-extra-args '("--sug-mode=ultra"))
-(flyspell-mode +1)
+(use-package flyspell
+  :demand t
+  :init
+  (gsetq ispell-program-name "aspell" ; use aspell instead of ispell
+         ispell-extra-args '("--sug-mode=ultra"))
+  (flyspell-mode +1))
 
 ;;
-(require 'ido)
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point 'guess
-      ido-max-prospects 10
-      ido-save-directory-list-file (expand-file-name "ido.hist" baboon-savefile-dir)
-      ido-default-file-method 'selected-window
-      ido-auto-merge-work-directories-length -1)
-(ido-mode +1)
+(use-package ido
+  :demand t
+  :init
+  (setq ido-enable-prefix nil
+        ido-enable-flex-matching t
+        ido-create-new-buffer 'always
+        ido-use-filename-at-point 'guess
+        ido-max-prospects 10
+        ido-save-directory-list-file (expand-file-name "ido.hist" baboon-savefile-dir)
+        ido-default-file-method 'selected-window
+        ido-auto-merge-work-directories-length -1)
+  (ido-mode +1))
 
 (use-package ido-completing-read+
   :demand t
@@ -75,9 +78,8 @@
   :demand t
   :custom
   (smex-history-length 25)
-  :config
-  (setq smex-save-file (expand-file-name ".smex-items" baboon-savefile-dir))
   :init
+  (setq smex-save-file (expand-file-name ".smex-items" baboon-savefile-dir))
   (smex-initialize)
   :bind (("M-x" . smex)
          ("M-X" . smex-major-mode-commands)))
