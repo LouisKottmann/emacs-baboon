@@ -70,3 +70,38 @@
 (use-package toml-mode)
 
 (use-package systemd)
+
+(use-package ruby-mode
+  :mode ("\\.rake\\'"
+         "Rakefile\\'"
+         "\\.gemspec\\'"
+         "\\.ru\\'"
+         "Gemfile\\'"
+         "Guardfile\\'"
+         "Capfile\\'"
+         "\\.cap\\'"
+         "\\.thor\\'"
+         "\\.rabl\\'"
+         "Thorfile\\'"
+         "Vagrantfile\\'"
+         "\\.jbuilder\\'"
+         "Podfile\\'"
+         "\\.podspec\\'"
+         "Puppetfile\\'"
+         "Berksfile\\'"
+         "Appraisals\\'")
+  :interpreter "ruby"
+  :config
+  (add-hook 'ruby-mode-hook #'subword-mode))
+
+(use-package ruby-tools
+  :hook (ruby-mode . ruby-tools-mode)
+  :bind (:map ruby-tools-mode-map
+              ("C-;" . iedit-mode)))
+
+(use-package rbenv
+  :ensure t
+  :defer t
+  :config
+  (global-rbenv-mode)
+  (rbenv-use-corresponding))
