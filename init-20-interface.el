@@ -343,3 +343,20 @@
   :bind ("s-m" . magit-status))
 
 (use-package git-timemachine)
+
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
+        dashboard-center-content t
+        dashboard-show-shortcuts t
+        dashboard-set-heading-icons t
+        dashboard-set-file-icons t
+        dashboard-set-init-info t
+        dashboard-set-navigator t
+        dashboard-startup-banner 'logo
+        dashboard-items '((recents  . 5)
+                          (bookmarks . 5)
+                          ;; (agenda . 5)
+                          ;; (registers . 5)
+                          (projects . 5))))
