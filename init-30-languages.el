@@ -12,17 +12,50 @@
 
 ;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
 (use-package lsp-mode
-  :init (setq lsp-keymap-prefix "C-S-l")
+  :init
+  (setq lsp-keymap-prefix "C-S-l")
+  (gsetq lsp-log-io                       "*debug*"
+         lsp-print-performance            "*debug*"
+         lsp-inhibit-message              t
+         lsp-report-if-no-buffer          "*debug*"
+         lsp-enable-snippet               t
+         lsp-restart                      'interactive
+         lsp-document-sync-method         nil
+         lsp-eldoc-render-all             t
+         lsp-enable-xref                  t
+         lsp-enable-indentation           t
+         lsp-prefer-flymake               nil
+         lsp-enable-on-type-formatting    t
+         lsp-signature-auto-activate      t
+         lsp-enable-semantic-highlighting t)
   :hook ((ruby-mode . lsp)
          (shell-script-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp
   :config
-  (setq lsp-prefer-capf t)
   (setq lsp-session-file (expand-file-name "lsp-session-v1" baboon-savefile-dir)))
 
 (use-package lsp-ui :commands lsp-ui-mode)
-(use-package company-lsp :commands company-lsp)
+
+(use-package company-lsp
+  :commands company-lsp
+  :after company
+  :preface
+  (defun company-lsp-init-h ()
+    "Make sure that `company-capf' is disabled since it is incompatible with
+`company-lsp' (see lsp-mode#884)."
+    (if (not (bound-and-true-p company-mode))
+        (add-hook 'company-mode-hook #'company-lsp-init-h t t)
+      (setq-local company-backends
+                  (cons 'company-lsp
+                        (remq 'company-capf company-backends)))
+      (remove-hook 'company-mode-hook #'company-lsp-init-h t)))
+  :hook ((lsp-mode . company-lsp-init-h))
+  :init
+  (gsetq company-lsp-async               t
+         company-lsp-enable-recompletion t
+         company-lsp-enable-snippet      t
+         company-lsp-cache-candidates    'auto))
 
 (use-package markdown-mode
   :mode (("README\\.md\\'" . gfm-mode)

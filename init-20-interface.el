@@ -82,7 +82,8 @@
   :bind (("M-x" . smex)
          ("M-X" . smex-major-mode-commands)))
 
-(use-package all-the-icons)
+(use-package all-the-icons
+  :init (gsetq inhibit-compacting-font-caches t))
 
 (use-package neotree
   :after all-the-icons
@@ -132,8 +133,10 @@
 
 ;; make the fringe (gutter) smaller
 ;; the argument is a width in pixels (the default is 8)
-(if (fboundp 'fringe-mode)
-    (fringe-mode 4))
+(when (fboundp 'fringe-mode)
+  (fringe-mode '(8 . 0)))
+
+(setq-default indicate-buffer-boundaries 'left)
 
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -262,17 +265,16 @@
 (use-package rainbow-blocks)
 
 ;; whitespace-mode
-;;
-;; make characters after column 100 purple
-(setq whitespace-line-column 100) ;; limit line length
-(setq whitespace-style '(face tabs empty trailing lines-tail))
-
-(global-whitespace-mode +1)
-
-;; makefile-mode adjustments
-(add-hook 'makefile-mode-hook
-          (lambda ()
-            (whitespace-mode 0)))
+(use-package whitespace
+  :init
+  (setq whitespace-action '(auto-cleanup)
+        whitespace-line-column 100 ;; make characters after column 100 purple
+        whitespace-style '(face tabs empty trailing lines-tail))
+  :config
+  (global-whitespace-mode +1)
+  :hook
+  ;; makefile requires tab to work
+  (makefile-mode . (lambda () (whitespace-mode 0))))
 
 (use-package visual-regexp
   :config
@@ -284,9 +286,6 @@
 (use-package auto-highlight-symbol
   :custom
   (global-auto-highlight-symbol-mode t))
-
-(fringe-mode '(8 . 0))
-(setq-default indicate-buffer-boundaries 'left)
 
 (use-package diff-hl
   :demand t
