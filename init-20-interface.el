@@ -77,12 +77,11 @@
 (use-package smex
   :demand t
   :custom
-  (smex-history-length 25)
+  (smex-history-length 35)
   :init
   (setq smex-save-file (expand-file-name ".smex-items" baboon-savefile-dir))
   (smex-initialize)
-  :bind (("M-x" . smex)
-         ("M-X" . smex-major-mode-commands)))
+  :bind (("M-X" . smex-major-mode-commands)))
 
 (use-package all-the-icons
   :init (gsetq inhibit-compacting-font-caches t))
@@ -177,16 +176,28 @@
   ;; Changes the helm prefix key
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
   (global-unset-key (kbd "C-x c"))
+  ;;
+  (gsetq helm-split-window-in-side-p           t
+         helm-move-to-line-cycle-in-source     t
+         helm-ff-search-library-in-sexp        t
+         helm-scroll-amount                    8
+         helm-M-x-fuzzy-match                  t
+         helm-ff-file-name-history-use-recentf t
+         helm-buffers-fuzzy-matching           t
+         helm-recentf-fuzzy-match              t
+         helm-imenu-fuzzy-match                t
+         helm-locate-fuzzy-match               t
+         helm-apropos-fuzzy-match              t
+         helm-lisp-fuzzy-completion            t
+         helm-allow-mouse                      t
+         helm-follow-mode-persistent           t
+         helm-ff-lynx-style-map                t
+         helm-bookmark-show-location           t)
+  :bind (("s-b" . helm-mini)
+         ("M-x" . helm-M-x))
   :config
-  (require 'helm)
   (require 'helm-files)
-  (require 'helm-config) ; Necessary for helm-mode
-  (setq helm-split-window-in-side-p           t
-        helm-move-to-line-cycle-in-source     t
-        helm-ff-search-library-in-sexp        t
-        helm-scroll-amount                    8
-        helm-M-x-fuzzy-match                  t
-        helm-ff-file-name-history-use-recentf t))
+  (require 'helm-config)) ; Necessary for helm-mode
 
 (use-package helm-ag
   :bind ("s-g" . helm-do-ag-project-root)
@@ -206,7 +217,13 @@
   (projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" baboon-savefile-dir)))
 
 (use-package helm-projectile
+  :after helm
+  :commands (helm-projectile-find-file
+             helm-projectile-recentf
+             helm-projectile-switch-project
+             helm-projectile-switch-to-buffer)
   :init
+  (helm-projectile-on)
   (gsetq projectile-completion-system 'helm)
   :bind ("s-f" . helm-projectile-find-file))
 

@@ -3,7 +3,6 @@
 (windmove-default-keybindings)
 
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
-(global-set-key (kbd "s-b") 'helm-buffers-list)
 (global-set-key (kbd "M-o") 'other-window)
 
 ;;
