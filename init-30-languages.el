@@ -31,3 +31,7 @@
   :init (setq markdown-command "pandoc"))
 
 (use-package dockerfile-mode)
+
+(use-package yaml-mode)
+
+(use-package toml-mode)
