@@ -81,7 +81,8 @@
   :init
   (setq smex-save-file (expand-file-name ".smex-items" baboon-savefile-dir))
   (smex-initialize)
-  :bind (("M-X" . smex-major-mode-commands)))
+  :bind (("M-X" . smex-major-mode-commands)
+         ("M-x" . smex)))
 
 (use-package all-the-icons
   :init (gsetq inhibit-compacting-font-caches t))
