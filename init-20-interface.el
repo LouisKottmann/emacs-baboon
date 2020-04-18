@@ -21,8 +21,7 @@
 (setq tab-always-indent 'complete)
 
 (use-package super-save
-  :init
-  (setq auto-save-default nil)
+  :demand t
   :config
   (super-save-mode +1))
 

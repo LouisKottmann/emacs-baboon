@@ -76,6 +76,7 @@
          "Rakefile\\'"
          "\\.gemspec\\'"
          "\\.ru\\'"
+         "\\.rb\\'"
          "Gemfile\\'"
          "Guardfile\\'"
          "Capfile\\'"
@@ -101,6 +102,8 @@
 
 (use-package rbenv
   :commands global-rbenv-mode
+  :init
+  (gsetq rbenv-modeline-function 'rbenv--modeline-plain)
   :config
   (global-rbenv-mode)
-  (rbenv-use-corresponding))
+  :hook (ruby-mode . rbenv-mode))
