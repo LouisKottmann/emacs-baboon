@@ -348,6 +348,8 @@
    ("s-/" . ace-swap-window)))
 
 (use-package flycheck
+  :init
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   :hook (after-init . global-flycheck-mode))
 
 (use-package vlf
@@ -386,6 +388,10 @@
 (use-package undo-tree
   :init
   (gsetq undo-tree-visualizer-timestamps t
-        undo-tree-visualizer-diff t)
+         undo-tree-visualizer-diff t)
+  :chords ("UU" . undo-tree-visualize)
   :config
   (global-undo-tree-mode 1))
+
+(use-package browse-kill-ring
+  :chords ("YY" . browse-kill-ring))
