@@ -91,3 +91,7 @@
   (load-file x))
 
 ;; TODO: prelude-editor.el
+
+;; We don't load custom-file, we just use it to get the syntax and then copy to the correct use-package definition
+;; (when (file-exists-p custom-file)
+;;   (load custom-file))

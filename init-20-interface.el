@@ -295,12 +295,9 @@
   :hook
   (dired-mode . diff-hl-dired-mode)
   :custom-face
-  (diff-hl-margin-insert ((t (:background "forest green" :foreground "forest green"))))
-  (diff-hl-margin-ignored ((t (:background "forest green" :foreground "forest green"))))
-  (diff-hl-margin-unknown ((t (:background "forest green" :foreground "forest green"))))
-  (diff-hl-margin-change ((t (:background "forest green" :foreground "forest green")))))
-
-;; (neo-vc-up-to-date-face ((t (:foreground "snow4"))))
+  (diff-hl-change ((t (:background "deep sky blue" :foreground "deep sky blue"))))
+  (diff-hl-insert ((t (:background "lime green" :foreground "lime green"))))
+  (diff-hl-delete ((t (:background "#a33c35" :foreground "#a33c35")))))
 
 (use-package easy-kill
   :bind
