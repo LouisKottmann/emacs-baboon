@@ -100,8 +100,7 @@
               ("C-;" . iedit-mode)))
 
 (use-package rbenv
-  :ensure t
-  :defer t
+  :commands global-rbenv-mode
   :config
   (global-rbenv-mode)
   (rbenv-use-corresponding))
