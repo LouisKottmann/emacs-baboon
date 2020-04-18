@@ -332,9 +332,9 @@
    (concat
     "https://" ical-username ":" ical-password "@baboon.io/caldav/baboon@baboon.io/calendar.ics/")))
 
-(if (package-installed-p 'yascroll)
-    ((require 'yascroll)
-     (global-yascroll-bar-mode)))
+(when (package-installed-p 'yascroll)
+  (require 'yascroll)
+  (global-yascroll-bar-mode))
 
 ;; mozrepl goodies
 (defun baboon-refresh-firefox ()

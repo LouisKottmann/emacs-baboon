@@ -108,13 +108,13 @@
  '(paradox-github-token t)
  '(paradox-lines-per-entry 2)
  '(pe/omit-regex "^\\.\\|^#\\|~$\\|\\.pyc\\|\\.pyo")
- '(powerline-default-separator (quote arrow))
+ '(powerline-default-separator (quote arrow)) ;; dealt
  '(prelude-guru nil)
  '(python-shell-virtualenv-root "/home/louis/virtualenv/ansible")
  '(recentf-max-saved-items 250)
  '(send-mail-function nil)
  '(sh-indentation 2)
- '(smex-history-length 25)
+ '(smex-history-length 25) ;; dealt
  '(smooth-scroll/vscroll-step-size 3)
  '(sp-autodelete-closing-pair nil)
  '(sp-autodelete-opening-pair nil)
@@ -149,8 +149,8 @@
  '(neo-file-link-face ((t (:inherit font-lock-reference-face))))
  '(neo-header-face ((t (:inherit font-lock-type-face :weight bold))))
  '(neo-vc-up-to-date-face ((t (:foreground "snow4"))))
- '(powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F"))))
- '(powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3"))))
+ '(powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F")))) ;; dealt
+ '(powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3")))) ;; dealt
  '(sp-show-pair-match-face ((t (:background "#268BD2" :foreground "white"))))
  '(tabbar-button ((t (:background "#5A768B" :foreground "#FDF6E3"))))
  '(tabbar-default ((t (:inherit variable-pitch :background "#EEE8D5" :foreground "#EEE8D5" :height 0.8))))
