@@ -5,8 +5,8 @@
 (setq load-prefer-newer t)
 
 ;; User Info
-(setq user-full-name "Gregory Stein")
-(setq user-mail-address "gregory.j.stein@gmail.com")
+(setq user-full-name "Louis Kottmann")
+(setq user-mail-address "louis.kottmann@baboon.io")
 
 ;; Increase GC threshold to 50MB
 (setq gc-cons-threshold 50000000)
