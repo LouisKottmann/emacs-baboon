@@ -6,7 +6,7 @@
              (interactive)
              (message "settings baboon backends again")
              (gsetq company-backends '((company-lsp company-keywords company-yasnippet company-files)
-                                       company-dabbrev)))
+                                       (company-tabnine company-dabbrev))))
   :init
   (gsetq company-minimum-prefix-length 1
          company-idle-delay 0.0
@@ -19,6 +19,15 @@
                ("C-o" . company-other-backend)
                ("C-n" . company-select-next)
                ("C-p" . company-select-previous))))
+
+(use-package company-tabnine
+  :custom
+  (company-tabnine-auto-balance nil)
+  (company-tabnine-auto-fallback nil))
+
+(use-package company-flx
+  :config
+  (company-flx-mode +1))
 
 (use-package company-quickhelp
   :after company
