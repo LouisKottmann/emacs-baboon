@@ -24,8 +24,7 @@
   :after company
   :init
   (gsetq company-quickhelp-delay 0.3
-         ;; company-quickhelp-color-background "#FFF08A"
-         )
+         company-quickhelp-color-background "#fdf6e3")
   :config (company-quickhelp-mode t))
 
 ;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
