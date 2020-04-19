@@ -1,5 +1,8 @@
 ;;; init-15-global-keybinds.el --- Global Keybindings
 
+;; A lot of these come from emacs-prelude by bbatsov
+;; I renamed them with a baboon- to find them more easily
+
 (windmove-default-keybindings)
 
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
@@ -16,7 +19,7 @@
 (global-set-key (kbd "C-c F") 'baboon-flush-lines)
 
 ;;
-(defun prelude-smart-open-line-above ()
+(defun baboon-smart-open-line-above ()
   "Insert an empty line above the current line.
 Position the cursor at it's beginning, according to the current mode."
   (interactive)
@@ -25,31 +28,31 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
-(global-set-key (kbd "C-S-<return>") 'prelude-smart-open-line-above)
+(global-set-key (kbd "C-S-<return>") 'baboon-smart-open-line-above)
 
 ;;
-(defun prelude-smart-open-line (arg)
+(defun baboon-smart-open-line (arg)
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode.
 
 With a prefix ARG open line above the current line."
   (interactive "P")
   (if arg
-      (prelude-smart-open-line-above)
+      (baboon-smart-open-line-above)
     (progn
       (move-end-of-line nil)
       (newline-and-indent))))
 
-(global-set-key (kbd "S-<return>") 'prelude-smart-open-line)
+(global-set-key (kbd "S-<return>") 'baboon-smart-open-line)
 
 ;;
-(defun prelude-top-join-line ()
+(defun baboon-top-join-line ()
   "Join the current line with the line beneath it."
   (interactive)
   (delete-indentation 1))
 
 ;;
-(defun prelude-move-beginning-of-line (arg)
+(defun baboon-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
 
 Move point to the first non-whitespace character on this line.
@@ -73,20 +76,20 @@ point reaches the beginning or end of the buffer, stop there."
       (move-beginning-of-line 1))))
 
 (global-set-key [remap move-beginning-of-line]
-                'prelude-move-beginning-of-line)
+                'baboon-move-beginning-of-line)
 
 ;;
-(defun prelude-kill-whole-line (&optional arg)
+(defun baboon-kill-whole-line (&optional arg)
   "A simple wrapper around command `kill-whole-line' that respects indentation.
 Passes ARG to command `kill-whole-line' when provided."
   (interactive "p")
   (kill-whole-line arg)
   (back-to-indentation))
 
-(global-set-key (kbd "s-k") 'prelude-kill-whole-line)
+(global-set-key (kbd "s-k") 'baboon-kill-whole-line)
 
 ;;
-(defun prelude-get-positions-of-line-or-region ()
+(defun baboon-get-positions-of-line-or-region ()
   "Return positions (beg . end) of the current line
 or region."
   (let (beg end)
@@ -98,13 +101,13 @@ or region."
     (setq end (line-end-position))
     (cons beg end)))
 
-(defun prelude-duplicate-current-line-or-region (arg)
+(defun baboon-duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
 If there's no region, the current line will be duplicated.  However, if
 there's a region, all lines that region covers will be duplicated."
   (interactive "p")
   (pcase-let* ((origin (point))
-               (`(,beg . ,end) (prelude-get-positions-of-line-or-region))
+               (`(,beg . ,end) (baboon-get-positions-of-line-or-region))
                (region (buffer-substring-no-properties beg end)))
     (-dotimes arg
       (lambda (n)
@@ -114,7 +117,7 @@ there's a region, all lines that region covers will be duplicated."
         (setq end (point))))
     (goto-char (+ origin (* (length region) arg) arg))))
 
-(global-set-key (kbd "C-c d") 'prelude-duplicate-current-line-or-region)
+(global-set-key (kbd "C-c d") 'baboon-duplicate-current-line-or-region)
 
 ;;
 (defun baboon-copy-file-path ()
@@ -149,13 +152,13 @@ there's a region, all lines that region covers will be duplicated."
 (key-chord-define-global "KK" 'kill-this-buffer)
 
 ;;
-(defun prelude-switch-to-previous-buffer ()
+(defun baboon-switch-to-previous-buffer ()
   "Switch to previously open buffer.
 Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
-(key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
+(key-chord-define-global "JJ" 'baboon-switch-to-previous-buffer)
 
 ;; Comment current line/region
 (defun baboon-comment-line-or-region (n)
