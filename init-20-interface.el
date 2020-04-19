@@ -73,6 +73,10 @@
   :init
   (ido-grid-mode 1))
 
+
+;; C-h f, while Smex is active, runs describe-function on the currently selected command.
+;; M-. jumps to the definition of the selected command.
+;; C-h w shows the key bindings for the selected command.
 (use-package smex
   :demand t
   :custom
