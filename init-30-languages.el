@@ -14,30 +14,6 @@
 
 (use-package systemd)
 
-;; (use-package ruby-mode
-;;   :mode ("\\.rake\\'"
-;;          "Rakefile\\'"
-;;          "\\.gemspec\\'"
-;;          "\\.ru\\'"
-;;          "\\.rb\\'"
-;;          "Gemfile\\'"
-;;          "Guardfile\\'"
-;;          "Capfile\\'"
-;;          "\\.cap\\'"
-;;          "\\.thor\\'"
-;;          "\\.rabl\\'"
-;;          "Thorfile\\'"
-;;          "Vagrantfile\\'"
-;;          "\\.jbuilder\\'"
-;;          "Podfile\\'"
-;;          "\\.podspec\\'"
-;;          "Puppetfile\\'"
-;;          "Berksfile\\'"
-;;          "Appraisals\\'")
-;;   :interpreter "ruby"
-;;   :init
-;;   )
-
 (eval-after-load 'ruby-mode
   '(progn
      (defun baboon-ruby-mode-defaults ()
@@ -52,12 +28,10 @@
 
 (use-package ruby-tools
   :bind (:map ruby-tools-mode-map
-              ("C-;" . iedit-mode))
-  ;; :hook (ruby-mode . ruby-tools-mode)
-  )
+              ("C-;" . iedit-mode)))
 
 (use-package rbenv
-  :commands global-rbenv-mode
+  ;; :commands global-rbenv-mode
   :init
   (gsetq rbenv-modeline-function 'rbenv--modeline-plain)
   :config
