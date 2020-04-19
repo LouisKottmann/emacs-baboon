@@ -80,7 +80,10 @@
   (unless (file-exists-p baboon-snippets-dir)
     (make-directory baboon-snippets-dir))
   :bind (:map yas-minor-mode-map
-              ("C-'" . yas-expand))
+               ("C-c C-'" . yas-expand)
+               ([(tab)]   . nil)
+               ("TAB"     . nil)
+               ("<tab>"   . nil))
   :config
   (add-to-list 'yas-snippet-dirs baboon-snippets-dir)
   (yas-global-mode 1))
