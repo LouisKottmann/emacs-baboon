@@ -3,8 +3,10 @@
 (use-package company
   :demand t
   :preface (defun baboon-company-set-backends ()
+             (interactive)
              (message "settings baboon backends again")
-             (gsetq company-backends '((company-lsp company-keywords company-yasnippet company-dabbrev company-files))))
+             (gsetq company-backends '((company-lsp company-keywords company-yasnippet company-files)
+                                       company-dabbrev)))
   :init
   (gsetq company-minimum-prefix-length 1
          company-idle-delay 0.0
