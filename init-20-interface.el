@@ -395,3 +395,7 @@
 
 (use-package browse-kill-ring
   :chords ("YY" . browse-kill-ring))
+
+(use-package which-key
+  :config
+  (which-key-mode))

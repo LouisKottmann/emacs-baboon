@@ -1,93 +1,4 @@
-;;; init-30-languages.el --- install languages and their completions
-
-(use-package company
-  :init (global-company-mode)
-  :config
-  (gsetq company-minimum-prefix-length 1
-         company-idle-delay 0.0)
-  :bind (("C-<tab>" . company-complete)
-         (:map company-active-map
-              ("C-o" . company-other-backend))))
-
-(use-package which-key
-  :config
-  (which-key-mode))
-
-;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
-(use-package lsp-mode
-  :demand t
-  :init
-  (setq lsp-keymap-prefix "C-S-l")
-  (gsetq lsp-log-io                       "*debug*"
-         lsp-print-performance            "*debug*"
-         lsp-inhibit-message              t
-         lsp-report-if-no-buffer          "*debug*"
-         lsp-enable-snippet               t
-         lsp-restart                      'interactive
-         lsp-document-sync-method         nil
-         lsp-eldoc-render-all             t
-         lsp-enable-xref                  t
-         lsp-enable-indentation           t
-         lsp-prefer-flymake               nil
-         lsp-enable-on-type-formatting    t
-         lsp-signature-auto-activate      t
-         lsp-enable-semantic-highlighting t)
-  :hook ((shell-script-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp
-  :config
-  (setq lsp-session-file (expand-file-name "lsp-session-v1" baboon-savefile-dir)))
-
-(use-package lsp-ui
-  :commands lsp-ui-mode)
-
-(use-package company-lsp
-  :commands company-lsp
-  :after company
-  :preface
-  (defun company-lsp-init-h ()
-    "Make sure that `company-capf' is disabled since it is incompatible with
-`company-lsp' (see lsp-mode#884)."
-    (if (not (bound-and-true-p company-mode))
-        (add-hook 'company-mode-hook #'company-lsp-init-h t t)
-      (setq-local company-backends
-                  (cons 'company-lsp
-                        (remq 'company-capf company-backends)))
-      (remove-hook 'company-mode-hook #'company-lsp-init-h t)))
-  :hook ((lsp-mode . company-lsp-init-h))
-  :init
-  (gsetq company-lsp-async               t
-         company-lsp-enable-recompletion t
-         company-lsp-enable-snippet      t
-         company-lsp-cache-candidates    'auto)
-  :config
-  (gsetq-default company-backends
-                 '((company-lsp
-                    company-files          ; files & directory
-                    company-keywords       ; keywords
-                    company-yasnippet)
-                   (company-abbrev company-dabbrev))))
-
-(use-package yasnippet
-  :preface
-  (defvar baboon-snippets-dir (expand-file-name "snippets" baboon-dir)
-    "This folder stores yasnippets")
-  :init
-  (unless (file-exists-p baboon-snippets-dir)
-    (make-directory baboon-snippets-dir))
-  :bind (:map yas-minor-mode-map
-              ("C-'" . yas-expand))
-  :commands (yas-minor-mode)
-  :hook ((prog-mode      . yas-minor-mode)
-         (yas-minor-mode . (lambda ()
-                             (add-to-list
-                              'yas-snippet-dirs
-                              baboon-snippets-dir))))
-  :config
-  (yas-reload-all))
-
-(use-package yasnippet-snippets
-  :after yasnippets)
+;;; init-30-languages.el --- install languages
 
 (use-package markdown-mode
   :mode (("README\\.md\\'" . gfm-mode)
@@ -103,42 +14,51 @@
 
 (use-package systemd)
 
-(use-package ruby-mode
-  :mode ("\\.rake\\'"
-         "Rakefile\\'"
-         "\\.gemspec\\'"
-         "\\.ru\\'"
-         "\\.rb\\'"
-         "Gemfile\\'"
-         "Guardfile\\'"
-         "Capfile\\'"
-         "\\.cap\\'"
-         "\\.thor\\'"
-         "\\.rabl\\'"
-         "Thorfile\\'"
-         "Vagrantfile\\'"
-         "\\.jbuilder\\'"
-         "Podfile\\'"
-         "\\.podspec\\'"
-         "Puppetfile\\'"
-         "Berksfile\\'"
-         "Appraisals\\'")
-  :interpreter "ruby"
-  :config
-  (add-hook 'ruby-mode-hook #'subword-mode)
-  :hook
-  (ruby-mode . lsp))
+;; (use-package ruby-mode
+;;   :mode ("\\.rake\\'"
+;;          "Rakefile\\'"
+;;          "\\.gemspec\\'"
+;;          "\\.ru\\'"
+;;          "\\.rb\\'"
+;;          "Gemfile\\'"
+;;          "Guardfile\\'"
+;;          "Capfile\\'"
+;;          "\\.cap\\'"
+;;          "\\.thor\\'"
+;;          "\\.rabl\\'"
+;;          "Thorfile\\'"
+;;          "Vagrantfile\\'"
+;;          "\\.jbuilder\\'"
+;;          "Podfile\\'"
+;;          "\\.podspec\\'"
+;;          "Puppetfile\\'"
+;;          "Berksfile\\'"
+;;          "Appraisals\\'")
+;;   :interpreter "ruby"
+;;   :init
+;;   )
+
+(eval-after-load 'ruby-mode
+  '(progn
+     (defun baboon-ruby-mode-defaults ()
+       (ruby-tools-mode +1)
+       ;; CamelCase aware editing operations
+       (subword-mode +1))
+
+     (setq baboon-ruby-mode-hook 'baboon-ruby-mode-defaults)
+
+     (add-hook 'ruby-mode-hook (lambda ()
+                                 (run-hooks 'baboon-ruby-mode-hook)))))
 
 (use-package ruby-tools
-  :hook (ruby-mode . ruby-tools-mode)
   :bind (:map ruby-tools-mode-map
-              ("C-;" . iedit-mode)))
+              ("C-;" . iedit-mode))
+  ;; :hook (ruby-mode . ruby-tools-mode)
+  )
 
 (use-package rbenv
   :commands global-rbenv-mode
   :init
   (gsetq rbenv-modeline-function 'rbenv--modeline-plain)
   :config
-  (global-rbenv-mode)
-  (rbenv-use-corresponding)
-  :hook (ruby-mode . rbenv-mode))
+  (global-rbenv-mode))
