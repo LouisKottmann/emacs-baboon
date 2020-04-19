@@ -5,7 +5,7 @@
   :preface (defun baboon-company-set-backends ()
              (interactive)
              (message "settings baboon backends again")
-             (gsetq company-backends '((company-lsp company-elisp company-keywords company-yasnippet company-files)
+             (gsetq company-backends '((company-capf company-keywords company-yasnippet company-files)
                                        (company-tabnine company-dabbrev))))
   :init
   (gsetq company-minimum-prefix-length 1
@@ -65,12 +65,12 @@
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
-(use-package company-lsp
-  :init
-  (gsetq company-lsp-async               t
-         company-lsp-enable-recompletion t
-         company-lsp-enable-snippet      t
-         company-lsp-cache-candidates    'auto))
+;; (use-package company-lsp
+;;   :init
+;;   (gsetq company-lsp-async               t
+;;          company-lsp-enable-recompletion t
+;;          company-lsp-enable-snippet      t
+;;          company-lsp-cache-candidates    'auto))
 
 (use-package yasnippet
   :preface
