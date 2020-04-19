@@ -5,12 +5,13 @@
   :preface (defun baboon-company-set-backends ()
              (interactive)
              (message "settings baboon backends again")
-             (gsetq company-backends '((company-lsp company-keywords company-yasnippet company-files)
+             (gsetq company-backends '((company-lsp company-elisp company-keywords company-yasnippet company-files)
                                        (company-tabnine company-dabbrev))))
   :init
   (gsetq company-minimum-prefix-length 1
          company-idle-delay 0.0
-         company-require-match nil)
+         company-require-match nil
+         company-tooltip-align-annotations t)
   :config
   (baboon-company-set-backends)
   (global-company-mode t)
@@ -23,7 +24,8 @@
 (use-package company-tabnine
   :custom
   (company-tabnine-auto-balance nil)
-  (company-tabnine-auto-fallback nil))
+  (company-tabnine-auto-fallback nil)
+  (company-tabnine-wait 1))
 
 (use-package company-flx
   :config
