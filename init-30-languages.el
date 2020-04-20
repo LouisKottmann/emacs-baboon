@@ -36,3 +36,5 @@
   (gsetq rbenv-modeline-function 'rbenv--modeline-plain)
   :config
   (global-rbenv-mode))
+
+(use-package ssh-config-mode)

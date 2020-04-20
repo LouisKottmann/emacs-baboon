@@ -6,10 +6,11 @@
              (interactive)
              (message "settings baboon backends again")
              (gsetq company-backends '((company-capf company-keywords company-yasnippet company-files)
-                                       (company-tabnine company-dabbrev))))
+                                       (;; company-tabnine
+                                        company-dabbrev))))
   :init
-  (gsetq company-minimum-prefix-length 1
-         company-idle-delay 0.0
+  (gsetq company-minimum-prefix-length 2
+         company-idle-delay 0.25
          company-require-match nil
          company-tooltip-align-annotations t)
   :config
@@ -21,11 +22,11 @@
                ("C-n" . company-select-next)
                ("C-p" . company-select-previous))))
 
-(use-package company-tabnine
-  :custom
-  (company-tabnine-auto-balance nil)
-  (company-tabnine-auto-fallback nil)
-  (company-tabnine-wait 1))
+;; (use-package company-tabnine
+;;   :custom
+;;   (company-tabnine-auto-balance nil)
+;;   (company-tabnine-auto-fallback nil)
+;;   (company-tabnine-wait 0.25))
 
 (use-package company-flx
   :config
@@ -41,7 +42,7 @@
 ;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
 (use-package lsp-mode
   :init
-  (gsetq lsp-keymap-prefix                "C-L"
+  (gsetq lsp-keymap-prefix                "C-S-l"
          lsp-session-file                 (expand-file-name "lsp-session-v1" baboon-savefile-dir)
          lsp-log-io                       "*debug*"
          lsp-print-performance            "*debug*"
@@ -59,7 +60,8 @@
          lsp-semantic-highlighting        :deferred)
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration)
-         (lsp-after-open . baboon-company-set-backends))
+         (lsp-after-open . baboon-company-set-backends)
+         (lsp-mode-managed-mode-hook . baboon-company-set-backends))
   :commands lsp)
 
 (use-package lsp-ui

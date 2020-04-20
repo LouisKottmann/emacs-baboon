@@ -180,3 +180,10 @@ If region is active, apply to active region instead."
     (back-to-indentation)))
 
 (global-set-key (kbd "M-;") 'baboon-comment-line-or-region)
+
+;;
+(defun baboon-find-emacs-init-file ()
+  (interactive)
+  (find-file (expand-file-name "init.el" baboon-dir)))
+
+(global-set-key (kbd "C-c E") 'baboon-find-emacs-init-file)
