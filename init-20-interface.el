@@ -94,7 +94,7 @@
   (add-to-list 'all-the-icons-icon-alist
                '("\\.conf" all-the-icons-octicon          "gear"     :face all-the-icons-dyellow :v-adjust 0.0))
   (add-to-list 'all-the-icons-icon-alist
-               '("ssh_config" all-the-icons-alltheicon "terminal" :face all-the-icons-black))
+               '("ssh_config" all-the-icons-alltheicon "terminal" :face all-the-icons-lsilver))
   (add-to-list 'all-the-icons-icon-alist
                '("\\.ru$" all-the-icons-alltheicon        "ruby-alt" :face all-the-icons-red)))
 

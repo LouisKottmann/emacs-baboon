@@ -8,7 +8,9 @@
 
 (use-package dockerfile-mode)
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :mode
+  (("\\.\\(e?ya?\\|ra\\)ml\\.\\(erb\\|sh\\)\\'" . yaml-mode)))
 
 (use-package toml-mode)
 
@@ -38,3 +40,5 @@
   (global-rbenv-mode))
 
 (use-package ssh-config-mode)
+
+(use-package dotenv-mode)
