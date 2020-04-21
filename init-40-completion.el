@@ -48,12 +48,11 @@
          lsp-document-sync-method         nil
          lsp-eldoc-render-all             t
          lsp-enable-xref                  t
-         lsp-enable-indentation           t
+         lsp-enable-indentation           nil
          lsp-diagnostic-package           :flycheck
          lsp-enable-on-type-formatting    t
          lsp-signature-auto-activate      t
-         lsp-auto-configure               t
-         lsp-semantic-highlighting        :deferred)
+         lsp-auto-configure               t)
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration)
          (lsp-after-open . baboon-company-set-backends)
