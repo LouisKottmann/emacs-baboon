@@ -4,7 +4,7 @@
   :demand t
   :preface (defun baboon-company-set-backends ()
              (interactive)
-             (message "settings baboon backends again")
+             (message "setting baboon backends again")
              (gsetq company-backends '((company-capf
                                         company-keywords
                                         company-yasnippet
