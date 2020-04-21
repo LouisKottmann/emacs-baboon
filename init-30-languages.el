@@ -42,3 +42,5 @@
 (use-package ssh-config-mode)
 
 (use-package dotenv-mode)
+
+(use-package json-mode)

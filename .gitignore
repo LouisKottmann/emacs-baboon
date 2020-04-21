@@ -2,3 +2,5 @@ elpa
 savefile
 transient/history.el
 *~
+.cache
+*.elc

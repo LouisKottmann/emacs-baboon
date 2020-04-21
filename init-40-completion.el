@@ -5,9 +5,11 @@
   :preface (defun baboon-company-set-backends ()
              (interactive)
              (message "settings baboon backends again")
-             (gsetq company-backends '((company-capf company-keywords company-yasnippet company-files)
-                                       (;; company-tabnine
-                                        company-dabbrev))))
+             (gsetq company-backends '((company-capf
+                                        company-keywords
+                                        company-yasnippet
+                                        company-files
+                                        company-dabbrev)))
   :init
   (gsetq company-minimum-prefix-length 2
          company-idle-delay 0.25
@@ -21,12 +23,6 @@
                ("C-o" . company-other-backend)
                ("C-n" . company-select-next)
                ("C-p" . company-select-previous))))
-
-;; (use-package company-tabnine
-;;   :custom
-;;   (company-tabnine-auto-balance nil)
-;;   (company-tabnine-auto-fallback nil)
-;;   (company-tabnine-wait 0.25))
 
 (use-package company-flx
   :config
