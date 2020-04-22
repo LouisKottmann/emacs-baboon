@@ -1,5 +1,11 @@
 ;;; init.el --- Entrypoint of Emacs config
-(setq user-emacs-directory "~/.emacs.d/")
+
+;; (setq user-emacs-directory "~/.emacs.d/")
+;; better way:
+(let (file-name-handler-alist)
+  ;; Ensure emacs is running out of this file's directory
+  (setq user-emacs-directory (file-name-directory load-file-name)))
+
 
 ;; Always load newest byte code
 (setq load-prefer-newer t)

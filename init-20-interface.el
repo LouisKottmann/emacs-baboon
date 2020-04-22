@@ -222,9 +222,9 @@
   :after helm
   :config
   (setq projectile-cache-file (expand-file-name  "projectile.cache" baboon-savefile-dir))
-  (projectile-global-mode t)
-  :custom
-  (projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" baboon-savefile-dir)))
+  (projectile-mode t)
+  :init
+  (gsetq projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" baboon-savefile-dir)))
 
 (use-package helm-projectile
   :after helm

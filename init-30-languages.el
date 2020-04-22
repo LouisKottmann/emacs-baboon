@@ -1,5 +1,7 @@
 ;;; init-30-languages.el --- install languages
 
+(gsetq flycheck-temp-prefix "savefile/flycheck")
+
 (use-package markdown-mode
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)

@@ -9,7 +9,7 @@
                                         company-keywords
                                         company-yasnippet
                                         company-files
-                                        company-dabbrev)))
+                                        company-dabbrev))))
   :init
   (gsetq company-minimum-prefix-length 2
          company-idle-delay 0.25
