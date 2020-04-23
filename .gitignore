@@ -5,3 +5,4 @@ transient/history.el
 .cache
 *.elc
 projectile-bookmarks.eld
+eshell/history
