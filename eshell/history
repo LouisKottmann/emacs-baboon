@@ -1,1 +1,0 @@
-kubectl explain deployment.spec.template.spec.containers.livenessProbe
