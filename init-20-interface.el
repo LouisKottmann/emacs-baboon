@@ -408,3 +408,12 @@
 (use-package which-key
   :config
   (which-key-mode))
+
+(defun baboon-random-buffer ()
+  (interactive)
+  (switch-to-buffer
+   (eval-expression
+    (quote
+     (concat "sdf "
+             (format "%s" (random 5000))))
+    nil)))
