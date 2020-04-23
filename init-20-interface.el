@@ -297,7 +297,7 @@
 (use-package whitespace
   :init
   (setq whitespace-action '(auto-cleanup)
-        whitespace-line-column 100 ;; make characters after column 100 purple
+        whitespace-line-column 120 ;; make characters after column 100 purple
         whitespace-style '(face tabs empty trailing lines-tail))
   :config
   (global-whitespace-mode +1)

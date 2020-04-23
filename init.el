@@ -6,7 +6,6 @@
   ;; Ensure emacs is running out of this file's directory
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
-
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 

@@ -46,3 +46,7 @@
 (use-package dotenv-mode)
 
 (use-package json-mode)
+
+(use-package gitignore-mode)
+
+(use-package lockfile-mode)
