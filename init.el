@@ -78,7 +78,7 @@
 
 ;;
 (setq recentf-max-menu-items 25)
-(setq recentf-max-saved-items 500)
+(setq recentf-max-saved-items 150)
 (setq recentf-save-file (expand-file-name "recentf" baboon-savefile-dir))
 ;; disable recentf-cleanup on Emacs start, because it can cause
 ;; problems with remote files
