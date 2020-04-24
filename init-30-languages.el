@@ -50,3 +50,5 @@
 (use-package gitignore-mode)
 
 (use-package lockfile-mode)
+
+(add-to-list 'auto-mode-alist '(".*inventory.*\\'" . conf-mode))
