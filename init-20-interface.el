@@ -92,11 +92,13 @@
   :init (gsetq inhibit-compacting-font-caches t)
   :config
   (add-to-list 'all-the-icons-icon-alist
-               '("\\.conf" all-the-icons-octicon          "gear"     :face all-the-icons-dyellow :v-adjust 0.0))
+               '("\\.conf$" all-the-icons-octicon          "gear"     :face all-the-icons-dyellow :v-adjust 0.0))
   (add-to-list 'all-the-icons-icon-alist
-               '("ssh_config" all-the-icons-alltheicon "terminal" :face all-the-icons-lsilver))
+               '("ssh*_config$" all-the-icons-alltheicon "terminal" :face all-the-icons-lsilver))
   (add-to-list 'all-the-icons-icon-alist
-               '("\\.ru$" all-the-icons-alltheicon        "ruby-alt" :face all-the-icons-red)))
+               '("\\.ru$" all-the-icons-alltheicon        "ruby-alt" :face all-the-icons-red))
+  (add-to-list 'all-the-icons-icon-alist
+               '("inventory" all-the-icons-fileicon "ansible" :face all-the-icons-sillver)))
 
 (use-package neotree
   :after all-the-icons
