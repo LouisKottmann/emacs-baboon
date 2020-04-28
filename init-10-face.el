@@ -41,6 +41,7 @@
 (add-hook 'focus-in-hook 'baboon-mode-line-count-lines)
 (add-hook 'focus-out-hook 'baboon-mode-line-count-lines)
 
+
 ;; Powerline support
 (use-package powerline
   :demand t
@@ -49,6 +50,16 @@
   :custom-face
   (powerline-active1 ((t (:inherit mode-line :background "#CB8E06" :foreground "#4F4F4F"))))
   (powerline-active2 ((t (:inherit mode-line :background "#268BD2" :foreground "#FDF6E3"))))
+  :preface
+  (defun baboon-modeline-save-status-icon ()
+    "Doc string"
+    (let* ((config-alist
+            '(("*" all-the-icons-faicon-family all-the-icons-faicon "chain-broken" :height 1.2 :v-adjust -0.0 :face all-the-icons-blue)
+              ("-" all-the-icons-faicon-family all-the-icons-faicon "link" :height 1.2 :v-adjust -0.0 :face all-the-icons-blue)
+              ("%" all-the-icons-octicon-family all-the-icons-octicon "lock" :height 1.2 :v-adjust 0.1 :face all-the-icons-blue)))
+           (result (cdr (assoc (format-mode-line "%*") config-alist))))
+      (propertize (apply (cadr result) (cddr result))
+                  'face `(:family ,(funcall (car result))))))
   :init
   (setq-default mode-line-format
                 '("%e"
@@ -63,9 +74,10 @@
                           (separator-right (intern (format "powerline-%s-%s"
                                                            powerline-default-separator
                                                            (cdr powerline-default-separator-dir))))
-                          (lhs (list (powerline-raw "%*" nil 'l)
+                          (lhs (list (powerline-raw " ")
+                                     (baboon-modeline-save-status-icon)
                                      (powerline-buffer-size nil 'l)
-                                     (powerline-raw mode-line-mule-info nil 'l)
+                                     ;; (powerline-raw mode-line-mule-info nil 'l)
                                      (when (and (boundp 'which-func-mode) which-func-mode)
                                        (powerline-raw which-func-format nil 'l))
                                      (powerline-raw " ")
@@ -90,7 +102,7 @@
                                      (funcall separator-right face1 mode-line)
                                      (powerline-raw " ")
                                      (powerline-raw baboon-mode-line-buffer-count nil 'r)
-                                     (powerline-raw " "))))
+                                     (powerline-raw "  "))))
                      (concat (powerline-render lhs)
                              (powerline-fill face2 (powerline-width rhs))
                              (powerline-render rhs)))))))
