@@ -371,6 +371,8 @@
   (defalias 'browse-url-hint 'link-hint-open-link)
   (defalias 'browse-u-hint 'link-hint-open-link))
 
+(use-package transient)
+
 (use-package magit
   :bind ("s-m" . magit-status)
   :config (gsetq magit-diff-refine-hunk 'all))
