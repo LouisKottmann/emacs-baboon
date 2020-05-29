@@ -52,3 +52,7 @@
 (use-package lockfile-mode)
 
 (add-to-list 'auto-mode-alist '(".*inventory.*\\'" . conf-mode))
+
+(use-package ansible-doc)
+
+(use-package jinja2-mode)

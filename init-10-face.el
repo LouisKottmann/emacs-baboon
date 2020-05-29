@@ -16,7 +16,7 @@
 ;; Font
 (set-face-attribute 'default nil
                     :family "UbuntuMono"
-                    :height 110)
+                    :height 95)
 
 ;; Colors
 (defface baboon-main-color
@@ -69,10 +69,10 @@
                           (face1 (if active 'powerline-active1 'powerline-inactive1))
                           (face2 (if active 'powerline-active2 'powerline-inactive2))
                           (separator-left (intern (format "powerline-%s-%s"
-                                                          powerline-default-separator
+                                                          (powerline-current-separator)
                                                           (car powerline-default-separator-dir))))
                           (separator-right (intern (format "powerline-%s-%s"
-                                                           powerline-default-separator
+                                                           (powerline-current-separator)
                                                            (cdr powerline-default-separator-dir))))
                           (lhs (list (powerline-raw " ")
                                      (baboon-modeline-save-status-icon)
@@ -80,7 +80,7 @@
                                      ;; (powerline-raw mode-line-mule-info nil 'l)
                                      (when (and (boundp 'which-func-mode) which-func-mode)
                                        (powerline-raw which-func-format nil 'l))
-                                     (powerline-raw " ")
+                                     ;; (powerline-raw " ")
                                      (funcall separator-left mode-line face1)
                                      (when (boundp 'erc-modified-channels-object)
                                        (powerline-raw erc-modified-channels-object face1 'l))

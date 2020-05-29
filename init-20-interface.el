@@ -98,7 +98,7 @@
   (add-to-list 'all-the-icons-icon-alist
                '("\\.ru$" all-the-icons-alltheicon        "ruby-alt" :face all-the-icons-red))
   (add-to-list 'all-the-icons-icon-alist
-               '("inventory" all-the-icons-fileicon "ansible" :face all-the-icons-sillver)))
+               '("inventory" all-the-icons-fileicon "ansible" :face all-the-icons-silver)))
 
 (use-package neotree
   :after all-the-icons
@@ -421,3 +421,8 @@
      (concat "sdf "
              (format "%s" (random 5000))))
     nil)))
+
+(use-package password-store)
+
+(use-package vline.el
+  :load-path "extras")
