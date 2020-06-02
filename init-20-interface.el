@@ -353,6 +353,9 @@
          "C" 'helpful-command))
 
 (use-package ace-window
+  :config
+  (gsetq aw-keys '(?a ?z ?e ?r ?t ?y ?u ?i ?o ?p)
+         aw-ignore-current t)
   :bind
   (("s-:" . ace-window)
    ("s-/" . ace-swap-window)))
