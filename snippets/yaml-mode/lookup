@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name : lookup
+# key : lookup
+# --
+{{ lookup('${1:env}', '$2') }}$0
