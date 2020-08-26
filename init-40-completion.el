@@ -37,6 +37,9 @@
 
 ;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
 (use-package lsp-mode
+  :preface (defun baboon-lsp ()
+             (unless (derived-mode-p 'clojure-mode)
+               (lsp)))
   :init
   (gsetq lsp-keymap-prefix                "C-S-l"
          lsp-session-file                 (expand-file-name "lsp-session-v1" baboon-savefile-dir)

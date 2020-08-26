@@ -7,16 +7,16 @@
 
 ;; Theme
 (use-package solarized-theme
+  ;; :init
+  ;; (load-theme 'solarized-light t)
+  )
+
+(use-package kaolin-themes
   :init
-  (load-theme 'solarized-light t))
+  (load-theme 'kaolin-valley-light t))
 
 ;; French keyboard support (^ etc)
 (load-library "iso-transl")
-
-;; Font
-(set-face-attribute 'default nil
-                    :family "UbuntuMono"
-                    :height 95)
 
 ;; Colors
 (defface baboon-main-color
@@ -105,7 +105,11 @@
                                      (powerline-raw "  "))))
                      (concat (powerline-render lhs)
                              (powerline-fill face2 (powerline-width rhs))
-                             (powerline-render rhs)))))))
+                             (powerline-render rhs))))))
+  ;; Font
+  (set-face-attribute 'default nil
+                      :family "UbuntuMono"
+                      :height 95))
 
 
 (defvar baboon-indent-sensitive-modes

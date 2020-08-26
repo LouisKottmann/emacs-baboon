@@ -56,3 +56,7 @@
 (use-package ansible-doc)
 
 (use-package jinja2-mode)
+
+(use-package clojure-mode)
+
+(use-package cider)
