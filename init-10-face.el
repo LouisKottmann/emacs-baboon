@@ -7,13 +7,13 @@
 
 ;; Theme
 (use-package solarized-theme
-  ;; :init
-  ;; (load-theme 'solarized-light t)
-  )
+  :init
+  (load-theme 'solarized-light t))
 
 (use-package kaolin-themes
-  :init
-  (load-theme 'kaolin-valley-light t))
+  ;; :init
+  ;; (load-theme 'kaolin-valley-light t)
+  )
 
 ;; French keyboard support (^ etc)
 (load-library "iso-transl")

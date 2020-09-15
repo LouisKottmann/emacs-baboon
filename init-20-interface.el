@@ -270,13 +270,13 @@
   (smartparens-global-mode +1)
   (show-smartparens-global-mode +1)
   :custom
-  (sp-autodelete-closing-pair nil)
-  (sp-autodelete-opening-pair nil)
-  (sp-autodelete-pair nil)
-  (sp-autodelete-wrap nil)
-  (sp-autoescape-string-quote nil)
-  (sp-autoinsert-pair nil)
-  (sp-autoskip-closing-pair nil)
+  (sp-autodelete-closing-pair t)
+  (sp-autodelete-opening-pair t)
+  (sp-autodelete-pair t)
+  (sp-autodelete-wrap t)
+  (sp-autoescape-string-quote t)
+  (sp-autoinsert-pair t)
+  (sp-autoskip-closing-pair t)
   (sp-show-pair-from-inside t)
   :custom-face
   (sp-show-pair-match-face ((t (:background "#268BD2" :foreground "white")))))
@@ -363,6 +363,16 @@
 (use-package flycheck
   :init
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  :config (progn (use-package flycheck-clojure ; load clojure specific flycheck features
+                   :ensure t
+                   :config (flycheck-clojure-setup))
+                 ;; initialize flycheck
+                 (use-package popup
+                   :ensure t)
+                 (use-package flycheck-pos-tip
+                   :ensure t)
+                 (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages)
+                 (global-flycheck-mode))
   :hook (after-init . global-flycheck-mode))
 
 (use-package vlf
@@ -377,8 +387,9 @@
 (use-package transient)
 
 (use-package magit
-  :bind ("s-m" . magit-status)
-  :config (gsetq magit-diff-refine-hunk 'all))
+  :bind ("s-m" . magit-status))
+  ;; : config (gsetq magit-diff-refine-hunk 'all)
+
 
 (use-package git-timemachine)
 
@@ -414,6 +425,7 @@
 
 (use-package which-key
   :config
+  (which-key-setup-minibuffer)
   (which-key-mode))
 
 (defun baboon-random-buffer ()
@@ -429,3 +441,5 @@
 
 (use-package vline.el
   :load-path "extras")
+
+(use-package fancy-narrow)

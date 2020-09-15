@@ -59,4 +59,16 @@
 
 (use-package clojure-mode)
 
-(use-package cider)
+(use-package cider
+  :config (progn (add-hook 'clojure-mode-hook 'cider-mode)
+                 (add-hook 'clojure-mode-hook 'cider-turn-on-eldoc-mode)
+                 (add-hook 'cider-repl-mode-hook 'subword-mode)
+                 (setq cider-annotate-completion-candidates t
+                       cider-prompt-for-symbol nil)))
+
+(use-package csv-mode
+  :mode (("\\.csv\\'" . csv-mode)))
+
+(use-package nginx-mode
+  :mode (("nginx\\.conf\\'" . nginx-mode)
+         ("nginx\\.conf\\.j2\\'" . nginx-mode)))
