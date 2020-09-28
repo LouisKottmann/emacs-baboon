@@ -28,7 +28,8 @@
      (setq baboon-ruby-mode-hook 'baboon-ruby-mode-defaults)
 
      (add-hook 'ruby-mode-hook (lambda ()
-                                 (run-hooks 'baboon-ruby-mode-hook)))))
+                                 (run-hooks 'baboon-ruby-mode-hook)))
+     (add-hook 'prog-mode lsp)))
 
 (use-package ruby-tools
   :bind (:map ruby-tools-mode-map
