@@ -23,13 +23,13 @@
      (defun baboon-ruby-mode-defaults ()
        (ruby-tools-mode +1)
        ;; CamelCase aware editing operations
-       (subword-mode +1))
+       (subword-mode +1)
+       (lsp))
 
      (setq baboon-ruby-mode-hook 'baboon-ruby-mode-defaults)
 
      (add-hook 'ruby-mode-hook (lambda ()
-                                 (run-hooks 'baboon-ruby-mode-hook)))
-     (add-hook 'prog-mode lsp)))
+                                 (run-hooks 'baboon-ruby-mode-hook)))))
 
 (use-package ruby-tools
   :bind (:map ruby-tools-mode-map
@@ -61,11 +61,11 @@
 (use-package clojure-mode)
 
 (use-package cider
-  :config (progn (add-hook 'clojure-mode-hook 'cider-mode)
-                 (add-hook 'clojure-mode-hook 'cider-turn-on-eldoc-mode)
-                 (add-hook 'cider-repl-mode-hook 'subword-mode)
-                 (setq cider-annotate-completion-candidates t
-                       cider-prompt-for-symbol nil)))
+  :config (gsetq cider-annotate-completion-candidates t
+                 cider-prompt-for-symbol nil)
+  :hook ((clojure-mode . cider-mode)
+         (clojure-mode . eldoc-mode)
+         (cider-repl-mode . subword-mode)))
 
 (use-package csv-mode
   :mode (("\\.csv\\'" . csv-mode)))
