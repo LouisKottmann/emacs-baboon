@@ -62,7 +62,10 @@
 
 (use-package cider
   :config (gsetq cider-annotate-completion-candidates t
-                 cider-prompt-for-symbol nil)
+                 cider-prompt-for-symbol nil
+                 cider-repl-history-file (expand-file-name ".cider-repl-history" baboon-savefile-dir)
+                 nrepl-log-messages t)
+  (flycheck-clojure-setup) ;; run setup *after* cider load
   :hook ((clojure-mode . cider-mode)
          (clojure-mode . eldoc-mode)
          (cider-repl-mode . subword-mode)))

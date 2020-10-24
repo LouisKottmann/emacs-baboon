@@ -360,20 +360,30 @@
   (("s-:" . ace-window)
    ("s-/" . ace-swap-window)))
 
-(use-package flycheck
-  :init
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-  :config (progn (use-package flycheck-clojure ; load clojure specific flycheck features
-                   :ensure t
-                   :config (flycheck-clojure-setup))
-                 ;; initialize flycheck
-                 (use-package popup
-                   :ensure t)
-                 (use-package flycheck-pos-tip
-                   :ensure t)
-                 (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages)
-                 (global-flycheck-mode))
+(use-package popup
+    :ensure t)
+
+(use-package flycheck-clojure
+  :defer t
+  :commands (flycheck-clojure-setup) ;; autoload
+  ;; :config
+  ;; (eval-after-load 'flycheck
+  ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
   :hook (after-init . global-flycheck-mode))
+
+(use-package flycheck
+  :ensure t
+  ;; :init
+  ;; (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  ;; (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages)
+  :hook (after-init . global-flycheck-mode))
+
+;; (use-package flycheck-pos-tip :ensure t
+;;   :after flycheck)
+
+(use-package flycheck-popup-tip
+  :after flycheck
+  :hook (flycheck-mode . flycheck-popup-tip-mode))
 
 (use-package vlf
   :config
@@ -389,7 +399,6 @@
 (use-package magit
   :bind ("s-m" . magit-status))
   ;; : config (gsetq magit-diff-refine-hunk 'all)
-
 
 (use-package git-timemachine)
 
@@ -439,7 +448,7 @@
 
 (use-package password-store)
 
-(use-package vline.el
+(use-package vline
   :load-path "extras")
 
 (use-package fancy-narrow)

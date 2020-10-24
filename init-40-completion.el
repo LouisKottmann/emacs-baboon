@@ -55,7 +55,7 @@
          lsp-auto-configure               t)
   :hook ((lsp-mode . lsp-enable-which-key-integration)
          (lsp-after-open . baboon-company-set-backends)
-         (lsp-mode-managed-mode-hook . baboon-company-set-backends))
+         (lsp-mode-managed-mode . baboon-company-set-backends))
   :commands lsp)
 
 (use-package lsp-ui
