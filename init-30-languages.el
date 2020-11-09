@@ -58,16 +58,23 @@
 
 (use-package jinja2-mode)
 
-(use-package clojure-mode)
+(use-package clojure-mode
+  :ensure t
+  :config
+  (require 'flycheck-clj-kondo)
+  :hook (clojure-mode . turn-on-eldoc-mode))
+
+(use-package clj-refactor
+  :hook (clojure-mode . clj-refactor-mode))
 
 (use-package cider
   :config (gsetq cider-annotate-completion-candidates t
                  cider-prompt-for-symbol nil
                  cider-repl-history-file (expand-file-name ".cider-repl-history" baboon-savefile-dir)
                  nrepl-log-messages t)
-  (flycheck-clojure-setup) ;; run setup *after* cider load
+  ;; (flycheck-clojure-setup) ;; run setup *after* cider load
   :hook ((clojure-mode . cider-mode)
-         (clojure-mode . eldoc-mode)
+         (clojure-mode . turn-on-eldoc-mode)
          (cider-repl-mode . subword-mode)))
 
 (use-package csv-mode

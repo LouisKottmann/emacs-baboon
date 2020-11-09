@@ -24,16 +24,26 @@
                ("C-n" . company-select-next)
                ("C-p" . company-select-previous))))
 
-(use-package company-flx
-  :config
-  (company-flx-mode +1))
+;; (use-package company-flx
+;;   :config
+;;   (company-flx-mode +1))
 
-(use-package company-quickhelp
-  :after company
-  :init
-  (gsetq company-quickhelp-delay 0.3
-         company-quickhelp-color-background "#fdf6e3")
-  :config (company-quickhelp-mode t))
+(use-package pos-tip
+  :after company)
+
+;; (use-package company-quickhelp
+  ;; :after company pos-tip
+  ;; :init
+  ;; (gsetq company-quickhelp-delay 0.3
+         ;; company-quickhelp-color-background "#fdf6e3")
+  ;; :config (company-quickhelp-mode t))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode)
+  :config
+  (setq company-box-backends-colors '((company-yasnippet :all "#CB8E06"
+                                                         :selected (:background "#268BD2"
+                                                                    :foreground "white")))))
 
 ;; For adding per-language binaries, see https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages
 (use-package lsp-mode

@@ -29,9 +29,9 @@
 (use-package savehist
   :demand t
   :init
-  (gsetq savehist-additional-variables '(search ring regexp-search-ring) ;; search entries
-        savehist-autosave-interval 60                                    ;; save every minute
-        savehist-file (expand-file-name "savehist" baboon-savefile-dir)) ;; keep the home clean
+  (gsetq savehist-additional-variables '(search ring regexp-search-ring)  ;; search entries
+         savehist-autosave-interval 60                                    ;; save every minute
+         savehist-file (expand-file-name "savehist" baboon-savefile-dir)) ;; keep the home clean
   :config
   (savehist-mode +1))
 
@@ -363,13 +363,16 @@
 (use-package popup
     :ensure t)
 
-(use-package flycheck-clojure
-  :defer t
-  :commands (flycheck-clojure-setup) ;; autoload
-  ;; :config
-  ;; (eval-after-load 'flycheck
-  ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-  :hook (after-init . global-flycheck-mode))
+;; (use-package flycheck-clojure
+;;   :defer t
+;;   :commands (flycheck-clojure-setup) ;; autoload
+;;   ;; :config
+;;   ;; (eval-after-load 'flycheck
+;;   ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+;;   :hook (after-init . global-flycheck-mode))
+
+(use-package flycheck-clj-kondo
+  :ensure t)
 
 (use-package flycheck
   :ensure t
@@ -377,6 +380,12 @@
   ;; (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   ;; (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages)
   :hook (after-init . global-flycheck-mode))
+
+(use-package flycheck-inline
+  :ensure t
+  :after flycheck
+  :config
+  (global-flycheck-inline-mode))
 
 ;; (use-package flycheck-pos-tip :ensure t
 ;;   :after flycheck)
