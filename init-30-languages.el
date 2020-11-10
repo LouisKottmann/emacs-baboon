@@ -79,7 +79,14 @@
   ;; (flycheck-clojure-setup) ;; run setup *after* cider load
   :hook ((clojure-mode . cider-mode)
          (clojure-mode . turn-on-eldoc-mode)
-         (cider-repl-mode . subword-mode)))
+         (cider-repl-mode . subword-mode))
+  :bind (:map cider-repl-mode-map
+              ("C-r" . helm-cider-repl-history)))
+
+(use-package sayid
+  :ensure t
+  :after cider
+  :init (sayid-setup-package))
 
 (use-package csv-mode
   :mode (("\\.csv\\'" . csv-mode)))
