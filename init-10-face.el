@@ -21,7 +21,7 @@
 ;; Colors
 (defvar baboon-main-color-plain "#182F31")
 (defface baboon-main-color
-  '((t (:foreground  baboon-main-color-plain)))
+  '((t (:foreground  "#182F31")))
   "Background color of my logo")
 
 ;; Line counter in modeline

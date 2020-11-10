@@ -67,10 +67,14 @@
 (use-package clj-refactor
   :hook (clojure-mode . clj-refactor-mode))
 
+(use-package helm-cider
+  :hook (cider-mode . helm-cider-mode))
+
 (use-package cider
   :config (gsetq cider-annotate-completion-candidates t
                  cider-prompt-for-symbol nil
                  cider-repl-history-file (expand-file-name ".cider-repl-history" baboon-savefile-dir)
+                 cider-repl-history-size 5000
                  nrepl-log-messages t)
   ;; (flycheck-clojure-setup) ;; run setup *after* cider load
   :hook ((clojure-mode . cider-mode)
