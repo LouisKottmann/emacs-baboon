@@ -42,7 +42,6 @@
 (add-hook 'focus-in-hook 'baboon-mode-line-count-lines)
 (add-hook 'focus-out-hook 'baboon-mode-line-count-lines)
 
-
 ;; Powerline support
 (use-package powerline
   :demand t
@@ -92,8 +91,7 @@
                                      (funcall separator-left face1 face2)
                                      (powerline-vc face2 'r)
                                      (when (and (boundp 'multiple-cursors-mode) multiple-cursors-mode)
-                                       (powerline-raw mc/mode-line face2))
-                                     ))
+                                       (powerline-raw mc/mode-line face2))))
                           (rhs (list (powerline-raw global-mode-string face2 'r)
                                      (powerline-buffer-id face2 'r)
                                      (funcall separator-right face2 face1)
@@ -106,11 +104,19 @@
                                      (powerline-raw "  "))))
                      (concat (powerline-render lhs)
                              (powerline-fill face2 (powerline-width rhs))
-                             (powerline-render rhs))))))
-  ;; Font
-  (set-face-attribute 'default nil
-                      :family "UbuntuMono"
-                      :height 95))
+                             (powerline-render rhs)))))))
+
+(use-package louis
+  :ensure nil
+  :after powerline
+  :preface (defun set-louis-face ()
+             (interactive)
+             (set-face-attribute 'default nil
+                                 :family "UbuntuMono"
+                                 :height (pcase system-name
+                                           ("louis-oryx-to-go-17-10" 105)
+                                           (t 95))))
+  :hook (after-init . set-louis-face))
 
 
 (defvar baboon-indent-sensitive-modes
