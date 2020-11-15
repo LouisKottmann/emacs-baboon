@@ -73,7 +73,6 @@
   :init
   (ido-grid-mode 1))
 
-
 ;; C-h f, while Smex is active, runs describe-function on the currently selected command.
 ;; M-. jumps to the definition of the selected command.
 ;; C-h w shows the key bindings for the selected command.
@@ -351,6 +350,10 @@
          "k" 'helpful-key
          "F" 'helpful-function
          "C" 'helpful-command))
+
+(use-package avy
+  :bind
+  (("s-." . avy-goto-char-2)))
 
 (use-package ace-window
   :config
