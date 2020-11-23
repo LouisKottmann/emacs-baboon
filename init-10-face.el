@@ -122,11 +122,3 @@
 (defvar baboon-indent-sensitive-modes
   '(coffee-mode python-mode slim-mode haml-mode)
   "Modes for which auto-indenting is suppressed.")
-
-(defun baboon-cleanup-buffer-or-region ()
-  "Cleanup a region if selected, otherwise the whole buffer."
-  (interactive)
-  (call-interactively 'untabify)
-  (unless (member major-mode baboon-indent-sensitive-modes)
-    (call-interactively 'indent-region))
-  (whitespace-cleanup))
