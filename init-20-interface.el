@@ -352,6 +352,7 @@
          "C" 'helpful-command))
 
 (use-package avy
+  :custom (avy-all-windows 'all-frames)
   :bind
   (("s-." . avy-goto-char-2)))
 
