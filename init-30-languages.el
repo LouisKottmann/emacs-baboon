@@ -48,7 +48,7 @@
 
 (use-package json-mode)
 
-(use-package gitignore-mode)
+(use-package git-modes)
 
 (use-package lockfile-mode)
 
