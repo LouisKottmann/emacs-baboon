@@ -500,3 +500,5 @@
   (add-to-list 'yascroll:disabled-modes 'neotree-mode)
   (global-yascroll-bar-mode 1)
   (scroll-bar-mode -1))
+
+(use-package noccur)

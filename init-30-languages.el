@@ -76,7 +76,8 @@
                  cider-repl-history-file (expand-file-name ".cider-repl-history" baboon-savefile-dir)
                  cider-repl-history-size 5000
                  nrepl-log-messages t
-                 cider-repl-display-help-banner nil)
+                 cider-repl-display-help-banner nil
+                 cider-known-endpoints '(("louisbotssj2-production" "localhost" "8091")))
   ;; (flycheck-clojure-setup) ;; run setup *after* cider load
   :hook ((clojure-mode . cider-mode)
          (clojure-mode . turn-on-eldoc-mode)
