@@ -95,3 +95,5 @@
 (use-package nginx-mode
   :mode (("nginx\\.conf\\'" . nginx-mode)
          ("nginx\\.conf\\.j2\\'" . nginx-mode)))
+
+(use-package sql-indent)
