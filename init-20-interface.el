@@ -206,6 +206,7 @@
   :bind (("s-b" . helm-mini)
          ("s-r" . helm-recentf))
   :config
+  (require 'helm-mode)
   (require 'helm-files)
   (require 'helm-config)) ; Necessary for helm-mode
 

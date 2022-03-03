@@ -85,6 +85,7 @@
               ("C-r" . helm-cider-repl-history)))
 
 (use-package sayid
+  :disabled
   :ensure t
   :after cider
   :init (sayid-setup-package))
