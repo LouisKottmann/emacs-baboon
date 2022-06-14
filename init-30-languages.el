@@ -84,11 +84,11 @@
   :bind (:map cider-repl-mode-map
               ("C-r" . helm-cider-repl-history)))
 
-(use-package sayid
-  :disabled
-  :ensure t
-  :after cider
-  :init (sayid-setup-package))
+;; (use-package sayid
+;;   :disabled
+;;   :ensure t
+;;   :after cider
+;;   :init (sayid-setup-package))
 
 (use-package csv-mode
   :mode (("\\.csv\\'" . csv-mode)))
@@ -98,3 +98,7 @@
          ("nginx\\.conf\\.j2\\'" . nginx-mode)))
 
 (use-package sql-indent)
+
+(use-package sqlformat
+  :config (gsetq sqlformat-command 'pgformatter
+                 sqlformat-args '("-s2")))
