@@ -124,7 +124,6 @@
   (tool-bar-mode -1))
 
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -495,4 +494,5 @@
     :config
   (setq yascroll:delay-to-hide nil)
   (add-to-list 'yascroll:disabled-modes 'neotree-mode)
-  (global-yascroll-bar-mode 1))
+  (global-yascroll-bar-mode 1)
+  (scroll-bar-mode -1))
