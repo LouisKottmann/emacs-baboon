@@ -374,6 +374,10 @@
   (("s-:" . ace-window)
    ("s-/" . ace-swap-window)))
 
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("s-!" . ace-jump-mode))
+
 (use-package popup
     :ensure t)
 
