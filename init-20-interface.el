@@ -124,6 +124,7 @@
   (tool-bar-mode -1))
 
 (menu-bar-mode -1)
+(toggle-scroll-bar -1)
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -488,3 +489,10 @@
   (shell-pop-autocd-to-working-dir nil)
   (shell-pop-restore-window-configuration t)
   (shell-pop-cleanup-buffer-at-process-exit t))
+
+(use-package yascroll
+  :demand t
+    :config
+  (setq yascroll:delay-to-hide nil)
+  (add-to-list 'yascroll:disabled-modes 'neotree-mode)
+  (global-yascroll-bar-mode 1))
