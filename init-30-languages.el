@@ -103,3 +103,6 @@
 (use-package sqlformat
   :config (gsetq sqlformat-command 'pgformatter
                  sqlformat-args '("-s2")))
+
+(use-package mermaid-mode
+  :mode (("\\.mermaid.md" . mermaid-mode)))
