@@ -85,12 +85,6 @@
   :bind (:map cider-repl-mode-map
               ("C-r" . helm-cider-repl-history)))
 
-;; (use-package sayid
-;;   :disabled
-;;   :ensure t
-;;   :after cider
-;;   :init (sayid-setup-package))
-
 (use-package csv-mode
   :mode (("\\.csv\\'" . csv-mode)))
 
